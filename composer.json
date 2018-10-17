@@ -1,0 +1,9 @@
+{
+    "name": "openeuropa/epoetry",
+    "require": {
+        "phpro/soap-client": "^0.7.7"
+    },
+    "require-dev": {
+        "zendframework/zend-code": "^3.1.0"
+    }
+}
