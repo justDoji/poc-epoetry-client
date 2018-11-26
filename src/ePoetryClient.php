@@ -1,7 +1,7 @@
 <?php
 
 namespace OpenEuropa\ePoetry;
-
+die;
 use OpenEuropa\ePoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
