@@ -7,10 +7,10 @@ use OpenEuropa\ePoetry\ePoetryClassmap;
 use Phpro\SoapClient\ClientFactory as PhproClientFactory;
 use Phpro\SoapClient\ClientBuilder;
 
-class ePoetryClientFactory
+class ePoetryClientFactory implements ePoetryClientFactoryInterface
 {
 
-    public static function factory(string $wsdl) : \OpenEuropa\ePoetry\ePoetryClient
+    public function factory(string $wsdl) : \OpenEuropa\ePoetry\ePoetryClient
     {
         $clientFactory = new PhproClientFactory(ePoetryClient::class);
         $clientBuilder = new ClientBuilder($clientFactory, $wsdl, []);

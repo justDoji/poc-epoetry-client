@@ -3,6 +3,7 @@
 namespace OpenEuropa\ePoetry\Tests\Requests;
 
 use OpenEuropa\ePoetry\Tests\AbstractTest;
+use OpenEuropa\ePoetry\ePoetryClient;
 
 /**
  * Class RequestTest
@@ -12,7 +13,8 @@ use OpenEuropa\ePoetry\Tests\AbstractTest;
 class RequestTest extends AbstractTest
 {
     public function testTest() {
-        $this->assertTrue(true);
+
+        $this->assertInstanceOf(ePoetryClient::class, $this->client, 'Wrong Client object received.');
     }
 
 }
