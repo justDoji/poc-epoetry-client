@@ -2,36 +2,41 @@
 
 namespace OpenEuropa\ePoetry\Type;
 
+use OpenEuropa\ePoetry\Type\DgtDocumentIn;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class OriginalDocumentIn implements RequestInterface, ResultInterface
+class OriginalDocumentIn extends dgtDocumentIn
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections
+     * @var linguisticSections $linguisticSections
      */
-    private $linguisticSections;
+    protected $linguisticSections = null;
 
     /**
-     * @var bool
+     * @var boolean $trackChanges
      */
-    private $trackChanges;
+    protected $trackChanges = null;
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
-     * @var bool $trackChanges
+     * @param base64Binary $file
+     * @param string $format
+     * @param documentTypeIn $type
+     * @param string $name
+     * @param boolean $trackChanges
      */
-    public function __construct($linguisticSections, $trackChanges)
+    public function __construct($file, $format, $type, $name, $trackChanges)
     {
-        $this->linguisticSections = $linguisticSections;
+
+        parent::__construct($file, $format, $type, $name);
+
         $this->trackChanges = $trackChanges;
+
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticSections
+     * @return linguisticSections
      */
     public function getLinguisticSections()
     {
@@ -39,19 +44,18 @@ class OriginalDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
-     * @return OriginalDocumentIn
+     * @param linguisticSections $linguisticSections
+     * @return originalDocumentIn
      */
-    public function withLinguisticSections($linguisticSections)
+    public function setLinguisticSections($linguisticSections)
     {
-        $new = clone $this;
-        $new->linguisticSections = $linguisticSections;
+        $this->linguisticSections = $linguisticSections;
 
-        return $new;
+        return $this;
     }
 
     /**
-     * @return bool
+     * @return boolean
      */
     public function getTrackChanges()
     {
@@ -59,17 +63,14 @@ class OriginalDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param bool $trackChanges
-     * @return OriginalDocumentIn
+     * @param boolean $trackChanges
+     * @return originalDocumentIn
      */
-    public function withTrackChanges($trackChanges)
+    public function setTrackChanges($trackChanges)
     {
-        $new = clone $this;
-        $new->trackChanges = $trackChanges;
+        $this->trackChanges = $trackChanges;
 
-        return $new;
+        return $this;
     }
 
-
 }
-

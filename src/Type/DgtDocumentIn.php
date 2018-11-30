@@ -1,40 +1,40 @@
 <?php
 
+
 namespace OpenEuropa\ePoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class DgtDocumentIn implements RequestInterface, ResultInterface
+
+abstract class dgtDocumentIn
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\base64Binary
+     * @var base64Binary $file
      */
-    private $file;
+    protected $file = null;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentFormat
+     * @var documentFormat $format
      */
-    private $format;
+    protected $format = null;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentTypeIn
+     * @var documentTypeIn $type
      */
-    private $type;
+    protected $type = null;
 
     /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\base64Binary $file
-     * @var \OpenEuropa\ePoetry\Type\documentFormat $format
-     * @var \OpenEuropa\ePoetry\Type\documentTypeIn $type
      * @var string $name
+     */
+    protected $name = null;
+
+    /**
+     * @param base64Binary $file
+     * @param documentFormat $format
+     * @param documentTypeIn $type
+     * @param string $name
      */
     public function __construct($file, $format, $type, $name)
     {
@@ -45,7 +45,7 @@ class DgtDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\base64Binary
+     * @return base64Binary
      */
     public function getFile()
     {
@@ -53,19 +53,18 @@ class DgtDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\base64Binary $file
-     * @return DgtDocumentIn
+     * @param base64Binary $file
+     * @return dgtDocumentIn
      */
-    public function withFile($file)
+    public function setFile($file)
     {
-        $new = clone $this;
-        $new->file = $file;
+        $this->file = $file;
 
-        return $new;
+        return $this;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentFormat
+     * @return documentFormat
      */
     public function getFormat()
     {
@@ -73,19 +72,18 @@ class DgtDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentFormat $format
-     * @return DgtDocumentIn
+     * @param documentFormat $format
+     * @return dgtDocumentIn
      */
-    public function withFormat($format)
+    public function setFormat($format)
     {
-        $new = clone $this;
-        $new->format = $format;
+        $this->format = $format;
 
-        return $new;
+        return $this;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentTypeIn
+     * @return documentTypeIn
      */
     public function getType()
     {
@@ -93,15 +91,14 @@ class DgtDocumentIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentTypeIn $type
-     * @return DgtDocumentIn
+     * @param documentTypeIn $type
+     * @return dgtDocumentIn
      */
-    public function withType($type)
+    public function setType($type)
     {
-        $new = clone $this;
-        $new->type = $type;
+        $this->type = $type;
 
-        return $new;
+        return $this;
     }
 
     /**
@@ -114,16 +111,13 @@ class DgtDocumentIn implements RequestInterface, ResultInterface
 
     /**
      * @param string $name
-     * @return DgtDocumentIn
+     * @return dgtDocumentIn
      */
-    public function withName($name)
+    public function setName($name)
     {
-        $new = clone $this;
-        $new->name = $name;
+        $this->name = $name;
 
-        return $new;
+        return $this;
     }
 
-
 }
-
