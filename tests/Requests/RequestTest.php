@@ -10,11 +10,9 @@ use OpenEuropa\ePoetry\Type\ContactPerson;
 use OpenEuropa\ePoetry\Type\Contacts;
 use OpenEuropa\ePoetry\Type\CreateRequests;
 use OpenEuropa\ePoetry\Type\Language;
-use OpenEuropa\ePoetry\Type\LinguisticRequest;
 use OpenEuropa\ePoetry\Type\LinguisticRequestIn;
 use OpenEuropa\ePoetry\Type\LinguisticSection;
 use OpenEuropa\ePoetry\Type\LinguisticSections;
-use OpenEuropa\ePoetry\Type\OriginalDocument;
 use OpenEuropa\ePoetry\Type\OriginalDocumentIn;
 use OpenEuropa\ePoetry\Type\ProductRequest;
 use OpenEuropa\ePoetry\Type\ProductRequests;
@@ -99,8 +97,7 @@ class RequestTest extends AbstractTest
         // @todo get value from lib.
         $languageCode = 'FR';
         $auxiliaryDocument = new AuxiliaryDocument($languageCode);
-        $auxiliaryDocuments = new AuxiliaryDocuments($auxiliaryDocument);
-        $this->assertEquals($auxiliaryDocuments->getAuxiliaryDocument()->getLanguage(), 'FR');
+        $auxiliaryDocuments = NULL;
 
         // Generate Linguistic Request.
         $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $auxiliaryDocuments);

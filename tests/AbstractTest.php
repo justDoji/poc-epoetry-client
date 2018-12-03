@@ -4,7 +4,6 @@ namespace OpenEuropa\ePoetry\Tests;
 
 use PHPUnit\Framework\TestCase;
 use OpenEuropa\ePoetry\ePoetryClient;
-use OpenEuropa\ePoetry\ePoetryClientFactory;
 use Phpro\SoapClient\ClientFactory;
 use Phpro\SoapClient\ClientBuilder;
 
