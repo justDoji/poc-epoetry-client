@@ -7,6 +7,10 @@ use OpenEuropa\ePoetry\ePoetryClient;
 use Phpro\SoapClient\ClientFactory;
 use Phpro\SoapClient\ClientBuilder;
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use OpenEuropa\ePoetry\Tests\Subscribers\RequestSubscriber;
+use OpenEuropa\ePoetry\ePoetryClassmap;
+
 /**
  * Class AbstractTest
  *
@@ -25,14 +29,19 @@ abstract class AbstractTest extends TestCase
      */
     protected function setUp()
     {
-
         $wsdl = 'dgtServiceWSDL.xml';
         $clientFactory = new ClientFactory(ePoetryClient::class);
         $soapOptions = [
             'cache_wsdl' => WSDL_CACHE_NONE
         ];
 
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addSubscriber(new RequestSubscriber());
+
         $clientBuilder = new ClientBuilder($clientFactory, $wsdl, $soapOptions);
+        $clientBuilder->withEventDispatcher($dispatcher);
+        $clientBuilder->withClassMaps(ePoetryClassmap::getCollection());
+        $clientBuilder->withHandler(new MockSoapServerHandle(new \SoapServer($wsdl)));
         $this->client = $clientBuilder->build();
 
         parent::setUp();

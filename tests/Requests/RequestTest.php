@@ -95,8 +95,10 @@ class RequestTest extends AbstractTest
 
         // Generate Auxiliary Documents.
         // @todo get value from lib.
-        $languageCode = 'FR';
-        $auxiliaryDocument = new AuxiliaryDocument($languageCode);
+        // $languageCode = 'FR';
+        // $auxiliaryDocument = new AuxiliaryDocument($languageCode);
+        // $auxiliaryDocuments = new AuxiliaryDocuments($auxiliaryDocument);
+        // $this->assertEquals($auxiliaryDocuments->getAuxiliaryDocument()->getLanguage(), 'FR');
         $auxiliaryDocuments = NULL;
 
         // Generate Linguistic Request.
@@ -109,7 +111,13 @@ class RequestTest extends AbstractTest
 
         $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
 
+        // Make request.
         $this->client->createRequests($parameters);
+
+        $debug = $this->client->debugLastSoapRequest();
+        $request = $debug['request'];
+
+        $this->assertContains('<title>Test</title>', $request['body'], 'XML malformed, missing title.');
 
     }
 
