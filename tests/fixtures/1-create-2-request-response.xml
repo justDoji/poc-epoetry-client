@@ -5,7 +5,7 @@
             <return statusCode="ENV">
                 <reference year="2018" number="2249" part="0" version="0" id="1738" internalReference="MYREF-DEF-123456" productType="TRA" requesterCode="DGT"/>
                 <generalInfo>
-                    <title>Title of the Document vpi</title>
+                    <title>Title of the Document</title>
                     <internalReference>MYREF-DEF-123456</internalReference>
                     <requestedDeadline>2018-11-30T12:00:00+01:00</requestedDeadline>
                     <sensitive>false</sensitive>

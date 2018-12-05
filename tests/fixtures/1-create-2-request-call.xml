@@ -9,7 +9,7 @@
         <ns2:createRequests xmlns:ns2="http://eu.europa.ec.dgt.epoetry">
             <linguisticRequest>
                 <generalInfo>
-                    <title>Title of the Document vpi</title>
+                    <title>Title of the Document call</title>
                     <internalReference>MYREF-DEF-123456</internalReference>
                     <requestedDeadline>2018-11-30T12:00:00.000+01:00</requestedDeadline>
                     <sensitive>false</sensitive>
@@ -64,7 +64,7 @@
             </linguisticRequest>
             <linguisticRequest>
                 <generalInfo>
-                    <title>Title of the Document vpi</title>
+                    <title>Title of the Document call</title>
                     <internalReference>MYREF-DEF-123456</internalReference>
                     <requestedDeadline>2018-11-30T12:00:00.000+01:00</requestedDeadline>
                     <sensitive>false</sensitive>

@@ -96,6 +96,7 @@ class RequestTest extends AbstractTest
         // Generate Auxiliary Documents.
         // @todo get value from lib.
         // $languageCode = 'FR';
+        // @todo fix AuxiliaryDocuments by using AuxiliaryDocumentIn extending DgtDocument.
         // $auxiliaryDocument = new AuxiliaryDocument($languageCode);
         // $auxiliaryDocuments = new AuxiliaryDocuments($auxiliaryDocument);
         // $this->assertEquals($auxiliaryDocuments->getAuxiliaryDocument()->getLanguage(), 'FR');
@@ -112,12 +113,18 @@ class RequestTest extends AbstractTest
         $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
 
         // Make request.
-        $this->client->createRequests($parameters);
+        $response = $this->client->createRequests($parameters);
 
+        // Test request.
         $debug = $this->client->debugLastSoapRequest();
         $request = $debug['request'];
+        $this->assertContains('<title>Test</title>', $request['body'], 'Request XML malformed, missing title.');
 
-        $this->assertContains('<title>Test</title>', $request['body'], 'XML malformed, missing title.');
+        // Test response.
+        /** @var \OpenEuropa\ePoetry\Type\LinguisticRequest $return */
+        $return = current($response->getReturn());
+        $this->assertEquals($return->getStatusCode(), 'ENV', 'Response error, wrong status.');
+        $this->assertEquals($return->getGeneralInfo()->getTitle(), 'Title of the Document', 'Response error, wrong title.');
 
     }
 
