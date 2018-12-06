@@ -11,6 +11,8 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use OpenEuropa\ePoetry\Tests\Subscribers\RequestSubscriber;
 use OpenEuropa\ePoetry\ePoetryClassmap;
 
+use Http\Discovery\HttpClientDiscovery;
+
 /**
  * Class AbstractTest
  *
@@ -41,7 +43,11 @@ abstract class AbstractTest extends TestCase
         $clientBuilder = new ClientBuilder($clientFactory, $wsdl, $soapOptions);
         $clientBuilder->withEventDispatcher($dispatcher);
         $clientBuilder->withClassMaps(ePoetryClassmap::getCollection());
-        $clientBuilder->withHandler(new MockSoapServerHandle(new \SoapServer($wsdl)));
+
+        $httpClient = HttpClientDiscovery::find();
+        $handler = MockHttPlugHandle::createForClient($httpClient);
+
+        $clientBuilder->withHandler($handler);
         $this->client = $clientBuilder->build();
 
         parent::setUp();
