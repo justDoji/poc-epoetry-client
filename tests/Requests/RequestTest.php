@@ -18,6 +18,8 @@ use OpenEuropa\ePoetry\Type\ProductRequest;
 use OpenEuropa\ePoetry\Type\ProductRequests;
 use OpenEuropa\ePoetry\Type\RequestGeneralInfo;
 use OpenEuropa\ePoetry\Type\RequestReference;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * Class RequestTest
@@ -111,6 +113,13 @@ class RequestTest extends AbstractTest
         $templateName = 'WEB';
 
         $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
+
+        // Mock response.
+        $response = $this->createMock(ResponseInterface::class);
+        $mockResponse = new Response(200, ['xxx' => 'yyy'], file_get_contents(__DIR__ . '/../fixtures/1-create-2-request-response.xml'));
+        $response->method('getBody')->willReturn($mockResponse->getBody());
+        $response->method('getHeaders')->willReturn($mockResponse->getHeaders());
+        $this->mockClient->addResponse($response);
 
         // Make request.
         $response = $this->client->createRequests($parameters);

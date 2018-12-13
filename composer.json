@@ -6,11 +6,11 @@
         "phpro/soap-client": "^0.7.7",
         "guzzlehttp/guzzle": "^6.2",
         "psr/http-message": "^1.0",
-        "php-http/httplug": "^2.0",
-        "php-http/client-common": "2.x.dev",
+        "php-http/httplug": "^1.0",
+        "php-http/client-common": "1.1",
         "php-http/discovery": "^1.4",
         "php-http/message-factory": "^1.0",
-        "php-http/guzzle6-adapter": "^2.0"
+        "php-http/mock-client": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.4",

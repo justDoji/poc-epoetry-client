@@ -6,12 +6,12 @@ use PHPUnit\Framework\TestCase;
 use OpenEuropa\ePoetry\ePoetryClient;
 use Phpro\SoapClient\ClientFactory;
 use Phpro\SoapClient\ClientBuilder;
-
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use OpenEuropa\ePoetry\Tests\Subscribers\RequestSubscriber;
 use OpenEuropa\ePoetry\ePoetryClassmap;
-
-use Http\Discovery\HttpClientDiscovery;
+use OpenEuropa\ePoetry\Tests\Middleware\MockMiddleware;
+use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
+use Http\Mock\Client as MockClient;
 
 /**
  * Class AbstractTest
@@ -20,6 +20,11 @@ use Http\Discovery\HttpClientDiscovery;
  */
 abstract class AbstractTest extends TestCase
 {
+
+    /**
+     * @var mockClient
+     */
+    protected $mockClient;
 
     /**
      * @var ePoetryClient
@@ -44,9 +49,9 @@ abstract class AbstractTest extends TestCase
         $clientBuilder->withEventDispatcher($dispatcher);
         $clientBuilder->withClassMaps(ePoetryClassmap::getCollection());
 
-        $httpClient = HttpClientDiscovery::find();
-        $handler = MockHttPlugHandle::createForClient($httpClient);
-
+        $this->mockClient = new MockCLient();
+        $handler = HttPlugHandle::createForClient($this->mockClient);
+        $handler->addMiddleware(new MockMiddleware());
         $clientBuilder->withHandler($handler);
         $this->client = $clientBuilder->build();
 
