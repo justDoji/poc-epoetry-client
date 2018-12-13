@@ -127,7 +127,8 @@ class RequestTest extends AbstractTest
         // Test request.
         $debug = $this->client->debugLastSoapRequest();
         $request = $debug['request'];
-        $this->assertContains('<title>Test</title>', $request['body'], 'Request XML malformed, missing title.');
+        $this->assertContains('ecas:ProxyTicket: DESKTOP_PT-21-9fp9', $request['headers'], 'Request XML header malformed, missing ticket.');
+        $this->assertContains('<title>Test</title>', $request['body'], 'Request XML body malformed, missing title.');
 
         // Test response.
         /** @var \OpenEuropa\ePoetry\Type\LinguisticRequest $return */

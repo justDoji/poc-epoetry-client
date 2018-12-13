@@ -2,20 +2,9 @@
 
 namespace OpenEuropa\ePoetry\Tests\Middleware;
 
-use \Phpro\SoapClient\Middleware\MiddleWare;
-use \Http\Promise\Promise;
-use \Psr\Http\Message\ResponseInterface;
-use \Psr\Http\Message\RequestInterface;
-
-
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
-
-use Psr\Http\Message\Uri;
-
-use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
+use Phpro\SoapClient\Middleware\MiddleWare;
+use Http\Promise\Promise;
+use Psr\Http\Message\RequestInterface;
 
 class MockMiddleware extends MiddleWare
 {
@@ -26,12 +15,9 @@ class MockMiddleware extends MiddleWare
 
     public function beforeRequest(callable $next, RequestInterface $request): Promise
     {
+        // Add Proxy Ticket.
+        $request = $request->withHeader('ecas:ProxyTicket', 'DESKTOP_PT-21-9fp9');
+
         return $next($request);
-    }
-
-    public function afterResponse(ResponseInterface $response): ResponseInterface
-    {
-
-        return $response;
     }
 }
