@@ -12,10 +12,9 @@ interface ePoetryClientFactoryInterface
 {
 
     /**
-     * @param SoapClient               $soapClient
-     * @param EventDispatcherInterface $dispatcher
+     * @param string $wsdl
      *
      * @return ClientInterface
      */
-    public function factory(SoapClient $soapClient, EventDispatcherInterface $dispatcher);
+    public function factory(string $wsdl);
 }
