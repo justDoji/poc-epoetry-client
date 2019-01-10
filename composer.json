@@ -4,15 +4,17 @@
     "prefer-stable": true,
     "require": {
         "phpro/soap-client": "^0.7.7",
-        "guzzlehttp/guzzle": "^6.2",
         "psr/http-message": "^1.0",
         "php-http/httplug": "^1.0",
         "php-http/client-common": "1.1",
         "php-http/discovery": "^1.4",
         "php-http/message-factory": "^1.0",
-        "php-http/mock-client": "^1.1"
+        "php-http/mock-client": "^1.1",
+        "php": "^7.1",
+        "ext-soap": "^7.1"
     },
     "require-dev": {
+        "guzzlehttp/guzzle": "^6.2",
         "phpunit/phpunit": "^7.4",
         "zendframework/zend-code": "^3.1.0"
     },

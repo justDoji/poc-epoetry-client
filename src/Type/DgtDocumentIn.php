@@ -7,7 +7,7 @@ use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
 
-abstract class dgtDocumentIn
+abstract class DgtDocumentIn
 {
 
     /**

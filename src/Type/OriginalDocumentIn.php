@@ -6,7 +6,7 @@ use OpenEuropa\ePoetry\Type\DgtDocumentIn;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class OriginalDocumentIn extends dgtDocumentIn implements RequestInterface, ResultInterface
+class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, ResultInterface
 {
 
     /**
