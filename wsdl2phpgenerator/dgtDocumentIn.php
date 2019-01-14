@@ -1,13 +1,8 @@
 <?php
 
-
 namespace OpenEuropa\ePoetry\Type;
 
-use Phpro\SoapClient\Type\RequestInterface;
-use Phpro\SoapClient\Type\ResultInterface;
-
-
-abstract class DgtDocumentIn
+abstract class dgtDocumentIn
 {
 
     /**
@@ -38,10 +33,10 @@ abstract class DgtDocumentIn
      */
     public function __construct($file, $format, $type, $name)
     {
-        $this->file = $file;
-        $this->format = $format;
-        $this->type = $type;
-        $this->name = $name;
+      $this->file = $file;
+      $this->format = $format;
+      $this->type = $type;
+      $this->name = $name;
     }
 
     /**
@@ -49,18 +44,17 @@ abstract class DgtDocumentIn
      */
     public function getFile()
     {
-        return $this->file;
+      return $this->file;
     }
 
     /**
      * @param base64Binary $file
-     * @return dgtDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
      */
     public function setFile($file)
     {
-        $this->file = $file;
-
-        return $this;
+      $this->file = $file;
+      return $this;
     }
 
     /**
@@ -68,18 +62,17 @@ abstract class DgtDocumentIn
      */
     public function getFormat()
     {
-        return $this->format;
+      return $this->format;
     }
 
     /**
      * @param documentFormat $format
-     * @return dgtDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
      */
     public function setFormat($format)
     {
-        $this->format = $format;
-
-        return $this;
+      $this->format = $format;
+      return $this;
     }
 
     /**
@@ -87,18 +80,17 @@ abstract class DgtDocumentIn
      */
     public function getType()
     {
-        return $this->type;
+      return $this->type;
     }
 
     /**
      * @param documentTypeIn $type
-     * @return dgtDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
      */
     public function setType($type)
     {
-        $this->type = $type;
-
-        return $this;
+      $this->type = $type;
+      return $this;
     }
 
     /**
@@ -106,18 +98,17 @@ abstract class DgtDocumentIn
      */
     public function getName()
     {
-        return $this->name;
+      return $this->name;
     }
 
     /**
      * @param string $name
-     * @return dgtDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
      */
     public function setName($name)
     {
-        $this->name = $name;
-
-        return $this;
+      $this->name = $name;
+      return $this;
     }
 
 }

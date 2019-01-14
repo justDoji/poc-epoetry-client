@@ -2,11 +2,7 @@
 
 namespace OpenEuropa\ePoetry\Type;
 
-use OpenEuropa\ePoetry\Type\DgtDocumentIn;
-use Phpro\SoapClient\Type\RequestInterface;
-use Phpro\SoapClient\Type\ResultInterface;
-
-class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, ResultInterface
+class originalDocumentIn extends dgtDocumentIn
 {
 
     /**
@@ -21,18 +17,15 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
 
     /**
      * @param base64Binary $file
-     * @param string $format
+     * @param documentFormat $format
      * @param documentTypeIn $type
      * @param string $name
      * @param boolean $trackChanges
      */
     public function __construct($file, $format, $type, $name, $trackChanges)
     {
-
-        parent::__construct($file, $format, $type, $name);
-
-        $this->trackChanges = $trackChanges;
-
+      parent::__construct($file, $format, $type, $name);
+      $this->trackChanges = $trackChanges;
     }
 
     /**
@@ -40,18 +33,17 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
      */
     public function getLinguisticSections()
     {
-        return $this->linguisticSections;
+      return $this->linguisticSections;
     }
 
     /**
      * @param linguisticSections $linguisticSections
-     * @return originalDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\originalDocumentIn
      */
     public function setLinguisticSections($linguisticSections)
     {
-        $this->linguisticSections = $linguisticSections;
-
-        return $this;
+      $this->linguisticSections = $linguisticSections;
+      return $this;
     }
 
     /**
@@ -59,18 +51,17 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
      */
     public function getTrackChanges()
     {
-        return $this->trackChanges;
+      return $this->trackChanges;
     }
 
     /**
      * @param boolean $trackChanges
-     * @return originalDocumentIn
+     * @return \OpenEuropa\ePoetry\Type\originalDocumentIn
      */
     public function setTrackChanges($trackChanges)
     {
-        $this->trackChanges = $trackChanges;
-
-        return $this;
+      $this->trackChanges = $trackChanges;
+      return $this;
     }
 
 }
