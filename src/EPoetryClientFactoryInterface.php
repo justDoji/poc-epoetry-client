@@ -1,14 +1,14 @@
 <?php
 
-namespace OpenEuropa\ePoetry;
+namespace OpenEuropa\EPoetry;
 
 use SoapClient;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Class ePoetryClientFactoryInterface
+ * Class EPoetryClientFactoryInterface
  */
-interface ePoetryClientFactoryInterface
+interface EPoetryClientFactoryInterface
 {
 
     /**

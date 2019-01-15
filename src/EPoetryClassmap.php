@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEuropa\ePoetry;
+namespace OpenEuropa\EPoetry;
 
-use OpenEuropa\ePoetry\Type;
+use OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 
-class ePoetryClassmap
+class EPoetryClassmap
 {
 
     public static function getCollection() : \Phpro\SoapClient\Soap\ClassMap\ClassMapCollection

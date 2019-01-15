@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -14,7 +14,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
     private $userId;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\contactRole
+     * @var \OpenEuropa\EPoetry\Type\contactRole
      */
     private $roleCode;
 
@@ -22,7 +22,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * Constructor
      *
      * @var string $userId
-     * @var \OpenEuropa\ePoetry\Type\contactRole $roleCode
+     * @var \OpenEuropa\EPoetry\Type\contactRole $roleCode
      */
     public function __construct($userId, $roleCode)
     {
@@ -51,7 +51,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\contactRole
+     * @return \OpenEuropa\EPoetry\Type\contactRole
      */
     public function getRoleCode()
     {
@@ -59,7 +59,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contactRole $roleCode
+     * @param \OpenEuropa\EPoetry\Type\contactRole $roleCode
      * @return ContactPersonIn
      */
     public function withRoleCode($roleCode)

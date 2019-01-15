@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class ModifyRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     private $requestReference;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     private $linguisticRequest;
 
@@ -26,8 +26,8 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn $requestReference
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $requestReference
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @var string $templateName
      */
     public function __construct($requestReference, $linguisticRequest, $templateName)
@@ -38,7 +38,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     public function getRequestReference()
     {
@@ -46,7 +46,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReferenceIn $requestReference
+     * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $requestReference
      * @return ModifyRequest
      */
     public function withRequestReference($requestReference)
@@ -58,7 +58,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function getLinguisticRequest()
     {
@@ -66,7 +66,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @param \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @return ModifyRequest
      */
     public function withLinguisticRequest($linguisticRequest)

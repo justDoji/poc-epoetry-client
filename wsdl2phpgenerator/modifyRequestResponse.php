@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class modifyRequestResponse
 {
@@ -26,7 +26,7 @@ class modifyRequestResponse
 
     /**
      * @param linguisticRequest $return
-     * @return \OpenEuropa\ePoetry\Type\modifyRequestResponse
+     * @return \OpenEuropa\EPoetry\Type\modifyRequestResponse
      */
     public function setReturn($return)
     {

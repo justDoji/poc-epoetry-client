@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class CreateRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     private $linguisticRequest;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     private $relatedRequest;
 
@@ -26,8 +26,8 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn $relatedRequest
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
      * @var string $templateName
      */
     public function __construct($linguisticRequest, $relatedRequest, $templateName)
@@ -38,7 +38,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function getLinguisticRequest()
     {
@@ -46,7 +46,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @param \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @return CreateRequests
      */
     public function withLinguisticRequest($linguisticRequest)
@@ -58,7 +58,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     public function getRelatedRequest()
     {
@@ -66,7 +66,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReferenceIn $relatedRequest
+     * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
      * @return CreateRequests
      */
     public function withRelatedRequest($relatedRequest)

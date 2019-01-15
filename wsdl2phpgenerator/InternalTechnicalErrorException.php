@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class InternalTechnicalErrorException
 {
@@ -31,7 +31,7 @@ class InternalTechnicalErrorException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\InternalTechnicalErrorException
+     * @return \OpenEuropa\EPoetry\Type\InternalTechnicalErrorException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class InternalTechnicalErrorException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\InternalTechnicalErrorException
+     * @return \OpenEuropa\EPoetry\Type\InternalTechnicalErrorException
      */
     public function setUid($uid)
     {

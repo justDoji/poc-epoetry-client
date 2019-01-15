@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class receiveNotificationsResponse
 {
@@ -26,7 +26,7 @@ class receiveNotificationsResponse
 
     /**
      * @param dgtNotification[] $return
-     * @return \OpenEuropa\ePoetry\Type\receiveNotificationsResponse
+     * @return \OpenEuropa\EPoetry\Type\receiveNotificationsResponse
      */
     public function setReturn(array $return = null)
     {

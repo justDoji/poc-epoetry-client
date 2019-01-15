@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class DgtDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentFormat
+     * @var \OpenEuropa\EPoetry\Type\documentFormat
      */
     private $format;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentType
+     * @var \OpenEuropa\EPoetry\Type\documentType
      */
     private $type;
 
@@ -26,8 +26,8 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\documentFormat $format
-     * @var \OpenEuropa\ePoetry\Type\documentType $type
+     * @var \OpenEuropa\EPoetry\Type\documentFormat $format
+     * @var \OpenEuropa\EPoetry\Type\documentType $type
      * @var string $name
      */
     public function __construct($format, $type, $name)
@@ -38,7 +38,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentFormat
+     * @return \OpenEuropa\EPoetry\Type\documentFormat
      */
     public function getFormat()
     {
@@ -46,7 +46,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentFormat $format
+     * @param \OpenEuropa\EPoetry\Type\documentFormat $format
      * @return DgtDocument
      */
     public function withFormat($format)
@@ -58,7 +58,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentType
+     * @return \OpenEuropa\EPoetry\Type\documentType
      */
     public function getType()
     {
@@ -66,7 +66,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentType $type
+     * @param \OpenEuropa\EPoetry\Type\documentType $type
      * @return DgtDocument
      */
     public function withType($type)

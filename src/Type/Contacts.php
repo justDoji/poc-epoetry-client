@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class Contacts implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\contactPerson
+     * @var \OpenEuropa\EPoetry\Type\contactPerson
      */
     private $contact;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\contactPerson $contact
+     * @var \OpenEuropa\EPoetry\Type\contactPerson $contact
      */
     public function __construct($contact)
     {
@@ -24,7 +24,7 @@ class Contacts implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function getContact()
     {
@@ -32,7 +32,7 @@ class Contacts implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contactPerson $contact
+     * @param \OpenEuropa\EPoetry\Type\contactPerson $contact
      * @return Contacts
      */
     public function withContact($contact)

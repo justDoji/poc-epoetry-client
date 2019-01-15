@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocument
+     * @var \OpenEuropa\EPoetry\Type\auxiliaryDocument
      */
     private $auxiliaryDocument;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocument $auxiliaryDocument
+     * @var \OpenEuropa\EPoetry\Type\auxiliaryDocument $auxiliaryDocument
      */
     public function __construct($auxiliaryDocument)
     {
@@ -24,7 +24,7 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\auxiliaryDocument
+     * @return \OpenEuropa\EPoetry\Type\auxiliaryDocument
      */
     public function getAuxiliaryDocument()
     {
@@ -32,7 +32,7 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\auxiliaryDocument $auxiliaryDocument
+     * @param \OpenEuropa\EPoetry\Type\auxiliaryDocument $auxiliaryDocument
      * @return AuxiliaryDocuments
      */
     public function withAuxiliaryDocument($auxiliaryDocument)

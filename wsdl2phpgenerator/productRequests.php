@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class productRequests
 {
@@ -28,7 +28,7 @@ class productRequests
 
     /**
      * @param productRequest $productRequest
-     * @return \OpenEuropa\ePoetry\Type\productRequests
+     * @return \OpenEuropa\EPoetry\Type\productRequests
      */
     public function setProductRequest($productRequest)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class contacts
 {
@@ -28,7 +28,7 @@ class contacts
 
     /**
      * @param contactPerson $contact
-     * @return \OpenEuropa\ePoetry\Type\contacts
+     * @return \OpenEuropa\EPoetry\Type\contacts
      */
     public function setContact($contact)
     {

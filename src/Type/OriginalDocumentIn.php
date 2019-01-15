@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
-use OpenEuropa\ePoetry\Type\DgtDocumentIn;
+use OpenEuropa\EPoetry\Type\DgtDocumentIn;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 

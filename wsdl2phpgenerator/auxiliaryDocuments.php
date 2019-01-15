@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class auxiliaryDocuments
 {
@@ -28,7 +28,7 @@ class auxiliaryDocuments
 
     /**
      * @param auxiliaryDocument $auxiliaryDocument
-     * @return \OpenEuropa\ePoetry\Type\auxiliaryDocuments
+     * @return \OpenEuropa\EPoetry\Type\auxiliaryDocuments
      */
     public function setAuxiliaryDocument($auxiliaryDocument)
     {

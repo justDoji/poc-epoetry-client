@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEuropa\ePoetry;
+namespace OpenEuropa\EPoetry;
 
-use OpenEuropa\ePoetry\Type;
+use OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 
-class ePoetryClient extends \Phpro\SoapClient\Client
+class EPoetryClient extends \Phpro\SoapClient\Client
 {
 
     /**
@@ -15,7 +15,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\findLinguisticRequestResponse
      * @throws SoapException
      */
-    public function findLinguisticRequest(\OpenEuropa\ePoetry\Type\findLinguisticRequest $parameters) : \OpenEuropa\ePoetry\Type\findLinguisticRequestResponse
+    public function findLinguisticRequest(\OpenEuropa\EPoetry\Type\findLinguisticRequest $parameters) : \OpenEuropa\EPoetry\Type\findLinguisticRequestResponse
     {
         return $this->call('findLinguisticRequest', $parameters);
     }
@@ -25,7 +25,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\modifyRequestResponse
      * @throws SoapException
      */
-    public function modifyRequest(\OpenEuropa\ePoetry\Type\modifyRequest $parameters) : \OpenEuropa\ePoetry\Type\modifyRequestResponse
+    public function modifyRequest(\OpenEuropa\EPoetry\Type\modifyRequest $parameters) : \OpenEuropa\EPoetry\Type\modifyRequestResponse
     {
         return $this->call('modifyRequest', $parameters);
     }
@@ -35,7 +35,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\correctTranslationResponse
      * @throws SoapException
      */
-    public function correctTranslation(\OpenEuropa\ePoetry\Type\correctTranslation $parameters) : \OpenEuropa\ePoetry\Type\correctTranslationResponse
+    public function correctTranslation(\OpenEuropa\EPoetry\Type\correctTranslation $parameters) : \OpenEuropa\EPoetry\Type\correctTranslationResponse
     {
         return $this->call('correctTranslation', $parameters);
     }
@@ -45,7 +45,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\receiveNotificationsResponse
      * @throws SoapException
      */
-    public function receiveNotifications(\OpenEuropa\ePoetry\Type\receiveNotifications $parameters) : \OpenEuropa\ePoetry\Type\receiveNotificationsResponse
+    public function receiveNotifications(\OpenEuropa\EPoetry\Type\receiveNotifications $parameters) : \OpenEuropa\EPoetry\Type\receiveNotificationsResponse
     {
         return $this->call('receiveNotifications', $parameters);
     }
@@ -55,7 +55,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\getLinguisticRequestResponse
      * @throws SoapException
      */
-    public function getLinguisticRequest(\OpenEuropa\ePoetry\Type\getLinguisticRequest $parameters) : \OpenEuropa\ePoetry\Type\getLinguisticRequestResponse
+    public function getLinguisticRequest(\OpenEuropa\EPoetry\Type\getLinguisticRequest $parameters) : \OpenEuropa\EPoetry\Type\getLinguisticRequestResponse
     {
         return $this->call('getLinguisticRequest', $parameters);
     }
@@ -65,7 +65,7 @@ class ePoetryClient extends \Phpro\SoapClient\Client
      * @return ResultInterface|Type\createRequestsResponse
      * @throws SoapException
      */
-    public function createRequests(\OpenEuropa\ePoetry\Type\createRequests $parameters) : \OpenEuropa\ePoetry\Type\createRequestsResponse
+    public function createRequests(\OpenEuropa\EPoetry\Type\createRequests $parameters) : \OpenEuropa\EPoetry\Type\createRequestsResponse
     {
         return $this->call('createRequests', $parameters);
     }

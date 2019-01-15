@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class correctTranslation
 {
@@ -31,7 +31,7 @@ class correctTranslation
 
     /**
      * @param productReference $product
-     * @return \OpenEuropa\ePoetry\Type\correctTranslation
+     * @return \OpenEuropa\EPoetry\Type\correctTranslation
      */
     public function setProduct($product)
     {
@@ -49,7 +49,7 @@ class correctTranslation
 
     /**
      * @param correctionDocument $correction
-     * @return \OpenEuropa\ePoetry\Type\correctTranslation
+     * @return \OpenEuropa\EPoetry\Type\correctTranslation
      */
     public function setCorrection($correction)
     {

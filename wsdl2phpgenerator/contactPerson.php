@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class contactPerson
 {
@@ -56,7 +56,7 @@ class contactPerson
 
     /**
      * @param string $firstName
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function setFirstName($firstName)
     {
@@ -74,7 +74,7 @@ class contactPerson
 
     /**
      * @param string $lastName
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function setLastName($lastName)
     {
@@ -92,7 +92,7 @@ class contactPerson
 
     /**
      * @param string $email
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function setEmail($email)
     {
@@ -110,7 +110,7 @@ class contactPerson
 
     /**
      * @param string $userId
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function setUserId($userId)
     {
@@ -128,7 +128,7 @@ class contactPerson
 
     /**
      * @param contactRole $roleCode
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
     public function setRoleCode($roleCode)
     {

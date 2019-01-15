@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\dgtNotification
+     * @var \OpenEuropa\EPoetry\Type\dgtNotification
      */
     private $return;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\dgtNotification $return
+     * @var \OpenEuropa\EPoetry\Type\dgtNotification $return
      */
     public function __construct($return)
     {
@@ -24,7 +24,7 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\dgtNotification
+     * @return \OpenEuropa\EPoetry\Type\dgtNotification
      */
     public function getReturn()
     {
@@ -32,7 +32,7 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\dgtNotification $return
+     * @param \OpenEuropa\EPoetry\Type\dgtNotification $return
      * @return ReceiveNotificationsResponse
      */
     public function withReturn($return)

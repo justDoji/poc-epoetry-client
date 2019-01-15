@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,16 +9,16 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\languageCode
+     * @var \OpenEuropa\EPoetry\Type\languageCode
      */
     private $language;
 
     /**
      * @param base64Binary $file
-     * @param \OpenEuropa\ePoetry\Type\documentFormat $format
-     * @param \OpenEuropa\ePoetry\Type\documentTypeIn $type
+     * @param \OpenEuropa\EPoetry\Type\documentFormat $format
+     * @param \OpenEuropa\EPoetry\Type\documentTypeIn $type
      * @param string $name
-     * @param \OpenEuropa\ePoetry\Type\languageCode $language
+     * @param \OpenEuropa\EPoetry\Type\languageCode $language
      */
     public function __construct($file, $format, $type, $name, $language)
     {
@@ -27,7 +27,7 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\languageCode
+     * @return \OpenEuropa\EPoetry\Type\languageCode
      */
     public function getLanguage()
     {
@@ -35,7 +35,7 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\languageCode $language
+     * @param \OpenEuropa\EPoetry\Type\languageCode $language
      * @return AuxiliaryDocumentIn
      */
     public function withLanguage($language)

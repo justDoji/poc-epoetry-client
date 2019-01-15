@@ -1,15 +1,15 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Tests;
+namespace OpenEuropa\EPoetry\Tests;
 
 use PHPUnit\Framework\TestCase;
-use OpenEuropa\ePoetry\ePoetryClient;
+use OpenEuropa\EPoetry\EPoetryClient;
 use Phpro\SoapClient\ClientFactory;
 use Phpro\SoapClient\ClientBuilder;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use OpenEuropa\ePoetry\Tests\Subscribers\RequestSubscriber;
-use OpenEuropa\ePoetry\ePoetryClassmap;
-use OpenEuropa\ePoetry\Tests\Middleware\MockMiddleware;
+use OpenEuropa\EPoetry\Tests\Subscribers\RequestSubscriber;
+use OpenEuropa\EPoetry\EPoetryClassmap;
+use OpenEuropa\EPoetry\Tests\Middleware\MockMiddleware;
 use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
 use Http\Mock\Client as MockClient;
 
@@ -27,7 +27,7 @@ abstract class AbstractTest extends TestCase
     protected $mockClient;
 
     /**
-     * @var ePoetryClient
+     * @var EPoetryClient
      */
     public $client;
 
@@ -37,7 +37,7 @@ abstract class AbstractTest extends TestCase
     protected function setUp()
     {
         $wsdl = 'dgtServiceWSDL.xml';
-        $clientFactory = new ClientFactory(ePoetryClient::class);
+        $clientFactory = new ClientFactory(EPoetryClient::class);
         $soapOptions = [
             'cache_wsdl' => WSDL_CACHE_NONE
         ];
@@ -47,7 +47,7 @@ abstract class AbstractTest extends TestCase
 
         $clientBuilder = new ClientBuilder($clientFactory, $wsdl, $soapOptions);
         $clientBuilder->withEventDispatcher($dispatcher);
-        $clientBuilder->withClassMaps(ePoetryClassmap::getCollection());
+        $clientBuilder->withClassMaps(EPoetryClassmap::getCollection());
 
         $this->mockClient = new MockCLient();
         $handler = HttPlugHandle::createForClient($this->mockClient);

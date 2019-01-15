@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class linguisticSectionIn
 {
@@ -26,7 +26,7 @@ class linguisticSectionIn
 
     /**
      * @param languageIn $language
-     * @return \OpenEuropa\ePoetry\Type\linguisticSectionIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticSectionIn
      */
     public function setLanguage($language)
     {

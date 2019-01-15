@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 abstract class dgtDocumentIn
 {
@@ -49,7 +49,7 @@ abstract class dgtDocumentIn
 
     /**
      * @param base64Binary $file
-     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\dgtDocumentIn
      */
     public function setFile($file)
     {
@@ -67,7 +67,7 @@ abstract class dgtDocumentIn
 
     /**
      * @param documentFormat $format
-     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\dgtDocumentIn
      */
     public function setFormat($format)
     {
@@ -85,7 +85,7 @@ abstract class dgtDocumentIn
 
     /**
      * @param documentTypeIn $type
-     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\dgtDocumentIn
      */
     public function setType($type)
     {
@@ -103,7 +103,7 @@ abstract class dgtDocumentIn
 
     /**
      * @param string $name
-     * @return \OpenEuropa\ePoetry\Type\dgtDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\dgtDocumentIn
      */
     public function setName($name)
     {

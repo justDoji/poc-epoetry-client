@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     private $request;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn $request
+     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $request
      */
     public function __construct($request)
     {
@@ -24,7 +24,7 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     public function getRequest()
     {
@@ -32,7 +32,7 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReferenceIn $request
+     * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $request
      * @return GetLinguisticRequest
      */
     public function withRequest($request)

@@ -1,22 +1,22 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Tests\Requests;
+namespace OpenEuropa\EPoetry\Tests\Requests;
 
-use OpenEuropa\ePoetry\ePoetryClient;
-use OpenEuropa\ePoetry\Tests\AbstractTest;
-use OpenEuropa\ePoetry\Type\AuxiliaryDocumentIn;
-use OpenEuropa\ePoetry\Type\ContactPerson;
-use OpenEuropa\ePoetry\Type\Contacts;
-use OpenEuropa\ePoetry\Type\CreateRequests;
-use OpenEuropa\ePoetry\Type\Language;
-use OpenEuropa\ePoetry\Type\LinguisticRequestIn;
-use OpenEuropa\ePoetry\Type\LinguisticSection;
-use OpenEuropa\ePoetry\Type\LinguisticSections;
-use OpenEuropa\ePoetry\Type\OriginalDocumentIn;
-use OpenEuropa\ePoetry\Type\ProductRequest;
-use OpenEuropa\ePoetry\Type\ProductRequests;
-use OpenEuropa\ePoetry\Type\RequestGeneralInfo;
-use OpenEuropa\ePoetry\Type\RequestReference;
+use OpenEuropa\EPoetry\EPoetryClient;
+use OpenEuropa\EPoetry\Tests\AbstractTest;
+use OpenEuropa\EPoetry\Type\AuxiliaryDocumentIn;
+use OpenEuropa\EPoetry\Type\ContactPerson;
+use OpenEuropa\EPoetry\Type\Contacts;
+use OpenEuropa\EPoetry\Type\CreateRequests;
+use OpenEuropa\EPoetry\Type\Language;
+use OpenEuropa\EPoetry\Type\LinguisticRequestIn;
+use OpenEuropa\EPoetry\Type\LinguisticSection;
+use OpenEuropa\EPoetry\Type\LinguisticSections;
+use OpenEuropa\EPoetry\Type\OriginalDocumentIn;
+use OpenEuropa\EPoetry\Type\ProductRequest;
+use OpenEuropa\EPoetry\Type\ProductRequests;
+use OpenEuropa\EPoetry\Type\RequestGeneralInfo;
+use OpenEuropa\EPoetry\Type\RequestReference;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Response;
 
@@ -29,7 +29,7 @@ class RequestTest extends AbstractTest
 {
     public function testTest() {
 
-        $this->assertInstanceOf(ePoetryClient::class, $this->client, 'Wrong Client object received.');
+        $this->assertInstanceOf(EPoetryClient::class, $this->client, 'Wrong Client object received.');
 
         // Generate Reference.
         $year = 2018;
@@ -125,7 +125,7 @@ class RequestTest extends AbstractTest
         $this->assertContains("<title>$title</title>", $request['body'], 'Request XML body malformed, missing title.');
 
         // Test response.
-        /** @var \OpenEuropa\ePoetry\Type\LinguisticRequest $return */
+        /** @var \OpenEuropa\EPoetry\Type\LinguisticRequest $return */
         $return = current($response->getReturn());
         $this->assertEquals($return->getStatusCode(), 'ENV', 'Response error, wrong status.');
         $this->assertEquals($return->getGeneralInfo()->getTitle(), 'Title of the Document', 'Response error, wrong title.');

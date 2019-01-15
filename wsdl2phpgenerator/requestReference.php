@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class requestReference
 {
@@ -84,7 +84,7 @@ class requestReference
 
     /**
      * @param int $year
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setYear($year)
     {
@@ -102,7 +102,7 @@ class requestReference
 
     /**
      * @param int $number
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setNumber($number)
     {
@@ -120,7 +120,7 @@ class requestReference
 
     /**
      * @param int $part
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setPart($part)
     {
@@ -138,7 +138,7 @@ class requestReference
 
     /**
      * @param int $version
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setVersion($version)
     {
@@ -156,7 +156,7 @@ class requestReference
 
     /**
      * @param int $id
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setId($id)
     {
@@ -174,7 +174,7 @@ class requestReference
 
     /**
      * @param string $internalReference
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setInternalReference($internalReference)
     {
@@ -192,7 +192,7 @@ class requestReference
 
     /**
      * @param string $internalTechnicalId
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setInternalTechnicalId($internalTechnicalId)
     {
@@ -210,7 +210,7 @@ class requestReference
 
     /**
      * @param string $productType
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setProductType($productType)
     {
@@ -228,7 +228,7 @@ class requestReference
 
     /**
      * @param string $requesterCode
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\requestReference
      */
     public function setRequesterCode($requesterCode)
     {

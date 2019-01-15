@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class LinguisticSection implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\language
+     * @var \OpenEuropa\EPoetry\Type\language
      */
     private $language;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\language $language
+     * @var \OpenEuropa\EPoetry\Type\language $language
      */
     public function __construct($language)
     {
@@ -24,7 +24,7 @@ class LinguisticSection implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\language
+     * @return \OpenEuropa\EPoetry\Type\language
      */
     public function getLanguage()
     {
@@ -32,7 +32,7 @@ class LinguisticSection implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\language $language
+     * @param \OpenEuropa\EPoetry\Type\language $language
      * @return LinguisticSection
      */
     public function withLanguage($language)

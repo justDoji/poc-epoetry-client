@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Tests\Middleware;
+namespace OpenEuropa\EPoetry\Tests\Middleware;
 
 use Phpro\SoapClient\Middleware\MiddleWare;
 use Http\Promise\Promise;

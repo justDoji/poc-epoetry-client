@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,14 +9,14 @@ class FindLinguisticRequestResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     private $return;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @var \OpenEuropa\EPoetry\Type\linguisticRequest $return
      */
     public function __construct($return)
     {
@@ -24,7 +24,7 @@ class FindLinguisticRequestResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function getReturn()
     {
@@ -32,7 +32,7 @@ class FindLinguisticRequestResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @param \OpenEuropa\EPoetry\Type\linguisticRequest $return
      * @return FindLinguisticRequestResponse
      */
     public function withReturn($return)

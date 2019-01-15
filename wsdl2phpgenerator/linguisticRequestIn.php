@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class linguisticRequestIn
 {
@@ -46,7 +46,7 @@ class linguisticRequestIn
 
     /**
      * @param requestGeneralInfoIn $generalInfo
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function setGeneralInfo($generalInfo)
     {
@@ -64,7 +64,7 @@ class linguisticRequestIn
 
     /**
      * @param contacts $contacts
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function setContacts($contacts)
     {
@@ -82,7 +82,7 @@ class linguisticRequestIn
 
     /**
      * @param originalDocumentIn $originalDocument
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function setOriginalDocument($originalDocument)
     {
@@ -100,7 +100,7 @@ class linguisticRequestIn
 
     /**
      * @param productRequests $productRequests
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function setProductRequests($productRequests)
     {
@@ -118,7 +118,7 @@ class linguisticRequestIn
 
     /**
      * @param auxiliaryDocuments $auxiliaryDocuments
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
     public function setAuxiliaryDocuments($auxiliaryDocuments)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class modifyRequest
 {
@@ -36,7 +36,7 @@ class modifyRequest
 
     /**
      * @param requestReferenceIn $requestReference
-     * @return \OpenEuropa\ePoetry\Type\modifyRequest
+     * @return \OpenEuropa\EPoetry\Type\modifyRequest
      */
     public function setRequestReference($requestReference)
     {
@@ -54,7 +54,7 @@ class modifyRequest
 
     /**
      * @param linguisticRequestIn $linguisticRequest
-     * @return \OpenEuropa\ePoetry\Type\modifyRequest
+     * @return \OpenEuropa\EPoetry\Type\modifyRequest
      */
     public function setLinguisticRequest($linguisticRequest)
     {
@@ -72,7 +72,7 @@ class modifyRequest
 
     /**
      * @param string $templateName
-     * @return \OpenEuropa\ePoetry\Type\modifyRequest
+     * @return \OpenEuropa\EPoetry\Type\modifyRequest
      */
     public function setTemplateName($templateName)
     {

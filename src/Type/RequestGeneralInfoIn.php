@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -49,12 +49,12 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     private $sentViaRUE;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\destination
+     * @var \OpenEuropa\EPoetry\Type\destination
      */
     private $destinationCode;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\slaAnnex
+     * @var \OpenEuropa\EPoetry\Type\slaAnnex
      */
     private $slaAnnex;
 
@@ -74,7 +74,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     private $onBehalfOf;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\accessLevel
+     * @var \OpenEuropa\EPoetry\Type\accessLevel
      */
     private $accessibleTo;
 
@@ -89,12 +89,12 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @var bool $documentToBeAdopted
      * @var string $decideReference
      * @var bool $sentViaRUE
-     * @var \OpenEuropa\ePoetry\Type\destination $destinationCode
-     * @var \OpenEuropa\ePoetry\Type\slaAnnex $slaAnnex
+     * @var \OpenEuropa\EPoetry\Type\destination $destinationCode
+     * @var \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
      * @var string $slaCommitment
      * @var string $comment
      * @var string $onBehalfOf
-     * @var \OpenEuropa\ePoetry\Type\accessLevel $accessibleTo
+     * @var \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
      */
     public function __construct($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo)
     {
@@ -275,7 +275,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\destination
+     * @return \OpenEuropa\EPoetry\Type\destination
      */
     public function getDestinationCode()
     {
@@ -283,7 +283,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\destination $destinationCode
+     * @param \OpenEuropa\EPoetry\Type\destination $destinationCode
      * @return RequestGeneralInfoIn
      */
     public function withDestinationCode($destinationCode)
@@ -295,7 +295,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\slaAnnex
+     * @return \OpenEuropa\EPoetry\Type\slaAnnex
      */
     public function getSlaAnnex()
     {
@@ -303,7 +303,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\slaAnnex $slaAnnex
+     * @param \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
      * @return RequestGeneralInfoIn
      */
     public function withSlaAnnex($slaAnnex)
@@ -375,7 +375,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\accessLevel
+     * @return \OpenEuropa\EPoetry\Type\accessLevel
      */
     public function getAccessibleTo()
     {
@@ -383,7 +383,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\accessLevel $accessibleTo
+     * @param \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
      * @return RequestGeneralInfoIn
      */
     public function withAccessibleTo($accessibleTo)

@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OpenEuropa\\ePoetry\\": "./src/"
+            "OpenEuropa\\EPoetry\\": "./src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenEuropa\\ePoetry\\Tests\\": "./tests/"
+            "OpenEuropa\\EPoetry\\Tests\\": "./tests/"
         }
     }
 }

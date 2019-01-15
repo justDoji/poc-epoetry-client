@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,7 +9,7 @@ class ProductRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\language
+     * @var \OpenEuropa\EPoetry\Type\language
      */
     private $language;
 
@@ -46,7 +46,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\language $language
+     * @var \OpenEuropa\EPoetry\Type\language $language
      * @var \DateTime $requestedDeadline
      * @var \DateTime $acceptedDeadline
      * @var string $formatCode
@@ -66,7 +66,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\language
+     * @return \OpenEuropa\EPoetry\Type\language
      */
     public function getLanguage()
     {
@@ -74,7 +74,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\language $language
+     * @param \OpenEuropa\EPoetry\Type\language $language
      * @return ProductRequest
      */
     public function withLanguage($language)

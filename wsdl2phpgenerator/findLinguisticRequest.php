@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class findLinguisticRequest
 {
@@ -46,7 +46,7 @@ class findLinguisticRequest
 
     /**
      * @param string $requesterCode
-     * @return \OpenEuropa\ePoetry\Type\findLinguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\findLinguisticRequest
      */
     public function setRequesterCode($requesterCode)
     {
@@ -64,7 +64,7 @@ class findLinguisticRequest
 
     /**
      * @param int $year
-     * @return \OpenEuropa\ePoetry\Type\findLinguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\findLinguisticRequest
      */
     public function setYear($year)
     {
@@ -82,7 +82,7 @@ class findLinguisticRequest
 
     /**
      * @param int $number
-     * @return \OpenEuropa\ePoetry\Type\findLinguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\findLinguisticRequest
      */
     public function setNumber($number)
     {
@@ -100,7 +100,7 @@ class findLinguisticRequest
 
     /**
      * @param int $part
-     * @return \OpenEuropa\ePoetry\Type\findLinguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\findLinguisticRequest
      */
     public function setPart($part)
     {
@@ -118,7 +118,7 @@ class findLinguisticRequest
 
     /**
      * @param string $productCode
-     * @return \OpenEuropa\ePoetry\Type\findLinguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\findLinguisticRequest
      */
     public function setProductCode($productCode)
     {

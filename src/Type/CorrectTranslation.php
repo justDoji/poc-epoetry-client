@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,20 +9,20 @@ class CorrectTranslation implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\productReference
+     * @var \OpenEuropa\EPoetry\Type\productReference
      */
     private $product;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\correctionDocument
+     * @var \OpenEuropa\EPoetry\Type\correctionDocument
      */
     private $correction;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\productReference $product
-     * @var \OpenEuropa\ePoetry\Type\correctionDocument $correction
+     * @var \OpenEuropa\EPoetry\Type\productReference $product
+     * @var \OpenEuropa\EPoetry\Type\correctionDocument $correction
      */
     public function __construct($product, $correction)
     {
@@ -31,7 +31,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\productReference
+     * @return \OpenEuropa\EPoetry\Type\productReference
      */
     public function getProduct()
     {
@@ -39,7 +39,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\productReference $product
+     * @param \OpenEuropa\EPoetry\Type\productReference $product
      * @return CorrectTranslation
      */
     public function withProduct($product)
@@ -51,7 +51,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\correctionDocument
+     * @return \OpenEuropa\EPoetry\Type\correctionDocument
      */
     public function getCorrection()
     {
@@ -59,7 +59,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\correctionDocument $correction
+     * @param \OpenEuropa\EPoetry\Type\correctionDocument $correction
      * @return CorrectTranslation
      */
     public function withCorrection($correction)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class languageIn
 {
@@ -28,7 +28,7 @@ class languageIn
 
     /**
      * @param languageCode $code
-     * @return \OpenEuropa\ePoetry\Type\languageIn
+     * @return \OpenEuropa\EPoetry\Type\languageIn
      */
     public function setCode($code)
     {

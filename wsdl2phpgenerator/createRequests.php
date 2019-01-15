@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -39,7 +39,7 @@ class createRequests implements RequestInterface, ResultInterface
 
     /**
      * @param linguisticRequestIn[] $linguisticRequest
-     * @return \OpenEuropa\ePoetry\Type\createRequests
+     * @return \OpenEuropa\EPoetry\Type\createRequests
      */
     public function setLinguisticRequest(array $linguisticRequest = null)
     {
@@ -57,7 +57,7 @@ class createRequests implements RequestInterface, ResultInterface
 
     /**
      * @param requestReferenceIn $relatedRequest
-     * @return \OpenEuropa\ePoetry\Type\createRequests
+     * @return \OpenEuropa\EPoetry\Type\createRequests
      */
     public function setRelatedRequest($relatedRequest)
     {
@@ -75,7 +75,7 @@ class createRequests implements RequestInterface, ResultInterface
 
     /**
      * @param string $templateName
-     * @return \OpenEuropa\ePoetry\Type\createRequests
+     * @return \OpenEuropa\EPoetry\Type\createRequests
      */
     public function setTemplateName($templateName)
     {

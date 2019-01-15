@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,7 +9,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\linguisticSections
      */
     private $linguisticSections;
 
@@ -26,7 +26,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
      * @var bool $trackChanges
      * @var float $pages
      */
@@ -38,7 +38,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticSections
+     * @return \OpenEuropa\EPoetry\Type\linguisticSections
      */
     public function getLinguisticSections()
     {
@@ -46,7 +46,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
+     * @param \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
      * @return OriginalDocument
      */
     public function withLinguisticSections($linguisticSections)
