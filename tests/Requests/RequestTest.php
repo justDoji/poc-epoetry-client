@@ -2,13 +2,18 @@
 
 namespace OpenEuropa\EPoetry\Tests\Requests;
 
+use GuzzleHttp\Psr7\Response;
 use OpenEuropa\EPoetry\EPoetryClient;
 use OpenEuropa\EPoetry\Tests\AbstractTest;
 use OpenEuropa\EPoetry\Type\AuxiliaryDocumentIn;
 use OpenEuropa\EPoetry\Type\ContactPerson;
 use OpenEuropa\EPoetry\Type\Contacts;
 use OpenEuropa\EPoetry\Type\CreateRequests;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentType;
 use OpenEuropa\EPoetry\Type\Language;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentFormat;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentType as DocumentTypeEnum;
+use OpenEuropa\EPoetry\Type\Enumeration\LanguageCode;
 use OpenEuropa\EPoetry\Type\LinguisticRequestIn;
 use OpenEuropa\EPoetry\Type\OriginalDocumentIn;
 use OpenEuropa\EPoetry\Type\ProductRequest;
@@ -16,7 +21,6 @@ use OpenEuropa\EPoetry\Type\ProductRequests;
 use OpenEuropa\EPoetry\Type\RequestGeneralInfo;
 use OpenEuropa\EPoetry\Type\RequestReference;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Psr7\Response;
 
 /**
  * Class RequestTest
@@ -25,7 +29,7 @@ use GuzzleHttp\Psr7\Response;
  */
 class RequestTest extends AbstractTest
 {
-    public function testTest() {
+    public function testRequest() {
 
         $this->assertInstanceOf(EPoetryClient::class, $this->client, 'Wrong Client object received.');
 
@@ -76,11 +80,11 @@ class RequestTest extends AbstractTest
         // Generate Original Document
         $file = 'dGVzdA==';
         $trackChanges = false;
-        $originalDocument = new OriginalDocumentIn($file, 'DOC', 'ORI', 'ari.doc', $trackChanges);
+        $originalDocument = new OriginalDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'ari.doc', $trackChanges);
         $this->assertEquals($originalDocument->isTrackChanges(), false);
 
         // Generate Product Requests.
-        $language = new Language('fr');
+        $language = new Language(LanguageCode::FR);
         $requestedDeadline = new \DateTime('2020-02-02');
         $acceptedDeadline = new \DateTime('2020-02-02');
         $formatCode = '';
@@ -89,13 +93,12 @@ class RequestTest extends AbstractTest
         $internalProductReference = '1';
         $productRequest = new ProductRequest($language, $requestedDeadline, $acceptedDeadline, $formatCode, $statusCode, $trackChanges, $internalProductReference);
         $productRequests = new ProductRequests($productRequest);
-        $this->assertEquals($productRequests->getProductRequest()->getLanguage()->getCode(), 'fr');
+        $this->assertEquals($productRequests->getProductRequest()->getLanguage()->getCode(), LanguageCode::FR);
 
         // Generate Auxiliary Documents.
-        $language = new Language('fr');
         $file = 'dGVzdA==';
-        $AuxiliaryDocument = new AuxiliaryDocumentIn($file, 'DOC', 'ORI', 'aux.doc', $language);
-        $this->assertEquals($AuxiliaryDocument->getLanguage(), $language);
+        $AuxiliaryDocument = new AuxiliaryDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'aux.doc', $language);
+        $this->assertEquals($AuxiliaryDocument->getLanguage()->getCode(), LanguageCode::FR);
 
         // Generate Linguistic Request.
         $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $AuxiliaryDocument);
