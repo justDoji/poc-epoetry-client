@@ -14,7 +14,4 @@ class CorrectTranslationResponse implements RequestInterface, ResultInterface
     public function __construct()
     {
     }
-
-
 }
-

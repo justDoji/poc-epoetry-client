@@ -42,7 +42,4 @@ class Language implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

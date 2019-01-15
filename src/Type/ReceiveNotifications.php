@@ -14,7 +14,4 @@ class ReceiveNotifications implements RequestInterface, ResultInterface
     public function __construct()
     {
     }
-
-
 }
-

@@ -81,6 +81,8 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     *
      * @var string $title
      * @var string $internalReference
      * @var string $internalTechnicalId
@@ -197,7 +199,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getSensitive()
+    public function isSensitive()
     {
         return $this->sensitive;
     }
@@ -217,7 +219,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getDocumentToBeAdopted()
+    public function isDocumentToBeAdopted()
     {
         return $this->documentToBeAdopted;
     }
@@ -257,7 +259,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getSentViaRUE()
+    public function isSentViaRUE()
     {
         return $this->sentViaRUE;
     }
@@ -393,7 +395,4 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

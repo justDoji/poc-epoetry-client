@@ -5,6 +5,9 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyFields)
+ */
 class RequestGeneralInfo implements RequestInterface, ResultInterface
 {
 
@@ -90,6 +93,8 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
 
     /**
      * Constructor
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      *
      * @var string $title
      * @var string $internalReference
@@ -211,7 +216,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getSensitive()
+    public function isSensitive()
     {
         return $this->sensitive;
     }
@@ -231,7 +236,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getDocumentToBeAdopted()
+    public function isDocumentToBeAdopted()
     {
         return $this->documentToBeAdopted;
     }
@@ -271,7 +276,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getSentViaRUE()
+    public function isSentViaRUE()
     {
         return $this->sentViaRUE;
     }
@@ -447,7 +452,4 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

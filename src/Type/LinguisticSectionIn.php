@@ -42,7 +42,4 @@ class LinguisticSectionIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

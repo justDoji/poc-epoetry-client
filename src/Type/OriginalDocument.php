@@ -60,7 +60,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getTrackChanges()
+    public function isTrackChanges()
     {
         return $this->trackChanges;
     }
@@ -96,7 +96,4 @@ class OriginalDocument implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

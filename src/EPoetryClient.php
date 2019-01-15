@@ -69,7 +69,4 @@ class EPoetryClient extends \Phpro\SoapClient\Client
     {
         return $this->call('createRequests', $parameters);
     }
-
-
 }
-

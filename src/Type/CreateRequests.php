@@ -96,7 +96,4 @@ class CreateRequests implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

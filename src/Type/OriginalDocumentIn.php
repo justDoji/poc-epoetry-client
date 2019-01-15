@@ -24,7 +24,7 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
      * @param string $format
      * @param documentTypeIn $type
      * @param string $name
-     * @param boolean $trackChanges
+     * @param bool $trackChanges
      */
     public function __construct($file, $format, $type, $name, $trackChanges)
     {
@@ -32,7 +32,6 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
         parent::__construct($file, $format, $type, $name);
 
         $this->trackChanges = $trackChanges;
-
     }
 
     /**
@@ -55,15 +54,15 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
-    public function getTrackChanges()
+    public function isTrackChanges()
     {
         return $this->trackChanges;
     }
 
     /**
-     * @param boolean $trackChanges
+     * @param bool $trackChanges
      * @return originalDocumentIn
      */
     public function setTrackChanges($trackChanges)
@@ -72,5 +71,4 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
 
         return $this;
     }
-
 }

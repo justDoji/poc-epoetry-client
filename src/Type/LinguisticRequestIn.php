@@ -150,7 +150,4 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

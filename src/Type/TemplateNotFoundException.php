@@ -69,7 +69,4 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

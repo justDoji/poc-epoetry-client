@@ -42,7 +42,4 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

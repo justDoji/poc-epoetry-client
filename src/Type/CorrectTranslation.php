@@ -69,7 +69,4 @@ class CorrectTranslation implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

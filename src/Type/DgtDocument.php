@@ -96,7 +96,4 @@ class DgtDocument implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

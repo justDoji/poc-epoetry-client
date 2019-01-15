@@ -150,7 +150,4 @@ class ContactPerson implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

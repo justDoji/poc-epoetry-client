@@ -69,7 +69,4 @@ class ContactPersonIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

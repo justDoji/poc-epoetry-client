@@ -42,7 +42,4 @@ class Contacts implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

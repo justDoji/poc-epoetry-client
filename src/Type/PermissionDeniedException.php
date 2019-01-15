@@ -69,7 +69,4 @@ class PermissionDeniedException implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

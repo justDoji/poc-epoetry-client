@@ -42,7 +42,4 @@ class AuxiliaryDocument implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

@@ -45,7 +45,4 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
 
         return $new;
     }
-
-
 }
-

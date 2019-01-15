@@ -150,7 +150,4 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

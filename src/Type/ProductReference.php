@@ -14,7 +14,4 @@ class ProductReference implements RequestInterface, ResultInterface
     public function __construct()
     {
     }
-
-
 }
-

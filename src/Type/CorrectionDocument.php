@@ -14,7 +14,4 @@ class CorrectionDocument implements RequestInterface, ResultInterface
     public function __construct()
     {
     }
-
-
 }
-

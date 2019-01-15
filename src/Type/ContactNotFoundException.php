@@ -69,7 +69,4 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

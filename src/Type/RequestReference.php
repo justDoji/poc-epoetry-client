@@ -258,7 +258,4 @@ class RequestReference implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

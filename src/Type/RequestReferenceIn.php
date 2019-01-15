@@ -69,7 +69,4 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

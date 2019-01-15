@@ -96,7 +96,4 @@ class ModifyRequest implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

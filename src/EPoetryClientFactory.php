@@ -18,7 +18,4 @@ class EPoetryClientFactory implements EPoetryClientFactoryInterface
 
         return $clientBuilder->build();
     }
-
-
 }
-

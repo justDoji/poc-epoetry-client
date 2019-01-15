@@ -107,7 +107,7 @@ class ProductRequestIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getTrackChanges()
+    public function isTrackChanges()
     {
         return $this->trackChanges;
     }
@@ -123,7 +123,4 @@ class ProductRequestIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

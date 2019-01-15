@@ -69,7 +69,4 @@ class InternalTechnicalErrorException implements RequestInterface, ResultInterfa
 
         return $new;
     }
-
-
 }
-

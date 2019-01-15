@@ -69,7 +69,4 @@ class RequestNotFoundException implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

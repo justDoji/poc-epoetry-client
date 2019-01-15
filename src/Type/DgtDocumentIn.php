@@ -6,7 +6,6 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-
 abstract class DgtDocumentIn
 {
 
@@ -119,5 +118,4 @@ abstract class DgtDocumentIn
 
         return $this;
     }
-
 }

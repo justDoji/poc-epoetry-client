@@ -42,7 +42,4 @@ class LanguageIn implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

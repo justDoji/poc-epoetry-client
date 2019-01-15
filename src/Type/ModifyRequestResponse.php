@@ -42,7 +42,4 @@ class ModifyRequestResponse implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

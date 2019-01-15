@@ -69,7 +69,4 @@ class ProductNotFoundException implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

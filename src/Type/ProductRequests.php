@@ -42,7 +42,4 @@ class ProductRequests implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

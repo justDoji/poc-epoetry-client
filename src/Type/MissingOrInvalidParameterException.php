@@ -69,7 +69,4 @@ class MissingOrInvalidParameterException implements RequestInterface, ResultInte
 
         return $new;
     }
-
-
 }
-

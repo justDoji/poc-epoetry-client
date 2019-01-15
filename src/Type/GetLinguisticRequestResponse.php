@@ -42,7 +42,4 @@ class GetLinguisticRequestResponse implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

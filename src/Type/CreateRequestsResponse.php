@@ -42,7 +42,4 @@ class CreateRequestsResponse implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-

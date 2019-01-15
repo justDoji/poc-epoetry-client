@@ -204,7 +204,4 @@ class LinguisticRequest implements RequestInterface, ResultInterface
 
         return $new;
     }
-
-
 }
-
