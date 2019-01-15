@@ -16,9 +16,9 @@ class AuxiliaryDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\languageCode $language
+     * @param \OpenEuropa\EPoetry\Type\languageCode $language
      */
-    public function __construct($language)
+    public function __construct(languageCode $language)
     {
         $this->language = $language;
     }

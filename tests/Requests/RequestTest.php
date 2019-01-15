@@ -10,8 +10,6 @@ use OpenEuropa\EPoetry\Type\Contacts;
 use OpenEuropa\EPoetry\Type\CreateRequests;
 use OpenEuropa\EPoetry\Type\Language;
 use OpenEuropa\EPoetry\Type\LinguisticRequestIn;
-use OpenEuropa\EPoetry\Type\LinguisticSection;
-use OpenEuropa\EPoetry\Type\LinguisticSections;
 use OpenEuropa\EPoetry\Type\OriginalDocumentIn;
 use OpenEuropa\EPoetry\Type\ProductRequest;
 use OpenEuropa\EPoetry\Type\ProductRequests;
@@ -79,7 +77,7 @@ class RequestTest extends AbstractTest
         $file = 'dGVzdA==';
         $trackChanges = false;
         $originalDocument = new OriginalDocumentIn($file, 'DOC', 'ORI', 'ari.doc', $trackChanges);
-        $this->assertEquals($originalDocument->getTrackChanges(), false);
+        $this->assertEquals($originalDocument->isTrackChanges(), false);
 
         // Generate Product Requests.
         $language = new Language('fr');
