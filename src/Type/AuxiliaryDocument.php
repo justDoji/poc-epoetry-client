@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocument implements RequestInterface, ResultInterface
+class AuxiliaryDocument extends DgtDocument implements RequestInterface, ResultInterface
 {
 
     /**
