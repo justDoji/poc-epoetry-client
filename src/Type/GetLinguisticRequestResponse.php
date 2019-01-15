@@ -18,7 +18,7 @@ class GetLinguisticRequestResponse implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\linguisticRequest $return
      */
-    public function __construct($return)
+    public function __construct(linguisticRequest $return)
     {
         $this->return = $return;
     }
@@ -26,7 +26,7 @@ class GetLinguisticRequestResponse implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
-    public function getReturn()
+    public function getReturn(): linguisticRequest
     {
         return $this->return;
     }
@@ -35,7 +35,7 @@ class GetLinguisticRequestResponse implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\linguisticRequest $return
      * @return GetLinguisticRequestResponse
      */
-    public function withReturn($return)
+    public function withReturn(linguisticRequest $return): GetLinguisticRequestResponse
     {
         $new = clone $this;
         $new->return = $return;

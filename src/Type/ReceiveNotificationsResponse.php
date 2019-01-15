@@ -26,7 +26,7 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\dgtNotification
      */
-    public function getReturn()
+    public function getReturn(): dgtNotification
     {
         return $this->return;
     }
@@ -35,7 +35,7 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\dgtNotification $return
      * @return ReceiveNotificationsResponse
      */
-    public function withReturn($return)
+    public function withReturn(dgtNotification $return): ReceiveNotificationsResponse
     {
         $new = clone $this;
         $new->return = $return;

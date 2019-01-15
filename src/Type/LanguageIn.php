@@ -18,7 +18,7 @@ class LanguageIn implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\languageCode $code
      */
-    public function __construct($code)
+    public function __construct(languageCode $code)
     {
         $this->code = $code;
     }
@@ -26,7 +26,7 @@ class LanguageIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\languageCode
      */
-    public function getCode()
+    public function getCode(): languageCode
     {
         return $this->code;
     }
@@ -35,7 +35,7 @@ class LanguageIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\languageCode $code
      * @return LanguageIn
      */
-    public function withCode($code)
+    public function withCode(languageCode $code): LanguageIn
     {
         $new = clone $this;
         $new->code = $code;

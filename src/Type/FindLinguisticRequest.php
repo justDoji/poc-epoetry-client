@@ -42,7 +42,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @var int $part
      * @var string $productCode
      */
-    public function __construct($requesterCode, $year, $number, $part, $productCode)
+    public function __construct(string $requesterCode, int $year, int $number, int $part, string $productCode)
     {
         $this->requesterCode = $requesterCode;
         $this->year = $year;
@@ -54,7 +54,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getRequesterCode()
+    public function getRequesterCode(): string
     {
         return $this->requesterCode;
     }
@@ -63,7 +63,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @param string $requesterCode
      * @return FindLinguisticRequest
      */
-    public function withRequesterCode($requesterCode)
+    public function withRequesterCode(string $requesterCode): FindLinguisticRequest
     {
         $new = clone $this;
         $new->requesterCode = $requesterCode;
@@ -74,7 +74,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
@@ -83,7 +83,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @param int $year
      * @return FindLinguisticRequest
      */
-    public function withYear($year)
+    public function withYear(int $year): FindLinguisticRequest
     {
         $new = clone $this;
         $new->year = $year;
@@ -94,7 +94,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getNumber()
+    public function getNumber(): int
     {
         return $this->number;
     }
@@ -103,7 +103,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @param int $number
      * @return FindLinguisticRequest
      */
-    public function withNumber($number)
+    public function withNumber(int $number): FindLinguisticRequest
     {
         $new = clone $this;
         $new->number = $number;
@@ -114,7 +114,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getPart()
+    public function getPart(): int
     {
         return $this->part;
     }
@@ -123,7 +123,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @param int $part
      * @return FindLinguisticRequest
      */
-    public function withPart($part)
+    public function withPart(int $part): FindLinguisticRequest
     {
         $new = clone $this;
         $new->part = $part;
@@ -134,7 +134,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getProductCode()
+    public function getProductCode(): string
     {
         return $this->productCode;
     }
@@ -143,7 +143,7 @@ class FindLinguisticRequest implements RequestInterface, ResultInterface
      * @param string $productCode
      * @return FindLinguisticRequest
      */
-    public function withProductCode($productCode)
+    public function withProductCode(string $productCode): FindLinguisticRequest
     {
         $new = clone $this;
         $new->productCode = $productCode;

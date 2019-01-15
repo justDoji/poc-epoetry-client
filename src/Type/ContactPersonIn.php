@@ -24,7 +24,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * @var string $userId
      * @var \OpenEuropa\EPoetry\Type\contactRole $roleCode
      */
-    public function __construct($userId, $roleCode)
+    public function __construct(string $userId, contactRole $roleCode)
     {
         $this->userId = $userId;
         $this->roleCode = $roleCode;
@@ -33,7 +33,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getUserId()
+    public function getUserId(): string
     {
         return $this->userId;
     }
@@ -42,7 +42,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * @param string $userId
      * @return ContactPersonIn
      */
-    public function withUserId($userId)
+    public function withUserId(string $userId): ContactPersonIn
     {
         $new = clone $this;
         $new->userId = $userId;
@@ -53,7 +53,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\contactRole
      */
-    public function getRoleCode()
+    public function getRoleCode(): contactRole
     {
         return $this->roleCode;
     }
@@ -62,7 +62,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\contactRole $roleCode
      * @return ContactPersonIn
      */
-    public function withRoleCode($roleCode)
+    public function withRoleCode(contactRole $roleCode): ContactPersonIn
     {
         $new = clone $this;
         $new->roleCode = $roleCode;

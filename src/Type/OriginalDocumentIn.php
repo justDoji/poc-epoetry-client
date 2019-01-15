@@ -20,13 +20,14 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
     protected $trackChanges = null;
 
     /**
-     * @param base64Binary $file
+     * @param string $file
+     *   The Base64 encoded file.
      * @param string $format
      * @param documentTypeIn $type
      * @param string $name
      * @param bool $trackChanges
      */
-    public function __construct($file, $format, $type, $name, $trackChanges)
+    public function __construct(string $file, string $format, documentTypeIn $type, string $name, bool $trackChanges)
     {
 
         parent::__construct($file, $format, $type, $name);
@@ -37,7 +38,7 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
     /**
      * @return linguisticSections
      */
-    public function getLinguisticSections()
+    public function getLinguisticSections(): linguisticSections
     {
         return $this->linguisticSections;
     }
@@ -46,7 +47,7 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
      * @param linguisticSections $linguisticSections
      * @return originalDocumentIn
      */
-    public function setLinguisticSections($linguisticSections)
+    public function setLinguisticSections(linguisticSections $linguisticSections): OriginalDocumentIn
     {
         $this->linguisticSections = $linguisticSections;
 
@@ -56,7 +57,7 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
     /**
      * @return bool
      */
-    public function isTrackChanges()
+    public function isTrackChanges(): bool
     {
         return $this->trackChanges;
     }
@@ -65,7 +66,7 @@ class OriginalDocumentIn extends DgtDocumentIn implements RequestInterface, Resu
      * @param bool $trackChanges
      * @return originalDocumentIn
      */
-    public function setTrackChanges($trackChanges)
+    public function setTrackChanges(bool $trackChanges): OriginalDocumentIn
     {
         $this->trackChanges = $trackChanges;
 

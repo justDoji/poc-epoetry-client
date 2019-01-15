@@ -26,7 +26,7 @@ class ProductRequests implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\productRequest
      */
-    public function getProductRequest()
+    public function getProductRequest(): productRequest
     {
         return $this->productRequest;
     }
@@ -35,7 +35,7 @@ class ProductRequests implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\productRequest $productRequest
      * @return ProductRequests
      */
-    public function withProductRequest($productRequest)
+    public function withProductRequest(productRequest $productRequest): ProductRequests
     {
         $new = clone $this;
         $new->productRequest = $productRequest;

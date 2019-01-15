@@ -30,7 +30,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @var bool $trackChanges
      * @var float $pages
      */
-    public function __construct($linguisticSections, $trackChanges, $pages)
+    public function __construct(linguisticSections $linguisticSections, bool $trackChanges, float $pages)
     {
         $this->linguisticSections = $linguisticSections;
         $this->trackChanges = $trackChanges;
@@ -40,7 +40,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\linguisticSections
      */
-    public function getLinguisticSections()
+    public function getLinguisticSections(): linguisticSections
     {
         return $this->linguisticSections;
     }
@@ -49,7 +49,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
      * @return OriginalDocument
      */
-    public function withLinguisticSections($linguisticSections)
+    public function withLinguisticSections(linguisticSections $linguisticSections): OriginalDocument
     {
         $new = clone $this;
         $new->linguisticSections = $linguisticSections;
@@ -60,7 +60,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isTrackChanges()
+    public function isTrackChanges(): bool
     {
         return $this->trackChanges;
     }
@@ -69,7 +69,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @param bool $trackChanges
      * @return OriginalDocument
      */
-    public function withTrackChanges($trackChanges)
+    public function withTrackChanges(bool $trackChanges): OriginalDocument
     {
         $new = clone $this;
         $new->trackChanges = $trackChanges;
@@ -80,7 +80,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return float
      */
-    public function getPages()
+    public function getPages(): float
     {
         return $this->pages;
     }
@@ -89,7 +89,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @param float $pages
      * @return OriginalDocument
      */
-    public function withPages($pages)
+    public function withPages(float $pages): OriginalDocument
     {
         $new = clone $this;
         $new->pages = $pages;

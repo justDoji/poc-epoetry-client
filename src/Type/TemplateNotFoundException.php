@@ -24,7 +24,7 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
      * @var string $message
      * @var string $uid
      */
-    public function __construct($message, $uid)
+    public function __construct(string $message, string $uid)
     {
         $this->message = $message;
         $this->uid = $uid;
@@ -33,7 +33,7 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -42,7 +42,7 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
      * @param string $message
      * @return TemplateNotFoundException
      */
-    public function withMessage($message)
+    public function withMessage(string $message): TemplateNotFoundException
     {
         $new = clone $this;
         $new->message = $message;
@@ -53,7 +53,7 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getUid()
+    public function getUid(): string
     {
         return $this->uid;
     }
@@ -62,7 +62,7 @@ class TemplateNotFoundException implements RequestInterface, ResultInterface
      * @param string $uid
      * @return TemplateNotFoundException
      */
-    public function withUid($uid)
+    public function withUid(string $uid): TemplateNotFoundException
     {
         $new = clone $this;
         $new->uid = $uid;

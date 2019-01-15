@@ -30,7 +30,7 @@ class CreateRequests implements RequestInterface, ResultInterface
      * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
      * @var string $templateName
      */
-    public function __construct($linguisticRequest, $relatedRequest, $templateName)
+    public function __construct(linguisticRequestIn $linguisticRequest, requestReferenceIn $relatedRequest, string $templateName)
     {
         $this->linguisticRequest = $linguisticRequest;
         $this->relatedRequest = $relatedRequest;
@@ -40,7 +40,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
-    public function getLinguisticRequest()
+    public function getLinguisticRequest(): linguisticRequestIn
     {
         return $this->linguisticRequest;
     }
@@ -49,7 +49,7 @@ class CreateRequests implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @return CreateRequests
      */
-    public function withLinguisticRequest($linguisticRequest)
+    public function withLinguisticRequest(linguisticRequestIn $linguisticRequest): CreateRequests
     {
         $new = clone $this;
         $new->linguisticRequest = $linguisticRequest;
@@ -60,7 +60,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
-    public function getRelatedRequest()
+    public function getRelatedRequest(): requestReferenceIn
     {
         return $this->relatedRequest;
     }
@@ -69,7 +69,7 @@ class CreateRequests implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
      * @return CreateRequests
      */
-    public function withRelatedRequest($relatedRequest)
+    public function withRelatedRequest(requestReferenceIn $relatedRequest): CreateRequests
     {
         $new = clone $this;
         $new->relatedRequest = $relatedRequest;
@@ -80,7 +80,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->templateName;
     }
@@ -89,7 +89,7 @@ class CreateRequests implements RequestInterface, ResultInterface
      * @param string $templateName
      * @return CreateRequests
      */
-    public function withTemplateName($templateName)
+    public function withTemplateName(string $templateName): CreateRequests
     {
         $new = clone $this;
         $new->templateName = $templateName;

@@ -30,7 +30,7 @@ class DgtDocument implements RequestInterface, ResultInterface
      * @var \OpenEuropa\EPoetry\Type\documentType $type
      * @var string $name
      */
-    public function __construct($format, $type, $name)
+    public function __construct(documentFormat $format, documentType $type, string $name)
     {
         $this->format = $format;
         $this->type = $type;
@@ -40,7 +40,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\documentFormat
      */
-    public function getFormat()
+    public function getFormat(): documentFormat
     {
         return $this->format;
     }
@@ -49,7 +49,7 @@ class DgtDocument implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\documentFormat $format
      * @return DgtDocument
      */
-    public function withFormat($format)
+    public function withFormat(documentFormat $format): DgtDocument
     {
         $new = clone $this;
         $new->format = $format;
@@ -60,7 +60,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\documentType
      */
-    public function getType()
+    public function getType(): documentType
     {
         return $this->type;
     }
@@ -69,7 +69,7 @@ class DgtDocument implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\documentType $type
      * @return DgtDocument
      */
-    public function withType($type)
+    public function withType(documentType $type): DgtDocument
     {
         $new = clone $this;
         $new->type = $type;
@@ -80,7 +80,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -89,7 +89,7 @@ class DgtDocument implements RequestInterface, ResultInterface
      * @param string $name
      * @return DgtDocument
      */
-    public function withName($name)
+    public function withName(string $name): DgtDocument
     {
         $new = clone $this;
         $new->name = $name;

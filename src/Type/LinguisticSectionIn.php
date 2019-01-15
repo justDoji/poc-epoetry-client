@@ -18,7 +18,7 @@ class LinguisticSectionIn implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\languageIn $language
      */
-    public function __construct($language)
+    public function __construct(languageIn $language)
     {
         $this->language = $language;
     }
@@ -26,7 +26,7 @@ class LinguisticSectionIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\languageIn
      */
-    public function getLanguage()
+    public function getLanguage(): languageIn
     {
         return $this->language;
     }
@@ -35,7 +35,7 @@ class LinguisticSectionIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\languageIn $language
      * @return LinguisticSectionIn
      */
-    public function withLanguage($language)
+    public function withLanguage(languageIn $language): LinguisticSectionIn
     {
         $new = clone $this;
         $new->language = $language;

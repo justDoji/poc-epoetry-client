@@ -66,7 +66,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @var string $productType
      * @var string $requesterCode
      */
-    public function __construct($year, $number, $part, $version, $id, $internalReference, $internalTechnicalId, $productType, $requesterCode)
+    public function __construct(int $year, int $number, int $part, int $version, int $id, string $internalReference, string $internalTechnicalId, string $productType, string $requesterCode)
     {
         $this->year = $year;
         $this->number = $number;
@@ -82,7 +82,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
@@ -91,7 +91,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param int $year
      * @return RequestReference
      */
-    public function withYear($year)
+    public function withYear(int $year): RequestReference
     {
         $new = clone $this;
         $new->year = $year;
@@ -102,7 +102,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getNumber()
+    public function getNumber(): int
     {
         return $this->number;
     }
@@ -111,7 +111,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param int $number
      * @return RequestReference
      */
-    public function withNumber($number)
+    public function withNumber(int $number): RequestReference
     {
         $new = clone $this;
         $new->number = $number;
@@ -122,7 +122,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getPart()
+    public function getPart(): int
     {
         return $this->part;
     }
@@ -131,7 +131,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param int $part
      * @return RequestReference
      */
-    public function withPart($part)
+    public function withPart(int $part): RequestReference
     {
         $new = clone $this;
         $new->part = $part;
@@ -142,7 +142,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getVersion()
+    public function getVersion(): int
     {
         return $this->version;
     }
@@ -151,7 +151,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param int $version
      * @return RequestReference
      */
-    public function withVersion($version)
+    public function withVersion(int $version): RequestReference
     {
         $new = clone $this;
         $new->version = $version;
@@ -162,7 +162,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -171,7 +171,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param int $id
      * @return RequestReference
      */
-    public function withId($id)
+    public function withId(int $id): RequestReference
     {
         $new = clone $this;
         $new->id = $id;
@@ -182,7 +182,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalReference()
+    public function getInternalReference(): string
     {
         return $this->internalReference;
     }
@@ -191,7 +191,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param string $internalReference
      * @return RequestReference
      */
-    public function withInternalReference($internalReference)
+    public function withInternalReference(string $internalReference): RequestReference
     {
         $new = clone $this;
         $new->internalReference = $internalReference;
@@ -202,7 +202,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalTechnicalId()
+    public function getInternalTechnicalId(): string
     {
         return $this->internalTechnicalId;
     }
@@ -211,7 +211,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param string $internalTechnicalId
      * @return RequestReference
      */
-    public function withInternalTechnicalId($internalTechnicalId)
+    public function withInternalTechnicalId(string $internalTechnicalId): RequestReference
     {
         $new = clone $this;
         $new->internalTechnicalId = $internalTechnicalId;
@@ -222,7 +222,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->productType;
     }
@@ -231,7 +231,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param string $productType
      * @return RequestReference
      */
-    public function withProductType($productType)
+    public function withProductType(string $productType): RequestReference
     {
         $new = clone $this;
         $new->productType = $productType;
@@ -242,7 +242,7 @@ class RequestReference implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getRequesterCode()
+    public function getRequesterCode(): string
     {
         return $this->requesterCode;
     }
@@ -251,7 +251,7 @@ class RequestReference implements RequestInterface, ResultInterface
      * @param string $requesterCode
      * @return RequestReference
      */
-    public function withRequesterCode($requesterCode)
+    public function withRequesterCode(string $requesterCode): RequestReference
     {
         $new = clone $this;
         $new->requesterCode = $requesterCode;

@@ -18,7 +18,7 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $request
      */
-    public function __construct($request)
+    public function __construct(requestReferenceIn $request)
     {
         $this->request = $request;
     }
@@ -26,7 +26,7 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
-    public function getRequest()
+    public function getRequest(): requestReferenceIn
     {
         return $this->request;
     }
@@ -35,7 +35,7 @@ class GetLinguisticRequest implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $request
      * @return GetLinguisticRequest
      */
-    public function withRequest($request)
+    public function withRequest(requestReferenceIn $request): GetLinguisticRequest
     {
         $new = clone $this;
         $new->request = $request;

@@ -30,7 +30,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
      * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @var string $templateName
      */
-    public function __construct($requestReference, $linguisticRequest, $templateName)
+    public function __construct(requestReferenceIn $requestReference, linguisticRequestIn $linguisticRequest, string $templateName)
     {
         $this->requestReference = $requestReference;
         $this->linguisticRequest = $linguisticRequest;
@@ -40,7 +40,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
-    public function getRequestReference()
+    public function getRequestReference(): requestReferenceIn
     {
         return $this->requestReference;
     }
@@ -49,7 +49,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $requestReference
      * @return ModifyRequest
      */
-    public function withRequestReference($requestReference)
+    public function withRequestReference(requestReferenceIn $requestReference): ModifyRequest
     {
         $new = clone $this;
         $new->requestReference = $requestReference;
@@ -60,7 +60,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
      */
-    public function getLinguisticRequest()
+    public function getLinguisticRequest(): linguisticRequestIn
     {
         return $this->linguisticRequest;
     }
@@ -69,7 +69,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
      * @return ModifyRequest
      */
-    public function withLinguisticRequest($linguisticRequest)
+    public function withLinguisticRequest(linguisticRequestIn $linguisticRequest): ModifyRequest
     {
         $new = clone $this;
         $new->linguisticRequest = $linguisticRequest;
@@ -80,7 +80,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->templateName;
     }
@@ -89,7 +89,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
      * @param string $templateName
      * @return ModifyRequest
      */
-    public function withTemplateName($templateName)
+    public function withTemplateName(string $templateName): ModifyRequest
     {
         $new = clone $this;
         $new->templateName = $templateName;

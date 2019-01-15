@@ -18,7 +18,7 @@ class Contacts implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\contactPerson $contact
      */
-    public function __construct($contact)
+    public function __construct(contactPerson $contact)
     {
         $this->contact = $contact;
     }
@@ -26,7 +26,7 @@ class Contacts implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\contactPerson
      */
-    public function getContact()
+    public function getContact(): contactPerson
     {
         return $this->contact;
     }
@@ -35,7 +35,7 @@ class Contacts implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\contactPerson $contact
      * @return Contacts
      */
-    public function withContact($contact)
+    public function withContact(contactPerson $contact): Contacts
     {
         $new = clone $this;
         $new->contact = $contact;

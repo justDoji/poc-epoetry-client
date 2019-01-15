@@ -14,13 +14,14 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
     private $language;
 
     /**
-     * @param base64Binary $file
+     * @param string $file
+     *   The Base64 encoded file.
      * @param \OpenEuropa\EPoetry\Type\documentFormat $format
      * @param \OpenEuropa\EPoetry\Type\documentTypeIn $type
      * @param string $name
      * @param \OpenEuropa\EPoetry\Type\languageCode $language
      */
-    public function __construct($file, $format, $type, $name, $language)
+    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name, languageCode $language)
     {
         parent::__construct($file, $format, $type, $name);
         $this->language = $language;
@@ -29,7 +30,7 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
     /**
      * @return \OpenEuropa\EPoetry\Type\languageCode
      */
-    public function getLanguage()
+    public function getLanguage(): languageCode
     {
         return $this->language;
     }
@@ -38,7 +39,7 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
      * @param \OpenEuropa\EPoetry\Type\languageCode $language
      * @return AuxiliaryDocumentIn
      */
-    public function withLanguage($language)
+    public function withLanguage(languageCode $language): AuxiliaryDocumentIn
     {
         $new = clone $this;
         $new->language = $language;

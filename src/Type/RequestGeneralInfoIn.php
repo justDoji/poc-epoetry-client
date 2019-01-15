@@ -98,7 +98,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @var string $onBehalfOf
      * @var \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
      */
-    public function __construct($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo)
+    public function __construct(string $title, string $internalReference, string $internalTechnicalId, \DateTime $requestedDeadline, bool $sensitive, bool $documentToBeAdopted, string $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, string $slaCommitment, string $comment, string $onBehalfOf, $accessibleTo)
     {
         $this->title = $title;
         $this->internalReference = $internalReference;
@@ -119,7 +119,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -128,7 +128,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $title
      * @return RequestGeneralInfoIn
      */
-    public function withTitle($title)
+    public function withTitle(string $title): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->title = $title;
@@ -139,7 +139,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalReference()
+    public function getInternalReference(): string
     {
         return $this->internalReference;
     }
@@ -148,7 +148,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $internalReference
      * @return RequestGeneralInfoIn
      */
-    public function withInternalReference($internalReference)
+    public function withInternalReference(string $internalReference): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->internalReference = $internalReference;
@@ -159,7 +159,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalTechnicalId()
+    public function getInternalTechnicalId(): string
     {
         return $this->internalTechnicalId;
     }
@@ -168,7 +168,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $internalTechnicalId
      * @return RequestGeneralInfoIn
      */
-    public function withInternalTechnicalId($internalTechnicalId)
+    public function withInternalTechnicalId(string $internalTechnicalId): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->internalTechnicalId = $internalTechnicalId;
@@ -179,7 +179,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return \DateTime
      */
-    public function getRequestedDeadline()
+    public function getRequestedDeadline(): \DateTime
     {
         return $this->requestedDeadline;
     }
@@ -188,7 +188,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param \DateTime $requestedDeadline
      * @return RequestGeneralInfoIn
      */
-    public function withRequestedDeadline($requestedDeadline)
+    public function withRequestedDeadline(\DateTime $requestedDeadline): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->requestedDeadline = $requestedDeadline;
@@ -199,7 +199,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isSensitive()
+    public function isSensitive(): bool
     {
         return $this->sensitive;
     }
@@ -208,7 +208,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param bool $sensitive
      * @return RequestGeneralInfoIn
      */
-    public function withSensitive($sensitive)
+    public function withSensitive(bool $sensitive): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->sensitive = $sensitive;
@@ -219,7 +219,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isDocumentToBeAdopted()
+    public function isDocumentToBeAdopted(): bool
     {
         return $this->documentToBeAdopted;
     }
@@ -228,7 +228,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param bool $documentToBeAdopted
      * @return RequestGeneralInfoIn
      */
-    public function withDocumentToBeAdopted($documentToBeAdopted)
+    public function withDocumentToBeAdopted(bool $documentToBeAdopted): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->documentToBeAdopted = $documentToBeAdopted;
@@ -239,7 +239,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getDecideReference()
+    public function getDecideReference(): string
     {
         return $this->decideReference;
     }
@@ -248,7 +248,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $decideReference
      * @return RequestGeneralInfoIn
      */
-    public function withDecideReference($decideReference)
+    public function withDecideReference(string$decideReference): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->decideReference = $decideReference;
@@ -259,7 +259,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isSentViaRUE()
+    public function isSentViaRUE(): bool
     {
         return $this->sentViaRUE;
     }
@@ -268,7 +268,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param bool $sentViaRUE
      * @return RequestGeneralInfoIn
      */
-    public function withSentViaRUE($sentViaRUE)
+    public function withSentViaRUE(bool $sentViaRUE): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->sentViaRUE = $sentViaRUE;
@@ -279,7 +279,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\destination
      */
-    public function getDestinationCode()
+    public function getDestinationCode(): destination
     {
         return $this->destinationCode;
     }
@@ -288,7 +288,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\destination $destinationCode
      * @return RequestGeneralInfoIn
      */
-    public function withDestinationCode($destinationCode)
+    public function withDestinationCode(destination $destinationCode): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->destinationCode = $destinationCode;
@@ -299,7 +299,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\slaAnnex
      */
-    public function getSlaAnnex()
+    public function getSlaAnnex(): slaAnnex
     {
         return $this->slaAnnex;
     }
@@ -308,7 +308,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
      * @return RequestGeneralInfoIn
      */
-    public function withSlaAnnex($slaAnnex)
+    public function withSlaAnnex(slaAnnex $slaAnnex): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->slaAnnex = $slaAnnex;
@@ -319,7 +319,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getSlaCommitment()
+    public function getSlaCommitment(): string
     {
         return $this->slaCommitment;
     }
@@ -328,7 +328,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $slaCommitment
      * @return RequestGeneralInfoIn
      */
-    public function withSlaCommitment($slaCommitment)
+    public function withSlaCommitment(string $slaCommitment): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->slaCommitment = $slaCommitment;
@@ -339,7 +339,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->comment;
     }
@@ -348,7 +348,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $comment
      * @return RequestGeneralInfoIn
      */
-    public function withComment($comment)
+    public function withComment(string$comment): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->comment = $comment;
@@ -359,7 +359,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getOnBehalfOf()
+    public function getOnBehalfOf(): string
     {
         return $this->onBehalfOf;
     }
@@ -368,7 +368,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param string $onBehalfOf
      * @return RequestGeneralInfoIn
      */
-    public function withOnBehalfOf($onBehalfOf)
+    public function withOnBehalfOf(string $onBehalfOf): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->onBehalfOf = $onBehalfOf;
@@ -379,7 +379,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\accessLevel
      */
-    public function getAccessibleTo()
+    public function getAccessibleTo(): accessLevel
     {
         return $this->accessibleTo;
     }
@@ -388,7 +388,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
      * @return RequestGeneralInfoIn
      */
-    public function withAccessibleTo($accessibleTo)
+    public function withAccessibleTo(accessLevel $accessibleTo): RequestGeneralInfoIn
     {
         $new = clone $this;
         $new->accessibleTo = $accessibleTo;

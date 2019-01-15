@@ -26,7 +26,7 @@ class AuxiliaryDocument implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\languageCode
      */
-    public function getLanguage()
+    public function getLanguage(): languageCode
     {
         return $this->language;
     }
@@ -35,7 +35,7 @@ class AuxiliaryDocument implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\languageCode $language
      * @return AuxiliaryDocument
      */
-    public function withLanguage($language)
+    public function withLanguage(languageCode $language): AuxiliaryDocument
     {
         $new = clone $this;
         $new->language = $language;

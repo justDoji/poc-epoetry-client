@@ -18,7 +18,7 @@ class Language implements RequestInterface, ResultInterface
      *
      * @var string $code
      */
-    public function __construct($code)
+    public function __construct(string $code)
     {
         $this->code = $code;
     }
@@ -26,7 +26,7 @@ class Language implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -35,7 +35,7 @@ class Language implements RequestInterface, ResultInterface
      * @param string $code
      * @return Language
      */
-    public function withCode($code)
+    public function withCode(string $code): Language
     {
         $new = clone $this;
         $new->code = $code;

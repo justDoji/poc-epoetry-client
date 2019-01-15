@@ -18,7 +18,7 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
      *
      * @var \OpenEuropa\EPoetry\Type\auxiliaryDocument $auxiliaryDocument
      */
-    public function __construct($auxiliaryDocument)
+    public function __construct(auxiliaryDocument $auxiliaryDocument)
     {
         $this->auxiliaryDocument = $auxiliaryDocument;
     }
@@ -26,7 +26,7 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\auxiliaryDocument
      */
-    public function getAuxiliaryDocument()
+    public function getAuxiliaryDocument(): auxiliaryDocument
     {
         return $this->auxiliaryDocument;
     }
@@ -35,7 +35,7 @@ class AuxiliaryDocuments implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\auxiliaryDocument $auxiliaryDocument
      * @return AuxiliaryDocuments
      */
-    public function withAuxiliaryDocument($auxiliaryDocument)
+    public function withAuxiliaryDocument(auxiliaryDocument $auxiliaryDocument): AuxiliaryDocuments
     {
         $new = clone $this;
         $new->auxiliaryDocument = $auxiliaryDocument;

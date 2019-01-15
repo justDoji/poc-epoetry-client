@@ -10,7 +10,8 @@ abstract class DgtDocumentIn
 {
 
     /**
-     * @var base64Binary $file
+     * @var string $file
+     *   The Base64 encoded file.
      */
     protected $file = null;
 
@@ -30,12 +31,12 @@ abstract class DgtDocumentIn
     protected $name = null;
 
     /**
-     * @param base64Binary $file
+     * @param string $file
      * @param documentFormat $format
      * @param documentTypeIn $type
      * @param string $name
      */
-    public function __construct($file, $format, $type, $name)
+    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name)
     {
         $this->file = $file;
         $this->format = $format;
@@ -44,18 +45,18 @@ abstract class DgtDocumentIn
     }
 
     /**
-     * @return base64Binary
+     * @return string
      */
-    public function getFile()
+    public function getFile(): string
     {
         return $this->file;
     }
 
     /**
-     * @param base64Binary $file
+     * @param string $file
      * @return dgtDocumentIn
      */
-    public function setFile($file)
+    public function setFile(string $file): DgtDocumentIn
     {
         $this->file = $file;
 
@@ -65,7 +66,7 @@ abstract class DgtDocumentIn
     /**
      * @return documentFormat
      */
-    public function getFormat()
+    public function getFormat(): documentFormat
     {
         return $this->format;
     }
@@ -74,7 +75,7 @@ abstract class DgtDocumentIn
      * @param documentFormat $format
      * @return dgtDocumentIn
      */
-    public function setFormat($format)
+    public function setFormat(documentFormat $format): DgtDocumentIn
     {
         $this->format = $format;
 
@@ -84,7 +85,7 @@ abstract class DgtDocumentIn
     /**
      * @return documentTypeIn
      */
-    public function getType()
+    public function getType(): documentTypeIn
     {
         return $this->type;
     }
@@ -93,7 +94,7 @@ abstract class DgtDocumentIn
      * @param documentTypeIn $type
      * @return dgtDocumentIn
      */
-    public function setType($type)
+    public function setType(documentTypeIn $type): DgtDocumentIn
     {
         $this->type = $type;
 
@@ -103,7 +104,7 @@ abstract class DgtDocumentIn
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -112,7 +113,7 @@ abstract class DgtDocumentIn
      * @param string $name
      * @return dgtDocumentIn
      */
-    public function setName($name)
+    public function setName(string $name): DgtDocumentIn
     {
         $this->name = $name;
 

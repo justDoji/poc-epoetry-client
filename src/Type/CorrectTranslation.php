@@ -24,7 +24,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
      * @var \OpenEuropa\EPoetry\Type\productReference $product
      * @var \OpenEuropa\EPoetry\Type\correctionDocument $correction
      */
-    public function __construct($product, $correction)
+    public function __construct(productReference $product, correctionDocument $correction)
     {
         $this->product = $product;
         $this->correction = $correction;
@@ -33,7 +33,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\productReference
      */
-    public function getProduct()
+    public function getProduct(): productReference
     {
         return $this->product;
     }
@@ -42,7 +42,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\productReference $product
      * @return CorrectTranslation
      */
-    public function withProduct($product)
+    public function withProduct(productReference $product): CorrectTranslation
     {
         $new = clone $this;
         $new->product = $product;
@@ -53,7 +53,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     /**
      * @return \OpenEuropa\EPoetry\Type\correctionDocument
      */
-    public function getCorrection()
+    public function getCorrection(): correctionDocument
     {
         return $this->correction;
     }
@@ -62,7 +62,7 @@ class CorrectTranslation implements RequestInterface, ResultInterface
      * @param \OpenEuropa\EPoetry\Type\correctionDocument $correction
      * @return CorrectTranslation
      */
-    public function withCorrection($correction)
+    public function withCorrection(correctionDocument $correction): CorrectTranslation
     {
         $new = clone $this;
         $new->correction = $correction;
