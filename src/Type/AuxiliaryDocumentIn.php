@@ -5,7 +5,7 @@ namespace OpenEuropa\ePoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocumentIn implements RequestInterface, ResultInterface
+class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, ResultInterface
 {
 
     /**
@@ -14,12 +14,15 @@ class AuxiliaryDocumentIn implements RequestInterface, ResultInterface
     private $language;
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\languageCode $language
+     * @param base64Binary $file
+     * @param \OpenEuropa\ePoetry\Type\documentFormat $format
+     * @param \OpenEuropa\ePoetry\Type\documentTypeIn $type
+     * @param string $name
+     * @param \OpenEuropa\ePoetry\Type\languageCode $language
      */
-    public function __construct($language)
+    public function __construct($file, $format, $type, $name, $language)
     {
+        parent::__construct($file, $format, $type, $name);
         $this->language = $language;
     }
 
