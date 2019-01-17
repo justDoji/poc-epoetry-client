@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, ResultInterface
+class AuxiliaryDocumentIn extends DgtDocumentIn implements RequestInterface, ResultInterface
 {
 
     /**
@@ -16,12 +16,14 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
     /**
      * @param string $file
      *   The Base64 encoded file.
-     * @param \OpenEuropa\EPoetry\Type\documentFormat $format
-     * @param \OpenEuropa\EPoetry\Type\documentTypeIn $type
+     * @param string $format
+     *   A DocumentFormat code.
+     * @param string $type
+     *   A DocumentTypeIn code.
      * @param string $name
      * @param string $language
      */
-    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name, string $language)
+    public function __construct(string $file, string $format, string $type, string $name, string $language)
     {
         parent::__construct($file, $format, $type, $name);
         $this->language = $language;

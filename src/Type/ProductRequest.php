@@ -9,7 +9,7 @@ class ProductRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\language
+     * @var \OpenEuropa\EPoetry\Type\Language
      */
     private $language;
 
@@ -46,7 +46,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\language $language
+     * @var \OpenEuropa\EPoetry\Type\Language $language
      * @var \DateTime $requestedDeadline
      * @var \DateTime $acceptedDeadline
      * @var string $formatCode
@@ -54,7 +54,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @var bool $trackChanges
      * @var string $internalProductReference
      */
-    public function __construct(language $language, \DateTime $requestedDeadline, \DateTime $acceptedDeadline, string $formatCode, string $statusCode, bool $trackChanges, string $internalProductReference)
+    public function __construct(Language $language, \DateTime $requestedDeadline, \DateTime $acceptedDeadline, string $formatCode, string $statusCode, bool $trackChanges, string $internalProductReference)
     {
         $this->language = $language;
         $this->requestedDeadline = $requestedDeadline;
@@ -66,18 +66,18 @@ class ProductRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\language
+     * @return \OpenEuropa\EPoetry\Type\Language
      */
-    public function getLanguage(): language
+    public function getLanguage(): Language
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\language $language
+     * @param \OpenEuropa\EPoetry\Type\Language $language
      * @return ProductRequest
      */
-    public function withLanguage(language $language): ProductRequest
+    public function withLanguage(Language $language): ProductRequest
     {
         $new = clone $this;
         $new->language = $language;

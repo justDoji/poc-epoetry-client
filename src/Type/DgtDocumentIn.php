@@ -16,12 +16,12 @@ abstract class DgtDocumentIn
     protected $file = null;
 
     /**
-     * @var documentFormat $format
+     * @var string $format
      */
     protected $format = null;
 
     /**
-     * @var documentTypeIn $type
+     * @var string $type
      */
     protected $type = null;
 
@@ -32,11 +32,13 @@ abstract class DgtDocumentIn
 
     /**
      * @param string $file
-     * @param documentFormat $format
-     * @param documentTypeIn $type
+     * @param string $format
+     *   A DocumentFormat code.
+     * @param string $type
+     *   A DocumentTypeIn code.
      * @param string $name
      */
-    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name)
+    public function __construct(string $file, string $format, string $type, string $name)
     {
         $this->file = $file;
         $this->format = $format;
@@ -64,18 +66,18 @@ abstract class DgtDocumentIn
     }
 
     /**
-     * @return documentFormat
+     * @return string
      */
-    public function getFormat(): documentFormat
+    public function getFormat(): string
     {
         return $this->format;
     }
 
     /**
-     * @param documentFormat $format
+     * @param string $format
      * @return dgtDocumentIn
      */
-    public function setFormat(documentFormat $format): DgtDocumentIn
+    public function setFormat(string $format): DgtDocumentIn
     {
         $this->format = $format;
 
@@ -83,18 +85,18 @@ abstract class DgtDocumentIn
     }
 
     /**
-     * @return documentTypeIn
+     * @return string
      */
-    public function getType(): documentTypeIn
+    public function getType(): string
     {
         return $this->type;
     }
 
     /**
-     * @param documentTypeIn $type
+     * @param string $type
      * @return dgtDocumentIn
      */
-    public function setType(documentTypeIn $type): DgtDocumentIn
+    public function setType(string $type): DgtDocumentIn
     {
         $this->type = $type;
 

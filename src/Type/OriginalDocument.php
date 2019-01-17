@@ -9,7 +9,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections
      */
     private $linguisticSections;
 
@@ -26,11 +26,11 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @var bool $trackChanges
      * @var float $pages
      */
-    public function __construct(linguisticSections $linguisticSections, bool $trackChanges, float $pages)
+    public function __construct(LinguisticSections $linguisticSections, bool $trackChanges, float $pages)
     {
         $this->linguisticSections = $linguisticSections;
         $this->trackChanges = $trackChanges;
@@ -38,18 +38,18 @@ class OriginalDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\linguisticSections
+     * @return \OpenEuropa\EPoetry\Type\LinguisticSections
      */
-    public function getLinguisticSections(): linguisticSections
+    public function getLinguisticSections(): LinguisticSections
     {
         return $this->linguisticSections;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
+     * @param \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @return OriginalDocument
      */
-    public function withLinguisticSections(linguisticSections $linguisticSections): OriginalDocument
+    public function withLinguisticSections(LinguisticSections $linguisticSections): OriginalDocument
     {
         $new = clone $this;
         $new->linguisticSections = $linguisticSections;

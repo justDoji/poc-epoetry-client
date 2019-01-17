@@ -49,12 +49,12 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     private $sentViaRUE;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\destination
+     * @var string
      */
     private $destinationCode;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex
+     * @var string
      */
     private $slaAnnex;
 
@@ -74,7 +74,7 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
     private $onBehalfOf;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\accessLevel
+     * @var string
      */
     private $accessibleTo;
 
@@ -91,12 +91,15 @@ class RequestGeneralInfoIn implements RequestInterface, ResultInterface
      * @var bool $documentToBeAdopted
      * @var string $decideReference
      * @var bool $sentViaRUE
-     * @var \OpenEuropa\EPoetry\Type\destination $destinationCode
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
+     * @var string $destinationCode
+     *   A Destination code.
+     * @var string $slaAnnex
+     *   A slaAnnex code.
      * @var string $slaCommitment
      * @var string $comment
      * @var string $onBehalfOf
-     * @var \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
+     * @var string $accessibleTo
+     *   An AccessLevel code.
      */
     public function __construct(string $title, string $internalReference, string $internalTechnicalId, \DateTime $requestedDeadline, bool $sensitive, bool $documentToBeAdopted, string $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, string $slaCommitment, string $comment, string $onBehalfOf, $accessibleTo)
     {

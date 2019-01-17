@@ -52,12 +52,12 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     private $sentViaRUE;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\destination
+     * @var string
      */
     private $destinationCode;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex
+     * @var string
      */
     private $slaAnnex;
 
@@ -77,7 +77,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     private $onBehalfOf;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\accessLevel
+     * @var string
      */
     private $accessibleTo;
 
@@ -104,16 +104,19 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @var bool $documentToBeAdopted
      * @var string $decideReference
      * @var bool $sentViaRUE
-     * @var \OpenEuropa\EPoetry\Type\destination $destinationCode
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
+     * @var string $destinationCode
+     *   A Destination code.
+     * @var string$slaAnnex
+     *   A slaAnnex code.
      * @var string $slaCommitment
      * @var string $comment
      * @var string $onBehalfOf
-     * @var \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
+     * @var string $accessibleTo
+     *   An AccessLevel code.
      * @var string $requestingService
      * @var string $serviceOfOrigin
      */
-    public function __construct(string $title, string $internalReference, string $internalTechnicalId, \DateTime $requestedDeadline, bool $sensitive, bool $documentToBeAdopted, string $decideReference, bool $sentViaRUE, destination $destinationCode, slaAnnex $slaAnnex, string $slaCommitment, string $comment, string $onBehalfOf, accessLevel $accessibleTo, string $requestingService, string $serviceOfOrigin)
+    public function __construct(string $title, string $internalReference, string $internalTechnicalId, \DateTime $requestedDeadline, bool $sensitive, bool $documentToBeAdopted, string $decideReference, bool $sentViaRUE, string $destinationCode, string $slaAnnex, string $slaCommitment, string $comment, string $onBehalfOf, string $accessibleTo, string $requestingService, string $serviceOfOrigin)
     {
         $this->title = $title;
         $this->internalReference = $internalReference;
@@ -294,18 +297,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\destination
+     * @return string
      */
-    public function getDestinationCode(): destination
+    public function getDestinationCode(): string
     {
         return $this->destinationCode;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\destination $destinationCode
+     * @param string $destinationCode
      * @return RequestGeneralInfo
      */
-    public function withDestinationCode(destination $destinationCode): RequestGeneralInfo
+    public function withDestinationCode(string $destinationCode): RequestGeneralInfo
     {
         $new = clone $this;
         $new->destinationCode = $destinationCode;
@@ -314,18 +317,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\slaAnnex
+     * @return string
      */
-    public function getSlaAnnex(): slaAnnex
+    public function getSlaAnnex(): string
     {
         return $this->slaAnnex;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
+     * @param string $slaAnnex
      * @return RequestGeneralInfo
      */
-    public function withSlaAnnex(slaAnnex $slaAnnex): RequestGeneralInfo
+    public function withSlaAnnex(string $slaAnnex): RequestGeneralInfo
     {
         $new = clone $this;
         $new->slaAnnex = $slaAnnex;
@@ -394,18 +397,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\accessLevel
+     * @return string
      */
-    public function getAccessibleTo(): accessLevel
+    public function getAccessibleTo(): string
     {
         return $this->accessibleTo;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
+     * @param string $accessibleTo
      * @return RequestGeneralInfo
      */
-    public function withAccessibleTo(accessLevel $accessibleTo): RequestGeneralInfo
+    public function withAccessibleTo(string $accessibleTo): RequestGeneralInfo
     {
         $new = clone $this;
         $new->accessibleTo = $accessibleTo;

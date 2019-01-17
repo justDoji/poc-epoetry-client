@@ -9,7 +9,7 @@ class ProductRequestIn implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\languageIn
+     * @var \OpenEuropa\EPoetry\Type\LanguageIn
      */
     private $language;
 
@@ -31,12 +31,12 @@ class ProductRequestIn implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\languageIn $language
+     * @var \OpenEuropa\EPoetry\Type\LanguageIn $language
      * @var \DateTime $requestedDeadline
      * @var string $internalProductReference
      * @var bool $trackChanges
      */
-    public function __construct(languageIn $language, \DateTime $requestedDeadline, string $internalProductReference, bool $trackChanges)
+    public function __construct(LanguageIn $language, \DateTime $requestedDeadline, string $internalProductReference, bool $trackChanges)
     {
         $this->language = $language;
         $this->requestedDeadline = $requestedDeadline;
@@ -45,18 +45,18 @@ class ProductRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\languageIn
+     * @return \OpenEuropa\EPoetry\Type\LanguageIn
      */
-    public function getLanguage(): languageIn
+    public function getLanguage(): LanguageIn
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\languageIn $language
+     * @param \OpenEuropa\EPoetry\Type\LanguageIn $language
      * @return ProductRequestIn
      */
-    public function withLanguage(languageIn $language): ProductRequestIn
+    public function withLanguage(LanguageIn $language): ProductRequestIn
     {
         $new = clone $this;
         $new->language = $language;

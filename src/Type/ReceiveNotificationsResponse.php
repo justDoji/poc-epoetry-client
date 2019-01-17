@@ -9,14 +9,14 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\dgtNotification
+     * @var \OpenEuropa\EPoetry\Type\DgtNotification
      */
     private $return;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\dgtNotification $return
+     * @var \OpenEuropa\EPoetry\Type\DgtNotification $return
      */
     public function __construct($return)
     {
@@ -24,18 +24,18 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\dgtNotification
+     * @return \OpenEuropa\EPoetry\Type\DgtNotification
      */
-    public function getReturn(): dgtNotification
+    public function getReturn(): DgtNotification
     {
         return $this->return;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\dgtNotification $return
+     * @param \OpenEuropa\EPoetry\Type\DgtNotification $return
      * @return ReceiveNotificationsResponse
      */
-    public function withReturn(dgtNotification $return): ReceiveNotificationsResponse
+    public function withReturn(DgtNotification $return): ReceiveNotificationsResponse
     {
         $new = clone $this;
         $new->return = $return;

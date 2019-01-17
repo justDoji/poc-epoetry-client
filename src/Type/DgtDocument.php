@@ -9,7 +9,7 @@ class DgtDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\documentFormat
+     * @var string
      */
     private $format;
 
@@ -26,11 +26,12 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\documentFormat $format
+     * @var string $format
+     *   A DocumentFormat code.
      * @var \OpenEuropa\EPoetry\Type\documentType $type
      * @var string $name
      */
-    public function __construct(documentFormat $format, documentType $type, string $name)
+    public function __construct(string $format, documentType $type, string $name)
     {
         $this->format = $format;
         $this->type = $type;
@@ -38,18 +39,18 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\documentFormat
+     * @return string
      */
-    public function getFormat(): documentFormat
+    public function getFormat(): string
     {
         return $this->format;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\documentFormat $format
+     * @param string $format
      * @return DgtDocument
      */
-    public function withFormat(documentFormat $format): DgtDocument
+    public function withFormat(string $format): DgtDocument
     {
         $new = clone $this;
         $new->format = $format;

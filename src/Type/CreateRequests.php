@@ -9,12 +9,12 @@ class CreateRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
     private $linguisticRequest;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
     private $relatedRequest;
 
@@ -26,11 +26,11 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
-     * @var \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn $relatedRequest
      * @var string $templateName
      */
-    public function __construct(linguisticRequestIn $linguisticRequest, requestReferenceIn $relatedRequest, string $templateName)
+    public function __construct(LinguisticRequestIn $linguisticRequest, RequestReferenceIn $relatedRequest, string $templateName)
     {
         $this->linguisticRequest = $linguisticRequest;
         $this->relatedRequest = $relatedRequest;
@@ -38,18 +38,18 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    public function getLinguisticRequest(): linguisticRequestIn
+    public function getLinguisticRequest(): LinguisticRequestIn
     {
         return $this->linguisticRequest;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\linguisticRequestIn $linguisticRequest
+     * @param \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
      * @return CreateRequests
      */
-    public function withLinguisticRequest(linguisticRequestIn $linguisticRequest): CreateRequests
+    public function withLinguisticRequest(LinguisticRequestIn $linguisticRequest): CreateRequests
     {
         $new = clone $this;
         $new->linguisticRequest = $linguisticRequest;
@@ -58,18 +58,18 @@ class CreateRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
-    public function getRelatedRequest(): requestReferenceIn
+    public function getRelatedRequest(): RequestReferenceIn
     {
         return $this->relatedRequest;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\requestReferenceIn $relatedRequest
+     * @param \OpenEuropa\EPoetry\Type\RequestReferenceIn $relatedRequest
      * @return CreateRequests
      */
-    public function withRelatedRequest(requestReferenceIn $relatedRequest): CreateRequests
+    public function withRelatedRequest(RequestReferenceIn $relatedRequest): CreateRequests
     {
         $new = clone $this;
         $new->relatedRequest = $relatedRequest;
