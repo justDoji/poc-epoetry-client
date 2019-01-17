@@ -9,33 +9,33 @@ class Contacts implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\contactPerson
+     * @var \OpenEuropa\EPoetry\Type\ContactPerson
      */
     private $contact;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\contactPerson $contact
+     * @var \OpenEuropa\EPoetry\Type\ContactPerson $contact
      */
-    public function __construct($contact)
+    public function __construct(ContactPerson $contact)
     {
         $this->contact = $contact;
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\contactPerson
+     * @return \OpenEuropa\EPoetry\Type\ContactPerson
      */
-    public function getContact()
+    public function getContact(): ContactPerson
     {
         return $this->contact;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\contactPerson $contact
+     * @param \OpenEuropa\EPoetry\Type\ContactPerson $contact
      * @return Contacts
      */
-    public function withContact($contact)
+    public function withContact(ContactPerson $contact): Contacts
     {
         $new = clone $this;
         $new->contact = $contact;

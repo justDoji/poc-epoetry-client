@@ -5,40 +5,43 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, ResultInterface
+class AuxiliaryDocumentIn extends DgtDocumentIn implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\languageCode
+     * @var string
      */
     private $language;
 
     /**
-     * @param base64Binary $file
-     * @param \OpenEuropa\EPoetry\Type\documentFormat $format
-     * @param \OpenEuropa\EPoetry\Type\documentTypeIn $type
+     * @param string $file
+     *   The Base64 encoded file.
+     * @param string $format
+     *   A DocumentFormat code.
+     * @param string $type
+     *   A DocumentTypeIn code.
      * @param string $name
-     * @param \OpenEuropa\EPoetry\Type\languageCode $language
+     * @param string $language
      */
-    public function __construct($file, $format, $type, $name, $language)
+    public function __construct(string $file, string $format, string $type, string $name, string $language)
     {
         parent::__construct($file, $format, $type, $name);
         $this->language = $language;
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\languageCode
+     * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\languageCode $language
+     * @param string $language
      * @return AuxiliaryDocumentIn
      */
-    public function withLanguage($language)
+    public function withLanguage(string $language): AuxiliaryDocumentIn
     {
         $new = clone $this;
         $new->language = $language;

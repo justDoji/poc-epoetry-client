@@ -9,7 +9,7 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections
      */
     private $linguisticSections;
 
@@ -26,11 +26,11 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @var bool $trackChanges
      * @var float $pages
      */
-    public function __construct($linguisticSections, $trackChanges, $pages)
+    public function __construct(LinguisticSections $linguisticSections, bool $trackChanges, float $pages)
     {
         $this->linguisticSections = $linguisticSections;
         $this->trackChanges = $trackChanges;
@@ -38,18 +38,18 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\linguisticSections
+     * @return \OpenEuropa\EPoetry\Type\LinguisticSections
      */
-    public function getLinguisticSections()
+    public function getLinguisticSections(): LinguisticSections
     {
         return $this->linguisticSections;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\linguisticSections $linguisticSections
+     * @param \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @return OriginalDocument
      */
-    public function withLinguisticSections($linguisticSections)
+    public function withLinguisticSections(LinguisticSections $linguisticSections): OriginalDocument
     {
         $new = clone $this;
         $new->linguisticSections = $linguisticSections;
@@ -60,7 +60,7 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
     /**
      * @return bool
      */
-    public function isTrackChanges()
+    public function isTrackChanges(): bool
     {
         return $this->trackChanges;
     }
@@ -69,7 +69,7 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
      * @param bool $trackChanges
      * @return OriginalDocument
      */
-    public function withTrackChanges($trackChanges)
+    public function withTrackChanges(bool $trackChanges): OriginalDocument
     {
         $new = clone $this;
         $new->trackChanges = $trackChanges;
@@ -80,7 +80,7 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
     /**
      * @return float
      */
-    public function getPages()
+    public function getPages(): float
     {
         return $this->pages;
     }
@@ -89,7 +89,7 @@ class OriginalDocument extends DgtDocument implements RequestInterface, ResultIn
      * @param float $pages
      * @return OriginalDocument
      */
-    public function withPages($pages)
+    public function withPages(float $pages): OriginalDocument
     {
         $new = clone $this;
         $new->pages = $pages;

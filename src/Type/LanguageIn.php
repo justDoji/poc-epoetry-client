@@ -9,33 +9,33 @@ class LanguageIn implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\languageCode
+     * @var string
      */
     private $code;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\languageCode $code
+     * @var string $code
      */
-    public function __construct($code)
+    public function __construct(string $code)
     {
         $this->code = $code;
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\languageCode
+     * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\languageCode $code
+     * @param string $code
      * @return LanguageIn
      */
-    public function withCode($code)
+    public function withCode(string $code): LanguageIn
     {
         $new = clone $this;
         $new->code = $code;

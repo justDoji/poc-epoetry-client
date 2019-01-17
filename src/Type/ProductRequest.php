@@ -9,7 +9,7 @@ class ProductRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\language
+     * @var \OpenEuropa\EPoetry\Type\Language
      */
     private $language;
 
@@ -46,7 +46,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\language $language
+     * @var \OpenEuropa\EPoetry\Type\Language $language
      * @var \DateTime $requestedDeadline
      * @var \DateTime $acceptedDeadline
      * @var string $formatCode
@@ -54,7 +54,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @var bool $trackChanges
      * @var string $internalProductReference
      */
-    public function __construct($language, $requestedDeadline, $acceptedDeadline, $formatCode, $statusCode, $trackChanges, $internalProductReference)
+    public function __construct(Language $language, \DateTime $requestedDeadline, \DateTime $acceptedDeadline, string $formatCode, string $statusCode, bool $trackChanges, string $internalProductReference)
     {
         $this->language = $language;
         $this->requestedDeadline = $requestedDeadline;
@@ -66,18 +66,18 @@ class ProductRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\language
+     * @return \OpenEuropa\EPoetry\Type\Language
      */
-    public function getLanguage()
+    public function getLanguage(): Language
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\language $language
+     * @param \OpenEuropa\EPoetry\Type\Language $language
      * @return ProductRequest
      */
-    public function withLanguage($language)
+    public function withLanguage(Language $language): ProductRequest
     {
         $new = clone $this;
         $new->language = $language;
@@ -88,7 +88,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return \DateTime
      */
-    public function getRequestedDeadline()
+    public function getRequestedDeadline(): \DateTime
     {
         return $this->requestedDeadline;
     }
@@ -97,7 +97,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param \DateTime $requestedDeadline
      * @return ProductRequest
      */
-    public function withRequestedDeadline($requestedDeadline)
+    public function withRequestedDeadline(\DateTime $requestedDeadline): ProductRequest
     {
         $new = clone $this;
         $new->requestedDeadline = $requestedDeadline;
@@ -108,7 +108,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return \DateTime
      */
-    public function getAcceptedDeadline()
+    public function getAcceptedDeadline(): \DateTime
     {
         return $this->acceptedDeadline;
     }
@@ -117,7 +117,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param \DateTime $acceptedDeadline
      * @return ProductRequest
      */
-    public function withAcceptedDeadline($acceptedDeadline)
+    public function withAcceptedDeadline(\DateTime $acceptedDeadline): ProductRequest
     {
         $new = clone $this;
         $new->acceptedDeadline = $acceptedDeadline;
@@ -128,7 +128,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getFormatCode()
+    public function getFormatCode(): string
     {
         return $this->formatCode;
     }
@@ -137,7 +137,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param string $formatCode
      * @return ProductRequest
      */
-    public function withFormatCode($formatCode)
+    public function withFormatCode(string $formatCode): ProductRequest
     {
         $new = clone $this;
         $new->formatCode = $formatCode;
@@ -148,7 +148,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getStatusCode()
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }
@@ -157,7 +157,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param string $statusCode
      * @return ProductRequest
      */
-    public function withStatusCode($statusCode)
+    public function withStatusCode(string $statusCode): ProductRequest
     {
         $new = clone $this;
         $new->statusCode = $statusCode;
@@ -168,7 +168,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isTrackChanges()
+    public function isTrackChanges(): bool
     {
         return $this->trackChanges;
     }
@@ -177,7 +177,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param bool $trackChanges
      * @return ProductRequest
      */
-    public function withTrackChanges($trackChanges)
+    public function withTrackChanges(bool $trackChanges): ProductRequest
     {
         $new = clone $this;
         $new->trackChanges = $trackChanges;
@@ -188,7 +188,7 @@ class ProductRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalProductReference()
+    public function getInternalProductReference(): string
     {
         return $this->internalProductReference;
     }
@@ -197,7 +197,7 @@ class ProductRequest implements RequestInterface, ResultInterface
      * @param string $internalProductReference
      * @return ProductRequest
      */
-    public function withInternalProductReference($internalProductReference)
+    public function withInternalProductReference(string $internalProductReference): ProductRequest
     {
         $new = clone $this;
         $new->internalProductReference = $internalProductReference;

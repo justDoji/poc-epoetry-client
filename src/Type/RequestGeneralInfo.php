@@ -52,12 +52,12 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     private $sentViaRUE;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\destination
+     * @var string
      */
     private $destinationCode;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex
+     * @var string
      */
     private $slaAnnex;
 
@@ -77,7 +77,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     private $onBehalfOf;
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\accessLevel
+     * @var string
      */
     private $accessibleTo;
 
@@ -104,16 +104,19 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @var bool $documentToBeAdopted
      * @var string $decideReference
      * @var bool $sentViaRUE
-     * @var \OpenEuropa\EPoetry\Type\destination $destinationCode
-     * @var \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
+     * @var string $destinationCode
+     *   A Destination code.
+     * @var string$slaAnnex
+     *   A slaAnnex code.
      * @var string $slaCommitment
      * @var string $comment
      * @var string $onBehalfOf
-     * @var \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
+     * @var string $accessibleTo
+     *   An AccessLevel code.
      * @var string $requestingService
      * @var string $serviceOfOrigin
      */
-    public function __construct($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo, $requestingService, $serviceOfOrigin)
+    public function __construct(string $title, string $internalReference, string $internalTechnicalId, \DateTime $requestedDeadline, bool $sensitive, bool $documentToBeAdopted, string $decideReference, bool $sentViaRUE, string $destinationCode, string $slaAnnex, string $slaCommitment, string $comment, string $onBehalfOf, string $accessibleTo, string $requestingService, string $serviceOfOrigin)
     {
         $this->title = $title;
         $this->internalReference = $internalReference;
@@ -136,7 +139,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -145,7 +148,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $title
      * @return RequestGeneralInfo
      */
-    public function withTitle($title)
+    public function withTitle(string $title): RequestGeneralInfo
     {
         $new = clone $this;
         $new->title = $title;
@@ -156,7 +159,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalReference()
+    public function getInternalReference(): string
     {
         return $this->internalReference;
     }
@@ -165,7 +168,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $internalReference
      * @return RequestGeneralInfo
      */
-    public function withInternalReference($internalReference)
+    public function withInternalReference(string $internalReference): RequestGeneralInfo
     {
         $new = clone $this;
         $new->internalReference = $internalReference;
@@ -176,7 +179,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalTechnicalId()
+    public function getInternalTechnicalId(): string
     {
         return $this->internalTechnicalId;
     }
@@ -185,7 +188,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $internalTechnicalId
      * @return RequestGeneralInfo
      */
-    public function withInternalTechnicalId($internalTechnicalId)
+    public function withInternalTechnicalId(string $internalTechnicalId): RequestGeneralInfo
     {
         $new = clone $this;
         $new->internalTechnicalId = $internalTechnicalId;
@@ -196,7 +199,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return \DateTime
      */
-    public function getRequestedDeadline()
+    public function getRequestedDeadline(): \DateTime
     {
         return $this->requestedDeadline;
     }
@@ -205,7 +208,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param \DateTime $requestedDeadline
      * @return RequestGeneralInfo
      */
-    public function withRequestedDeadline($requestedDeadline)
+    public function withRequestedDeadline(\DateTime $requestedDeadline): RequestGeneralInfo
     {
         $new = clone $this;
         $new->requestedDeadline = $requestedDeadline;
@@ -216,7 +219,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isSensitive()
+    public function isSensitive(): bool
     {
         return $this->sensitive;
     }
@@ -225,7 +228,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param bool $sensitive
      * @return RequestGeneralInfo
      */
-    public function withSensitive($sensitive)
+    public function withSensitive(bool $sensitive): RequestGeneralInfo
     {
         $new = clone $this;
         $new->sensitive = $sensitive;
@@ -236,7 +239,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isDocumentToBeAdopted()
+    public function isDocumentToBeAdopted(): bool
     {
         return $this->documentToBeAdopted;
     }
@@ -245,7 +248,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param bool $documentToBeAdopted
      * @return RequestGeneralInfo
      */
-    public function withDocumentToBeAdopted($documentToBeAdopted)
+    public function withDocumentToBeAdopted(bool $documentToBeAdopted): RequestGeneralInfo
     {
         $new = clone $this;
         $new->documentToBeAdopted = $documentToBeAdopted;
@@ -256,7 +259,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getDecideReference()
+    public function getDecideReference(): string
     {
         return $this->decideReference;
     }
@@ -265,7 +268,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $decideReference
      * @return RequestGeneralInfo
      */
-    public function withDecideReference($decideReference)
+    public function withDecideReference(string $decideReference): RequestGeneralInfo
     {
         $new = clone $this;
         $new->decideReference = $decideReference;
@@ -276,7 +279,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function isSentViaRUE()
+    public function isSentViaRUE(): bool
     {
         return $this->sentViaRUE;
     }
@@ -285,7 +288,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param bool $sentViaRUE
      * @return RequestGeneralInfo
      */
-    public function withSentViaRUE($sentViaRUE)
+    public function withSentViaRUE(bool $sentViaRUE): RequestGeneralInfo
     {
         $new = clone $this;
         $new->sentViaRUE = $sentViaRUE;
@@ -294,18 +297,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\destination
+     * @return string
      */
-    public function getDestinationCode()
+    public function getDestinationCode(): string
     {
         return $this->destinationCode;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\destination $destinationCode
+     * @param string $destinationCode
      * @return RequestGeneralInfo
      */
-    public function withDestinationCode($destinationCode)
+    public function withDestinationCode(string $destinationCode): RequestGeneralInfo
     {
         $new = clone $this;
         $new->destinationCode = $destinationCode;
@@ -314,18 +317,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\slaAnnex
+     * @return string
      */
-    public function getSlaAnnex()
+    public function getSlaAnnex(): string
     {
         return $this->slaAnnex;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\slaAnnex $slaAnnex
+     * @param string $slaAnnex
      * @return RequestGeneralInfo
      */
-    public function withSlaAnnex($slaAnnex)
+    public function withSlaAnnex(string $slaAnnex): RequestGeneralInfo
     {
         $new = clone $this;
         $new->slaAnnex = $slaAnnex;
@@ -336,7 +339,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getSlaCommitment()
+    public function getSlaCommitment(): string
     {
         return $this->slaCommitment;
     }
@@ -345,7 +348,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $slaCommitment
      * @return RequestGeneralInfo
      */
-    public function withSlaCommitment($slaCommitment)
+    public function withSlaCommitment(string $slaCommitment): RequestGeneralInfo
     {
         $new = clone $this;
         $new->slaCommitment = $slaCommitment;
@@ -356,7 +359,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->comment;
     }
@@ -365,7 +368,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $comment
      * @return RequestGeneralInfo
      */
-    public function withComment($comment)
+    public function withComment(string $comment): RequestGeneralInfo
     {
         $new = clone $this;
         $new->comment = $comment;
@@ -376,7 +379,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getOnBehalfOf()
+    public function getOnBehalfOf(): string
     {
         return $this->onBehalfOf;
     }
@@ -385,7 +388,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $onBehalfOf
      * @return RequestGeneralInfo
      */
-    public function withOnBehalfOf($onBehalfOf)
+    public function withOnBehalfOf(string $onBehalfOf): RequestGeneralInfo
     {
         $new = clone $this;
         $new->onBehalfOf = $onBehalfOf;
@@ -394,18 +397,18 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\accessLevel
+     * @return string
      */
-    public function getAccessibleTo()
+    public function getAccessibleTo(): string
     {
         return $this->accessibleTo;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\accessLevel $accessibleTo
+     * @param string $accessibleTo
      * @return RequestGeneralInfo
      */
-    public function withAccessibleTo($accessibleTo)
+    public function withAccessibleTo(string $accessibleTo): RequestGeneralInfo
     {
         $new = clone $this;
         $new->accessibleTo = $accessibleTo;
@@ -416,7 +419,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getRequestingService()
+    public function getRequestingService(): string
     {
         return $this->requestingService;
     }
@@ -425,7 +428,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $requestingService
      * @return RequestGeneralInfo
      */
-    public function withRequestingService($requestingService)
+    public function withRequestingService(string $requestingService): RequestGeneralInfo
     {
         $new = clone $this;
         $new->requestingService = $requestingService;
@@ -436,7 +439,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getServiceOfOrigin()
+    public function getServiceOfOrigin(): string
     {
         return $this->serviceOfOrigin;
     }
@@ -445,7 +448,7 @@ class RequestGeneralInfo implements RequestInterface, ResultInterface
      * @param string $serviceOfOrigin
      * @return RequestGeneralInfo
      */
-    public function withServiceOfOrigin($serviceOfOrigin)
+    public function withServiceOfOrigin(string $serviceOfOrigin): RequestGeneralInfo
     {
         $new = clone $this;
         $new->serviceOfOrigin = $serviceOfOrigin;

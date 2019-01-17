@@ -9,14 +9,14 @@ class ProductRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\productRequest
+     * @var \OpenEuropa\EPoetry\Type\ProductRequest
      */
     private $productRequest;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\productRequest $productRequest
+     * @var \OpenEuropa\EPoetry\Type\ProductRequest $productRequest
      */
     public function __construct($productRequest)
     {
@@ -24,18 +24,18 @@ class ProductRequests implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\ProductRequest
      */
-    public function getProductRequest()
+    public function getProductRequest(): ProductRequest
     {
         return $this->productRequest;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\productRequest $productRequest
+     * @param \OpenEuropa\EPoetry\Type\ProductRequest $productRequest
      * @return ProductRequests
      */
-    public function withProductRequest($productRequest)
+    public function withProductRequest(ProductRequest $productRequest): ProductRequests
     {
         $new = clone $this;
         $new->productRequest = $productRequest;

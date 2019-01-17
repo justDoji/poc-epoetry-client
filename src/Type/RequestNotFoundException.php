@@ -24,7 +24,7 @@ class RequestNotFoundException implements RequestInterface, ResultInterface
      * @var string $message
      * @var string $uid
      */
-    public function __construct($message, $uid)
+    public function __construct(string $message, string $uid)
     {
         $this->message = $message;
         $this->uid = $uid;
@@ -33,7 +33,7 @@ class RequestNotFoundException implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -42,7 +42,7 @@ class RequestNotFoundException implements RequestInterface, ResultInterface
      * @param string $message
      * @return RequestNotFoundException
      */
-    public function withMessage($message)
+    public function withMessage($message): RequestNotFoundException
     {
         $new = clone $this;
         $new->message = $message;
