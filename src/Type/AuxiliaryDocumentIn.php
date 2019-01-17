@@ -9,7 +9,7 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\languageCode
+     * @var string
      */
     private $language;
 
@@ -19,27 +19,27 @@ class AuxiliaryDocumentIn extends dgtDocumentIn implements RequestInterface, Res
      * @param \OpenEuropa\EPoetry\Type\documentFormat $format
      * @param \OpenEuropa\EPoetry\Type\documentTypeIn $type
      * @param string $name
-     * @param \OpenEuropa\EPoetry\Type\languageCode $language
+     * @param string $language
      */
-    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name, languageCode $language)
+    public function __construct(string $file, documentFormat $format, documentTypeIn $type, string $name, string $language)
     {
         parent::__construct($file, $format, $type, $name);
         $this->language = $language;
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\languageCode
+     * @return string
      */
-    public function getLanguage(): languageCode
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\languageCode $language
+     * @param string $language
      * @return AuxiliaryDocumentIn
      */
-    public function withLanguage(languageCode $language): AuxiliaryDocumentIn
+    public function withLanguage(string $language): AuxiliaryDocumentIn
     {
         $new = clone $this;
         $new->language = $language;
