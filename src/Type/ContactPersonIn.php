@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class ContactPersonIn implements RequestInterface, ResultInterface
+class ContactPersonIn extends ContactPerson implements RequestInterface, ResultInterface
 {
 
     /**
@@ -43,7 +43,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * @param string $userId
      * @return ContactPersonIn
      */
-    public function withUserId(string $userId): ContactPersonIn
+    public function withUserId(string $userId): ContactPerson
     {
         $new = clone $this;
         $new->userId = $userId;
@@ -63,7 +63,7 @@ class ContactPersonIn implements RequestInterface, ResultInterface
      * @param string $roleCode
      * @return ContactPersonIn
      */
-    public function withRoleCode(string $roleCode): ContactPersonIn
+    public function withRoleCode(string $roleCode): ContactPerson
     {
         $new = clone $this;
         $new->roleCode = $roleCode;

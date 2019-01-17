@@ -24,9 +24,9 @@ class CreateRequestsResponse implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\LinguisticRequest
+     * @return array \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
-    public function getReturn(): LinguisticRequest
+    public function getReturn(): array
     {
         return $this->return;
     }

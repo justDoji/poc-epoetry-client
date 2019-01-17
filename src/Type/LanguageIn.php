@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class LanguageIn implements RequestInterface, ResultInterface
+class LanguageIn implements LanguageInterface, RequestInterface, ResultInterface
 {
 
     /**
@@ -33,9 +33,9 @@ class LanguageIn implements RequestInterface, ResultInterface
 
     /**
      * @param string $code
-     * @return LanguageIn
+     * @return LanguageInterface
      */
-    public function withCode(string $code): LanguageIn
+    public function withCode(string $code): LanguageInterface
     {
         $new = clone $this;
         $new->code = $code;

@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class ProductRequestIn implements RequestInterface, ResultInterface
+class ProductRequestIn implements ProductRequestInterface, RequestInterface, ResultInterface
 {
 
     /**
@@ -31,12 +31,12 @@ class ProductRequestIn implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\LanguageIn $language
+     * @var \OpenEuropa\EPoetry\Type\LanguageInterface $language
      * @var \DateTime $requestedDeadline
      * @var string $internalProductReference
      * @var bool $trackChanges
      */
-    public function __construct(LanguageIn $language, \DateTime $requestedDeadline, string $internalProductReference, bool $trackChanges)
+    public function __construct(LanguageInterface $language, \DateTime $requestedDeadline, string $internalProductReference, bool $trackChanges)
     {
         $this->language = $language;
         $this->requestedDeadline = $requestedDeadline;
@@ -45,18 +45,18 @@ class ProductRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\LanguageIn
+     * @return \OpenEuropa\EPoetry\Type\LanguageInterface
      */
-    public function getLanguage(): LanguageIn
+    public function getLanguage(): LanguageInterface
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\EPoetry\Type\LanguageIn $language
+     * @param \OpenEuropa\EPoetry\Type\LanguageInterface $language
      * @return ProductRequestIn
      */
-    public function withLanguage(LanguageIn $language): ProductRequestIn
+    public function withLanguage(LanguageInterface $language): ProductRequestInterface
     {
         $new = clone $this;
         $new->language = $language;
@@ -76,7 +76,7 @@ class ProductRequestIn implements RequestInterface, ResultInterface
      * @param \DateTime $requestedDeadline
      * @return ProductRequestIn
      */
-    public function withRequestedDeadline(\DateTime $requestedDeadline): ProductRequestIn
+    public function withRequestedDeadline(\DateTime $requestedDeadline): ProductRequestInterface
     {
         $new = clone $this;
         $new->requestedDeadline = $requestedDeadline;
@@ -96,7 +96,7 @@ class ProductRequestIn implements RequestInterface, ResultInterface
      * @param string $internalProductReference
      * @return ProductRequestIn
      */
-    public function withInternalProductReference(string $internalProductReference): ProductRequestIn
+    public function withInternalProductReference(string $internalProductReference): ProductRequestInterface
     {
         $new = clone $this;
         $new->internalProductReference = $internalProductReference;
@@ -116,7 +116,7 @@ class ProductRequestIn implements RequestInterface, ResultInterface
      * @param bool $trackChanges
      * @return ProductRequestIn
      */
-    public function withTrackChanges(bool $trackChanges): ProductRequestIn
+    public function withTrackChanges(bool $trackChanges): ProductRequestInterface
     {
         $new = clone $this;
         $new->trackChanges = $trackChanges;

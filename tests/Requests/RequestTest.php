@@ -6,7 +6,8 @@ use GuzzleHttp\Psr7\Response;
 use OpenEuropa\EPoetry\EPoetryClient;
 use OpenEuropa\EPoetry\Tests\AbstractTest;
 use OpenEuropa\EPoetry\Type\AuxiliaryDocumentIn;
-use OpenEuropa\EPoetry\Type\ContactPerson;
+use OpenEuropa\EPoetry\Type\AuxiliaryDocuments;
+use OpenEuropa\EPoetry\Type\ContactPersonIn;
 use OpenEuropa\EPoetry\Type\Contacts;
 use OpenEuropa\EPoetry\Type\CreateRequests;
 use OpenEuropa\EPoetry\Type\Enumeration\DocumentType;
@@ -16,10 +17,10 @@ use OpenEuropa\EPoetry\Type\Enumeration\DocumentType as DocumentTypeEnum;
 use OpenEuropa\EPoetry\Type\Enumeration\LanguageCode;
 use OpenEuropa\EPoetry\Type\LinguisticRequestIn;
 use OpenEuropa\EPoetry\Type\OriginalDocumentIn;
-use OpenEuropa\EPoetry\Type\ProductRequest;
+use OpenEuropa\EPoetry\Type\ProductRequestIn;
 use OpenEuropa\EPoetry\Type\ProductRequests;
-use OpenEuropa\EPoetry\Type\RequestGeneralInfo;
-use OpenEuropa\EPoetry\Type\RequestReference;
+use OpenEuropa\EPoetry\Type\RequestGeneralInfoIn;
+use OpenEuropa\EPoetry\Type\RequestReferenceIn;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -33,21 +34,10 @@ class RequestTest extends AbstractTest
 
         $this->assertInstanceOf(EPoetryClient::class, $this->client, 'Wrong Client object received.');
 
-        // Generate Reference.
-        $year = 2018;
-        $number = 1;
-        $part = 0;
-        $version = 0;
-        $id = 1;
-        $internalReference = '1';
-        $internalTechnicalId = '1';
-        $productType = 'TRA';
-        $requesterCode = 'WEB';
-        $reference = new RequestReference($year, $number, $part, $version, $id, $internalReference, $internalTechnicalId, $productType, $requesterCode);
-        $this->assertEquals($reference->getYear(), $year);
-
         // Generate General Info.
         $title = 'Test';
+        $internalReference = '1';
+        $internalTechnicalId = '1';
         $requestedDeadline = new \DateTime('2020-02-02');
         $sensitive = false;
         $documentToBeAdopted = true;
@@ -62,20 +52,16 @@ class RequestTest extends AbstractTest
         $onBehalfOf = '';
         // @todo get value from lib.
         $accessibleTo = NULL;
-        $requestingService = '';
-        $serviceOfOrigin = '';
-        $generalInfo = new RequestGeneralInfo($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo, $requestingService, $serviceOfOrigin);
+        $generalInfo = new RequestGeneralInfoIn($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo);
         $this->assertEquals($generalInfo->getTitle(), $title);
 
         // Generate Contacts.
-        $firstName = 'Eunice';
-        $lastName = 'Tomas';
         $email = 'email@example.com';
         $userId = '1';
-        $roleCode = NULL;
-        $contact = new ContactPerson($firstName, $lastName, $email, $userId, $roleCode);
+        $roleCode = 'editor';
+        $contact = new ContactPersonIn($userId, $roleCode);
         $contacts = new Contacts($contact);
-        $this->assertEquals($contacts->getContact()->getEmail(), $email);
+        $this->assertEquals($contacts->getContact()->getUserId(), '1');
 
         // Generate Original Document
         $file = 'dGVzdA==';
@@ -86,27 +72,26 @@ class RequestTest extends AbstractTest
         // Generate Product Requests.
         $language = new Language(LanguageCode::FR);
         $requestedDeadline = new \DateTime('2020-02-02');
-        $acceptedDeadline = new \DateTime('2020-02-02');
-        $formatCode = '';
-        $statusCode = '';
         $trackChanges = false;
         $internalProductReference = '1';
-        $productRequest = new ProductRequest($language, $requestedDeadline, $acceptedDeadline, $formatCode, $statusCode, $trackChanges, $internalProductReference);
+        $productRequest = new ProductRequestIn($language, $requestedDeadline, $internalProductReference, $trackChanges);
         $productRequests = new ProductRequests($productRequest);
         $this->assertEquals($productRequests->getProductRequest()->getLanguage()->getCode(), LanguageCode::FR);
 
         // Generate Auxiliary Documents.
         $file = 'dGVzdA==';
-        $AuxiliaryDocument = new AuxiliaryDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'aux.doc', $language);
-        $this->assertEquals($AuxiliaryDocument->getLanguage()->getCode(), LanguageCode::FR);
+        $AuxiliaryDocument = new AuxiliaryDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'aux.doc', LanguageCode::FR);
+        $this->assertEquals($AuxiliaryDocument->getLanguage(), LanguageCode::FR);
+        $AuxiliaryDocuments = new AuxiliaryDocuments($AuxiliaryDocument);
 
         // Generate Linguistic Request.
-        $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $AuxiliaryDocument);
+        $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $AuxiliaryDocuments);
 
         // Define missing arguments for Request.
-        $relatedRequest = NULL;
+        $relatedRequest = new RequestReferenceIn(123, 'ref123');
         $templateName = 'WEB';
 
+        // All arguments are ready, create the request.
         $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
 
         // Mock response.
@@ -132,5 +117,4 @@ class RequestTest extends AbstractTest
         $this->assertEquals($return->getGeneralInfo()->getTitle(), 'Title of the Document', 'Response error, wrong title.');
 
     }
-
 }

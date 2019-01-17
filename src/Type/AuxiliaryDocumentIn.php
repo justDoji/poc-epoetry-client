@@ -5,7 +5,7 @@ namespace OpenEuropa\EPoetry\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocumentIn extends DgtDocumentIn implements RequestInterface, ResultInterface
+class AuxiliaryDocumentIn extends DgtDocumentIn implements AuxiliaryDocumentInterface, RequestInterface, ResultInterface
 {
 
     /**
@@ -39,9 +39,9 @@ class AuxiliaryDocumentIn extends DgtDocumentIn implements RequestInterface, Res
 
     /**
      * @param string $language
-     * @return AuxiliaryDocumentIn
+     * @return AuxiliaryDocumentInterface
      */
-    public function withLanguage(string $language): AuxiliaryDocumentIn
+    public function withLanguage(string $language): AuxiliaryDocumentInterface
     {
         $new = clone $this;
         $new->language = $language;
