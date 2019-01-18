@@ -7,26 +7,15 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class Contacts implements RequestInterface, ResultInterface
 {
+    /**
+     * @var array \OpenEuropa\EPoetry\Type\ContactPerson
+     */
+    private $contact = [];
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\ContactPerson
+     * @return array \OpenEuropa\EPoetry\Type\ContactPerson
      */
-    private $contact;
-
-    /**
-     * Constructor
-     *
-     * @var \OpenEuropa\EPoetry\Type\ContactPerson $contact
-     */
-    public function __construct(ContactPerson $contact)
-    {
-        $this->contact = $contact;
-    }
-
-    /**
-     * @return \OpenEuropa\EPoetry\Type\ContactPerson
-     */
-    public function getContact(): ContactPerson
+    public function getContact(): array
     {
         return $this->contact;
     }
@@ -38,7 +27,7 @@ class Contacts implements RequestInterface, ResultInterface
     public function withContact(ContactPerson $contact): Contacts
     {
         $new = clone $this;
-        $new->contact = $contact;
+        $new->contact[] = $contact;
 
         return $new;
     }

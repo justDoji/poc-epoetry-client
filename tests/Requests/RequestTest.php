@@ -10,6 +10,7 @@ use OpenEuropa\EPoetry\Type\AuxiliaryDocuments;
 use OpenEuropa\EPoetry\Type\ContactPersonIn;
 use OpenEuropa\EPoetry\Type\Contacts;
 use OpenEuropa\EPoetry\Type\CreateRequests;
+use OpenEuropa\EPoetry\Type\Enumeration\ContactRole;
 use OpenEuropa\EPoetry\Type\Enumeration\DocumentType;
 use OpenEuropa\EPoetry\Type\Language;
 use OpenEuropa\EPoetry\Type\Enumeration\DocumentFormat;
@@ -56,12 +57,10 @@ class RequestTest extends AbstractTest
         $this->assertEquals($generalInfo->getTitle(), $title);
 
         // Generate Contacts.
-        $email = 'email@example.com';
-        $userId = '1';
-        $roleCode = 'editor';
-        $contact = new ContactPersonIn($userId, $roleCode);
-        $contacts = new Contacts($contact);
-        $this->assertEquals($contacts->getContact()->getUserId(), '1');
+        $contacts = new Contacts();
+        $contacts = $contacts->withContact(new ContactPersonIn('1', ContactRole::AUTHOR));
+        $contacts = $contacts->withContact(new ContactPersonIn('2', ContactRole::EDITOR));
+        $this->assertEquals($contacts->getContact()[0]->getUserId(), '1');
 
         // Generate Original Document
         $file = 'dGVzdA==';
@@ -109,6 +108,7 @@ class RequestTest extends AbstractTest
         $request = $debug['request'];
         $this->assertContains('ecas:ProxyTicket: DESKTOP_PT-21-9fp9', $request['headers'], 'Request XML header malformed, missing ticket.');
         $this->assertContains("<title>$title</title>", $request['body'], 'Request XML body malformed, missing title.');
+        $this->assertContains('<contact userId="1" roleCode="AUTHOR"/>', $request['body'], 'Request XML body malformed, missing contact.');
 
         // Test response.
         /** @var \OpenEuropa\EPoetry\Type\LinguisticRequest $return */
