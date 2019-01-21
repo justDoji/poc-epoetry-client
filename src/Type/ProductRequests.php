@@ -9,24 +9,14 @@ class ProductRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\ProductRequestInterface
+     * @var array \OpenEuropa\EPoetry\Type\ProductRequestInterface
      */
-    private $productRequest;
+    private $productRequest = [];
 
     /**
-     * Constructor
-     *
-     * @param \OpenEuropa\EPoetry\Type\ProductRequestInterface $productRequest
+     * @return array \OpenEuropa\EPoetry\Type\ProductRequestInterface
      */
-    public function __construct(ProductRequestInterface $productRequest)
-    {
-        $this->productRequest = $productRequest;
-    }
-
-    /**
-     * @return \OpenEuropa\EPoetry\Type\ProductRequestInterface
-     */
-    public function getProductRequest(): ProductRequestInterface
+    public function getProductRequest(): array
     {
         return $this->productRequest;
     }
@@ -38,7 +28,7 @@ class ProductRequests implements RequestInterface, ResultInterface
     public function withProductRequest(ProductRequestInterface $productRequest): ProductRequests
     {
         $new = clone $this;
-        $new->productRequest = $productRequest;
+        $new->productRequest[] = $productRequest;
 
         return $new;
     }

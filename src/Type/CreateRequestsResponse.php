@@ -9,19 +9,9 @@ class CreateRequestsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\LinguisticRequest
+     * @var array \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
-    private $return;
-
-    /**
-     * Constructor
-     *
-     * @var \OpenEuropa\EPoetry\Type\LinguisticRequest $return
-     */
-    public function __construct(LinguisticRequest $return)
-    {
-        $this->return = $return;
-    }
+    private $return = [];
 
     /**
      * @return array \OpenEuropa\EPoetry\Type\LinguisticRequest
@@ -38,7 +28,7 @@ class CreateRequestsResponse implements RequestInterface, ResultInterface
     public function withReturn(LinguisticRequest $return): CreateRequestsResponse
     {
         $new = clone $this;
-        $new->return = $return;
+        $new->return[] = $return;
 
         return $new;
     }

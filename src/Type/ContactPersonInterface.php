@@ -4,17 +4,6 @@ namespace OpenEuropa\EPoetry\Type;
 
 interface ContactPersonInterface
 {
-
-    /**
-     * @var string
-     */
-    private $userId;
-
-    /**
-     * @var string
-     */
-    private $roleCode;
-
     /**
      * @return string
      */

@@ -74,14 +74,16 @@ class RequestTest extends AbstractTest
         $trackChanges = false;
         $internalProductReference = '1';
         $productRequest = new ProductRequestIn($language, $requestedDeadline, $internalProductReference, $trackChanges);
-        $productRequests = new ProductRequests($productRequest);
-        $this->assertEquals($productRequests->getProductRequest()->getLanguage()->getCode(), LanguageCode::FR);
+        $productRequests = new ProductRequests();
+        $productRequests = $productRequests->withProductRequest($productRequest);
+        $this->assertContains($productRequests->getProductRequest()[0]->getLanguage()->getCode(), LanguageCode::FR);
 
         // Generate Auxiliary Documents.
         $file = 'dGVzdA==';
         $AuxiliaryDocument = new AuxiliaryDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'aux.doc', LanguageCode::FR);
         $this->assertEquals($AuxiliaryDocument->getLanguage(), LanguageCode::FR);
-        $AuxiliaryDocuments = new AuxiliaryDocuments($AuxiliaryDocument);
+        $AuxiliaryDocuments = new AuxiliaryDocuments();
+        $AuxiliaryDocuments = $AuxiliaryDocuments->withAuxiliaryDocument($AuxiliaryDocument);
 
         // Generate Linguistic Request.
         $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $AuxiliaryDocuments);
@@ -91,7 +93,8 @@ class RequestTest extends AbstractTest
         $templateName = 'WEB';
 
         // All arguments are ready, create the request.
-        $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
+        $createRequest = new CreateRequests($relatedRequest, $templateName);
+        $createRequest = $createRequest->withLinguisticRequest($linguisticRequest);
 
         // Mock response.
         $response = $this->createMock(ResponseInterface::class);
@@ -101,7 +104,7 @@ class RequestTest extends AbstractTest
         $this->mockClient->addResponse($response);
 
         // Make request.
-        $response = $this->client->createRequests($parameters);
+        $response = $this->client->createRequests($createRequest);
 
         // Test request.
         $debug = $this->client->debugLastSoapRequest();

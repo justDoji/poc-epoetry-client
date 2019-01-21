@@ -10,7 +10,7 @@ class Contacts implements RequestInterface, ResultInterface
     /**
      * @var array \OpenEuropa\EPoetry\Type\ContactPerson
      */
-    private $contact = [];
+    private $contact;
 
     /**
      * @return array \OpenEuropa\EPoetry\Type\ContactPerson

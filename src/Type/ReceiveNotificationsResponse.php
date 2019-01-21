@@ -9,24 +9,14 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\DgtNotification
+     * @var array \OpenEuropa\EPoetry\Type\DgtNotification
      */
-    private $return;
+    private $return = [];
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\EPoetry\Type\DgtNotification $return
+     * @return array \OpenEuropa\EPoetry\Type\DgtNotification
      */
-    public function __construct($return)
-    {
-        $this->return = $return;
-    }
-
-    /**
-     * @return \OpenEuropa\EPoetry\Type\DgtNotification
-     */
-    public function getReturn(): DgtNotification
+    public function getReturn(): array
     {
         return $this->return;
     }
@@ -38,7 +28,7 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
     public function withReturn(DgtNotification $return): ReceiveNotificationsResponse
     {
         $new = clone $this;
-        $new->return = $return;
+        $new->return[] = $return;
 
         return $new;
     }

@@ -9,9 +9,9 @@ class CreateRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn
+     * @var array \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    private $linguisticRequest;
+    private $linguisticRequest = [];
 
     /**
      * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn
@@ -26,21 +26,19 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
      * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn $relatedRequest
      * @var string $templateName
      */
-    public function __construct(LinguisticRequestIn $linguisticRequest, RequestReferenceIn $relatedRequest, string $templateName)
+    public function __construct(RequestReferenceIn $relatedRequest, string $templateName)
     {
-        $this->linguisticRequest = $linguisticRequest;
         $this->relatedRequest = $relatedRequest;
         $this->templateName = $templateName;
     }
 
     /**
-     * @return \OpenEuropa\EPoetry\Type\LinguisticRequestIn
+     * @return array \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    public function getLinguisticRequest(): LinguisticRequestIn
+    public function getLinguisticRequest(): array
     {
         return $this->linguisticRequest;
     }
@@ -52,7 +50,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     public function withLinguisticRequest(LinguisticRequestIn $linguisticRequest): CreateRequests
     {
         $new = clone $this;
-        $new->linguisticRequest = $linguisticRequest;
+        $new->linguisticRequest[] = $linguisticRequest;
 
         return $new;
     }
