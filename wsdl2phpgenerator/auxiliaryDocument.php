@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class auxiliaryDocument extends dgtDocument
 {
@@ -32,7 +32,7 @@ class auxiliaryDocument extends dgtDocument
 
     /**
      * @param languageCode $language
-     * @return \OpenEuropa\ePoetry\Type\auxiliaryDocument
+     * @return \OpenEuropa\EPoetry\Type\auxiliaryDocument
      */
     public function setLanguage($language)
     {

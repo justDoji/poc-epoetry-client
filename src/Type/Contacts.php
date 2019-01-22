@@ -1,48 +1,34 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
 class Contacts implements RequestInterface, ResultInterface
 {
-
     /**
-     * @var \OpenEuropa\ePoetry\Type\contactPerson
+     * @var array \OpenEuropa\EPoetry\Type\ContactPerson
      */
     private $contact;
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\contactPerson $contact
+     * @return array \OpenEuropa\EPoetry\Type\ContactPerson
      */
-    public function __construct($contact)
-    {
-        $this->contact = $contact;
-    }
-
-    /**
-     * @return \OpenEuropa\ePoetry\Type\contactPerson
-     */
-    public function getContact()
+    public function getContact(): array
     {
         return $this->contact;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contactPerson $contact
+     * @param \OpenEuropa\EPoetry\Type\ContactPerson $contact
      * @return Contacts
      */
-    public function withContact($contact)
+    public function withContact(ContactPerson $contact): Contacts
     {
         $new = clone $this;
-        $new->contact = $contact;
+        $new->contact[] = $contact;
 
         return $new;
     }
-
-
 }
-

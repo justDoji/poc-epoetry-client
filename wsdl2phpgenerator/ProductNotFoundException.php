@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class ProductNotFoundException
 {
@@ -31,7 +31,7 @@ class ProductNotFoundException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\ProductNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\ProductNotFoundException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class ProductNotFoundException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\ProductNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\ProductNotFoundException
      */
     public function setUid($uid)
     {

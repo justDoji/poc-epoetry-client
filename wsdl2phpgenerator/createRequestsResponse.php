@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -29,7 +29,7 @@ class createRequestsResponse implements RequestInterface, ResultInterface
 
     /**
      * @param linguisticRequest[] $return
-     * @return \OpenEuropa\ePoetry\Type\createRequestsResponse
+     * @return \OpenEuropa\EPoetry\Type\createRequestsResponse
      */
     public function setReturn(array $return = null)
     {

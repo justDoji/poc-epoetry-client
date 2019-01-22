@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -29,7 +29,8 @@ class ContactPerson implements RequestInterface, ResultInterface
     private $userId;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\contactRole
+     * @var string
+     *
      */
     private $roleCode;
 
@@ -40,9 +41,10 @@ class ContactPerson implements RequestInterface, ResultInterface
      * @var string $lastName
      * @var string $email
      * @var string $userId
-     * @var \OpenEuropa\ePoetry\Type\contactRole $roleCode
+     * @var string $roleCode
+     *   A ContactRole code.
      */
-    public function __construct($firstName, $lastName, $email, $userId, $roleCode)
+    public function __construct(string $firstName, string $lastName, string $email, string $userId, string $roleCode)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -54,7 +56,7 @@ class ContactPerson implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
@@ -63,7 +65,7 @@ class ContactPerson implements RequestInterface, ResultInterface
      * @param string $firstName
      * @return ContactPerson
      */
-    public function withFirstName($firstName)
+    public function withFirstName(string $firstName): ContactPerson
     {
         $new = clone $this;
         $new->firstName = $firstName;
@@ -74,7 +76,7 @@ class ContactPerson implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
@@ -83,7 +85,7 @@ class ContactPerson implements RequestInterface, ResultInterface
      * @param string $lastName
      * @return ContactPerson
      */
-    public function withLastName($lastName)
+    public function withLastName(string $lastName): ContactPerson
     {
         $new = clone $this;
         $new->lastName = $lastName;
@@ -94,7 +96,7 @@ class ContactPerson implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -103,7 +105,7 @@ class ContactPerson implements RequestInterface, ResultInterface
      * @param string $email
      * @return ContactPerson
      */
-    public function withEmail($email)
+    public function withEmail(string $email): ContactPerson
     {
         $new = clone $this;
         $new->email = $email;
@@ -114,7 +116,7 @@ class ContactPerson implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getUserId()
+    public function getUserId(): string
     {
         return $this->userId;
     }
@@ -123,7 +125,7 @@ class ContactPerson implements RequestInterface, ResultInterface
      * @param string $userId
      * @return ContactPerson
      */
-    public function withUserId($userId)
+    public function withUserId(string $userId): ContactPerson
     {
         $new = clone $this;
         $new->userId = $userId;
@@ -132,25 +134,22 @@ class ContactPerson implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\contactRole
+     * @return string
      */
-    public function getRoleCode()
+    public function getRoleCode(): string
     {
         return $this->roleCode;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contactRole $roleCode
+     * @param string $roleCode
      * @return ContactPerson
      */
-    public function withRoleCode($roleCode)
+    public function withRoleCode(string $roleCode): ContactPerson
     {
         $new = clone $this;
         $new->roleCode = $roleCode;
 
         return $new;
     }
-
-
 }
-

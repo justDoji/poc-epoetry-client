@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class contactPersonIn
 {
@@ -35,7 +35,7 @@ class contactPersonIn
 
     /**
      * @param string $userId
-     * @return \OpenEuropa\ePoetry\Type\contactPersonIn
+     * @return \OpenEuropa\EPoetry\Type\contactPersonIn
      */
     public function setUserId($userId)
     {
@@ -53,7 +53,7 @@ class contactPersonIn
 
     /**
      * @param contactRole $roleCode
-     * @return \OpenEuropa\ePoetry\Type\contactPersonIn
+     * @return \OpenEuropa\EPoetry\Type\contactPersonIn
      */
     public function setRoleCode($roleCode)
     {

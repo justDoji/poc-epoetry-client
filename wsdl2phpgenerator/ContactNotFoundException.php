@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class ContactNotFoundException
 {
@@ -31,7 +31,7 @@ class ContactNotFoundException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\ContactNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\ContactNotFoundException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class ContactNotFoundException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\ContactNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\ContactNotFoundException
      */
     public function setUid($uid)
     {

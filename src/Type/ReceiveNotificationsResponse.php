@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,27 @@ class ReceiveNotificationsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\dgtNotification
+     * @var array \OpenEuropa\EPoetry\Type\DgtNotification
      */
-    private $return;
+    private $return = [];
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\dgtNotification $return
+     * @return array \OpenEuropa\EPoetry\Type\DgtNotification
      */
-    public function __construct($return)
-    {
-        $this->return = $return;
-    }
-
-    /**
-     * @return \OpenEuropa\ePoetry\Type\dgtNotification
-     */
-    public function getReturn()
+    public function getReturn(): array
     {
         return $this->return;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\dgtNotification $return
+     * @param \OpenEuropa\EPoetry\Type\DgtNotification $return
      * @return ReceiveNotificationsResponse
      */
-    public function withReturn($return)
+    public function withReturn(DgtNotification $return): ReceiveNotificationsResponse
     {
         $new = clone $this;
-        $new->return = $return;
+        $new->return[] = $return;
 
         return $new;
     }
-
-
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class requestGeneralInfo
 {
@@ -107,7 +107,7 @@ class requestGeneralInfo
 
     /**
      * @param string $title
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setTitle($title)
     {
@@ -125,7 +125,7 @@ class requestGeneralInfo
 
     /**
      * @param string $internalReference
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setInternalReference($internalReference)
     {
@@ -143,7 +143,7 @@ class requestGeneralInfo
 
     /**
      * @param string $internalTechnicalId
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setInternalTechnicalId($internalTechnicalId)
     {
@@ -169,7 +169,7 @@ class requestGeneralInfo
 
     /**
      * @param \DateTime $requestedDeadline
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setRequestedDeadline(\DateTime $requestedDeadline = null)
     {
@@ -191,7 +191,7 @@ class requestGeneralInfo
 
     /**
      * @param boolean $sensitive
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setSensitive($sensitive)
     {
@@ -209,7 +209,7 @@ class requestGeneralInfo
 
     /**
      * @param boolean $documentToBeAdopted
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setDocumentToBeAdopted($documentToBeAdopted)
     {
@@ -227,7 +227,7 @@ class requestGeneralInfo
 
     /**
      * @param string $decideReference
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setDecideReference($decideReference)
     {
@@ -245,7 +245,7 @@ class requestGeneralInfo
 
     /**
      * @param boolean $sentViaRUE
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setSentViaRUE($sentViaRUE)
     {
@@ -263,7 +263,7 @@ class requestGeneralInfo
 
     /**
      * @param destination $destinationCode
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setDestinationCode($destinationCode)
     {
@@ -281,7 +281,7 @@ class requestGeneralInfo
 
     /**
      * @param slaAnnex $slaAnnex
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setSlaAnnex($slaAnnex)
     {
@@ -299,7 +299,7 @@ class requestGeneralInfo
 
     /**
      * @param string $slaCommitment
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setSlaCommitment($slaCommitment)
     {
@@ -317,7 +317,7 @@ class requestGeneralInfo
 
     /**
      * @param string $comment
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setComment($comment)
     {
@@ -335,7 +335,7 @@ class requestGeneralInfo
 
     /**
      * @param string $onBehalfOf
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setOnBehalfOf($onBehalfOf)
     {
@@ -353,7 +353,7 @@ class requestGeneralInfo
 
     /**
      * @param accessLevel $accessibleTo
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setAccessibleTo($accessibleTo)
     {
@@ -371,7 +371,7 @@ class requestGeneralInfo
 
     /**
      * @param string $requestingService
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setRequestingService($requestingService)
     {
@@ -389,7 +389,7 @@ class requestGeneralInfo
 
     /**
      * @param string $serviceOfOrigin
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfo
      */
     public function setServiceOfOrigin($serviceOfOrigin)
     {

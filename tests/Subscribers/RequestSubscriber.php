@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Tests\Subscribers;
+namespace OpenEuropa\EPoetry\Tests\Subscribers;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Phpro\SoapClient\Events;

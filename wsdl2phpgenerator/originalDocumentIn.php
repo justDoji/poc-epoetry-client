@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class originalDocumentIn extends dgtDocumentIn
 {
@@ -38,7 +38,7 @@ class originalDocumentIn extends dgtDocumentIn
 
     /**
      * @param linguisticSections $linguisticSections
-     * @return \OpenEuropa\ePoetry\Type\originalDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\originalDocumentIn
      */
     public function setLinguisticSections($linguisticSections)
     {
@@ -56,7 +56,7 @@ class originalDocumentIn extends dgtDocumentIn
 
     /**
      * @param boolean $trackChanges
-     * @return \OpenEuropa\ePoetry\Type\originalDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\originalDocumentIn
      */
     public function setTrackChanges($trackChanges)
     {

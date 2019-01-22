@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class CreateRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @var array \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    private $linguisticRequest;
+    private $linguisticRequest = [];
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
     private $relatedRequest;
 
@@ -26,50 +26,48 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn $relatedRequest
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn $relatedRequest
      * @var string $templateName
      */
-    public function __construct($linguisticRequest, $relatedRequest, $templateName)
+    public function __construct(RequestReferenceIn $relatedRequest, string $templateName)
     {
-        $this->linguisticRequest = $linguisticRequest;
         $this->relatedRequest = $relatedRequest;
         $this->templateName = $templateName;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return array \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    public function getLinguisticRequest()
+    public function getLinguisticRequest(): array
     {
         return $this->linguisticRequest;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @param \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
      * @return CreateRequests
      */
-    public function withLinguisticRequest($linguisticRequest)
+    public function withLinguisticRequest(LinguisticRequestIn $linguisticRequest): CreateRequests
     {
         $new = clone $this;
-        $new->linguisticRequest = $linguisticRequest;
+        $new->linguisticRequest[] = $linguisticRequest;
 
         return $new;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
-    public function getRelatedRequest()
+    public function getRelatedRequest(): RequestReferenceIn
     {
         return $this->relatedRequest;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReferenceIn $relatedRequest
+     * @param \OpenEuropa\EPoetry\Type\RequestReferenceIn $relatedRequest
      * @return CreateRequests
      */
-    public function withRelatedRequest($relatedRequest)
+    public function withRelatedRequest(RequestReferenceIn $relatedRequest): CreateRequests
     {
         $new = clone $this;
         $new->relatedRequest = $relatedRequest;
@@ -80,7 +78,7 @@ class CreateRequests implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->templateName;
     }
@@ -89,14 +87,11 @@ class CreateRequests implements RequestInterface, ResultInterface
      * @param string $templateName
      * @return CreateRequests
      */
-    public function withTemplateName($templateName)
+    public function withTemplateName(string $templateName): CreateRequests
     {
         $new = clone $this;
         $new->templateName = $templateName;
 
         return $new;
     }
-
-
 }
-

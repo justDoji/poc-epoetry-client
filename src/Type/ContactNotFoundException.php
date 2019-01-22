@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -24,7 +24,7 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
      * @var string $message
      * @var string $uid
      */
-    public function __construct($message, $uid)
+    public function __construct(string $message, string $uid)
     {
         $this->message = $message;
         $this->uid = $uid;
@@ -33,7 +33,7 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -42,7 +42,7 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
      * @param string $message
      * @return ContactNotFoundException
      */
-    public function withMessage($message)
+    public function withMessage(string $message): ContactNotFoundException
     {
         $new = clone $this;
         $new->message = $message;
@@ -53,7 +53,7 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getUid()
+    public function getUid(): string
     {
         return $this->uid;
     }
@@ -62,14 +62,11 @@ class ContactNotFoundException implements RequestInterface, ResultInterface
      * @param string $uid
      * @return ContactNotFoundException
      */
-    public function withUid($uid)
+    public function withUid(string $uid): ContactNotFoundException
     {
         $new = clone $this;
         $new->uid = $uid;
 
         return $new;
     }
-
-
 }
-

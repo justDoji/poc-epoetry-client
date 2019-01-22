@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class requestGeneralInfoIn
 {
@@ -97,7 +97,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $title
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setTitle($title)
     {
@@ -115,7 +115,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $internalReference
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setInternalReference($internalReference)
     {
@@ -133,7 +133,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $internalTechnicalId
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setInternalTechnicalId($internalTechnicalId)
     {
@@ -159,7 +159,7 @@ class requestGeneralInfoIn
 
     /**
      * @param \DateTime $requestedDeadline
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setRequestedDeadline(\DateTime $requestedDeadline = null)
     {
@@ -181,7 +181,7 @@ class requestGeneralInfoIn
 
     /**
      * @param boolean $sensitive
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setSensitive($sensitive)
     {
@@ -199,7 +199,7 @@ class requestGeneralInfoIn
 
     /**
      * @param boolean $documentToBeAdopted
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setDocumentToBeAdopted($documentToBeAdopted)
     {
@@ -217,7 +217,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $decideReference
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setDecideReference($decideReference)
     {
@@ -235,7 +235,7 @@ class requestGeneralInfoIn
 
     /**
      * @param boolean $sentViaRUE
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setSentViaRUE($sentViaRUE)
     {
@@ -253,7 +253,7 @@ class requestGeneralInfoIn
 
     /**
      * @param destination $destinationCode
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setDestinationCode($destinationCode)
     {
@@ -271,7 +271,7 @@ class requestGeneralInfoIn
 
     /**
      * @param slaAnnex $slaAnnex
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setSlaAnnex($slaAnnex)
     {
@@ -289,7 +289,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $slaCommitment
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setSlaCommitment($slaCommitment)
     {
@@ -307,7 +307,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $comment
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setComment($comment)
     {
@@ -325,7 +325,7 @@ class requestGeneralInfoIn
 
     /**
      * @param string $onBehalfOf
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setOnBehalfOf($onBehalfOf)
     {
@@ -343,7 +343,7 @@ class requestGeneralInfoIn
 
     /**
      * @param accessLevel $accessibleTo
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\requestGeneralInfoIn
      */
     public function setAccessibleTo($accessibleTo)
     {

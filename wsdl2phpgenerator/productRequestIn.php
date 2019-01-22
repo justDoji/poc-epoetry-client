@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class productRequestIn
 {
@@ -47,7 +47,7 @@ class productRequestIn
 
     /**
      * @param languageIn $language
-     * @return \OpenEuropa\ePoetry\Type\productRequestIn
+     * @return \OpenEuropa\EPoetry\Type\productRequestIn
      */
     public function setLanguage($language)
     {
@@ -73,7 +73,7 @@ class productRequestIn
 
     /**
      * @param \DateTime $requestedDeadline
-     * @return \OpenEuropa\ePoetry\Type\productRequestIn
+     * @return \OpenEuropa\EPoetry\Type\productRequestIn
      */
     public function setRequestedDeadline(\DateTime $requestedDeadline)
     {
@@ -91,7 +91,7 @@ class productRequestIn
 
     /**
      * @param string $internalProductReference
-     * @return \OpenEuropa\ePoetry\Type\productRequestIn
+     * @return \OpenEuropa\EPoetry\Type\productRequestIn
      */
     public function setInternalProductReference($internalProductReference)
     {
@@ -109,7 +109,7 @@ class productRequestIn
 
     /**
      * @param boolean $trackChanges
-     * @return \OpenEuropa\ePoetry\Type\productRequestIn
+     * @return \OpenEuropa\EPoetry\Type\productRequestIn
      */
     public function setTrackChanges($trackChanges)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class TemplateNotFoundException
 {
@@ -31,7 +31,7 @@ class TemplateNotFoundException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\TemplateNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\TemplateNotFoundException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class TemplateNotFoundException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\TemplateNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\TemplateNotFoundException
      */
     public function setUid($uid)
     {

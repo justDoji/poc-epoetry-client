@@ -1,25 +1,28 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Tests\Requests;
+namespace OpenEuropa\EPoetry\Tests\Requests;
 
-use OpenEuropa\ePoetry\ePoetryClient;
-use OpenEuropa\ePoetry\Tests\AbstractTest;
-use OpenEuropa\ePoetry\Type\AuxiliaryDocument;
-use OpenEuropa\ePoetry\Type\AuxiliaryDocuments;
-use OpenEuropa\ePoetry\Type\ContactPerson;
-use OpenEuropa\ePoetry\Type\Contacts;
-use OpenEuropa\ePoetry\Type\CreateRequests;
-use OpenEuropa\ePoetry\Type\Language;
-use OpenEuropa\ePoetry\Type\LinguisticRequestIn;
-use OpenEuropa\ePoetry\Type\LinguisticSection;
-use OpenEuropa\ePoetry\Type\LinguisticSections;
-use OpenEuropa\ePoetry\Type\OriginalDocumentIn;
-use OpenEuropa\ePoetry\Type\ProductRequest;
-use OpenEuropa\ePoetry\Type\ProductRequests;
-use OpenEuropa\ePoetry\Type\RequestGeneralInfo;
-use OpenEuropa\ePoetry\Type\RequestReference;
-use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Response;
+use OpenEuropa\EPoetry\EPoetryClient;
+use OpenEuropa\EPoetry\Tests\AbstractTest;
+use OpenEuropa\EPoetry\Type\AuxiliaryDocumentIn;
+use OpenEuropa\EPoetry\Type\AuxiliaryDocuments;
+use OpenEuropa\EPoetry\Type\ContactPersonIn;
+use OpenEuropa\EPoetry\Type\Contacts;
+use OpenEuropa\EPoetry\Type\CreateRequests;
+use OpenEuropa\EPoetry\Type\Enumeration\ContactRole;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentType;
+use OpenEuropa\EPoetry\Type\Language;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentFormat;
+use OpenEuropa\EPoetry\Type\Enumeration\DocumentType as DocumentTypeEnum;
+use OpenEuropa\EPoetry\Type\Enumeration\LanguageCode;
+use OpenEuropa\EPoetry\Type\LinguisticRequestIn;
+use OpenEuropa\EPoetry\Type\OriginalDocumentIn;
+use OpenEuropa\EPoetry\Type\ProductRequestIn;
+use OpenEuropa\EPoetry\Type\ProductRequests;
+use OpenEuropa\EPoetry\Type\RequestGeneralInfoIn;
+use OpenEuropa\EPoetry\Type\RequestReferenceIn;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class RequestTest
@@ -28,25 +31,14 @@ use GuzzleHttp\Psr7\Response;
  */
 class RequestTest extends AbstractTest
 {
-    public function testTest() {
+    public function testRequest() {
 
-        $this->assertInstanceOf(ePoetryClient::class, $this->client, 'Wrong Client object received.');
-
-        // Generate Reference.
-        $year = 2018;
-        $number = 1;
-        $part = 0;
-        $version = 0;
-        $id = 1;
-        $internalReference = '1';
-        $internalTechnicalId = '1';
-        $productType = 'TRA';
-        $requesterCode = 'WEB';
-        $reference = new RequestReference($year, $number, $part, $version, $id, $internalReference, $internalTechnicalId, $productType, $requesterCode);
-        $this->assertEquals($reference->getYear(), 2018);
+        $this->assertInstanceOf(EPoetryClient::class, $this->client, 'Wrong Client object received.');
 
         // Generate General Info.
         $title = 'Test';
+        $internalReference = '1';
+        $internalTechnicalId = '1';
         $requestedDeadline = new \DateTime('2020-02-02');
         $sensitive = false;
         $documentToBeAdopted = true;
@@ -61,58 +53,48 @@ class RequestTest extends AbstractTest
         $onBehalfOf = '';
         // @todo get value from lib.
         $accessibleTo = NULL;
-        $requestingService = '';
-        $serviceOfOrigin = '';
-        $generalInfo = new RequestGeneralInfo($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo, $requestingService, $serviceOfOrigin);
-        $this->assertEquals($generalInfo->getTitle(), 'Test');
+        $generalInfo = new RequestGeneralInfoIn($title, $internalReference, $internalTechnicalId, $requestedDeadline, $sensitive, $documentToBeAdopted, $decideReference, $sentViaRUE, $destinationCode, $slaAnnex, $slaCommitment, $comment, $onBehalfOf, $accessibleTo);
+        $this->assertEquals($generalInfo->getTitle(), $title);
 
         // Generate Contacts.
-        $firstName = 'Eunice';
-        $lastName = 'Tomas';
-        $email = 'email@example.com';
-        $userId = '1';
-        $roleCode = NULL;
-        $contact = new ContactPerson($firstName, $lastName, $email, $userId, $roleCode);
-        $contacts = new Contacts($contact);
-        $this->assertEquals($contacts->getContact()->getEmail(), 'email@example.com');
+        $contacts = new Contacts();
+        $contacts = $contacts->withContact(new ContactPersonIn('1', ContactRole::AUTHOR));
+        $contacts = $contacts->withContact(new ContactPersonIn('2', ContactRole::EDITOR));
+        $this->assertEquals($contacts->getContact()[0]->getUserId(), '1');
 
         // Generate Original Document
-        $language = new Language('fr');
-        $linguisticSection = new LinguisticSection($language);
-        $linguisticSections = new LinguisticSections($linguisticSection);
+        $file = 'dGVzdA==';
         $trackChanges = false;
-        $originalDocument = new OriginalDocumentIn('dGVzdA==', 'string', 'TXT', 'ORI', $trackChanges);
-        $this->assertEquals($originalDocument->getTrackChanges(), false);
+        $originalDocument = new OriginalDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'ari.doc', $trackChanges);
+        $this->assertEquals($originalDocument->isTrackChanges(), false);
 
         // Generate Product Requests.
+        $language = new Language(LanguageCode::FR);
         $requestedDeadline = new \DateTime('2020-02-02');
-        $acceptedDeadline = new \DateTime('2020-02-02');
-        $formatCode = '';
-        $statusCode = '';
         $trackChanges = false;
         $internalProductReference = '1';
-        $productRequest = new ProductRequest($language, $requestedDeadline, $acceptedDeadline, $formatCode, $statusCode, $trackChanges, $internalProductReference);
-        $productRequests = new ProductRequests($productRequest);
-        $this->assertEquals($productRequests->getProductRequest()->getLanguage()->getCode(), 'fr');
+        $productRequest = new ProductRequestIn($language, $requestedDeadline, $internalProductReference, $trackChanges);
+        $productRequests = new ProductRequests();
+        $productRequests = $productRequests->withProductRequest($productRequest);
+        $this->assertContains($productRequests->getProductRequest()[0]->getLanguage()->getCode(), LanguageCode::FR);
 
         // Generate Auxiliary Documents.
-        // @todo get value from lib.
-        // $languageCode = 'FR';
-        // @todo fix AuxiliaryDocuments by using AuxiliaryDocumentIn extending DgtDocument.
-        // $auxiliaryDocument = new AuxiliaryDocument($languageCode);
-        // $auxiliaryDocuments = new AuxiliaryDocuments($auxiliaryDocument);
-        // $this->assertEquals($auxiliaryDocuments->getAuxiliaryDocument()->getLanguage(), 'FR');
-        $auxiliaryDocuments = NULL;
+        $file = 'dGVzdA==';
+        $AuxiliaryDocument = new AuxiliaryDocumentIn($file, DocumentFormat::DOC, DocumentTypeEnum::ORI, 'aux.doc', LanguageCode::FR);
+        $this->assertEquals($AuxiliaryDocument->getLanguage(), LanguageCode::FR);
+        $AuxiliaryDocuments = new AuxiliaryDocuments();
+        $AuxiliaryDocuments = $AuxiliaryDocuments->withAuxiliaryDocument($AuxiliaryDocument);
 
         // Generate Linguistic Request.
-        $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $auxiliaryDocuments);
-        // @todo $this->assertInstanceOf();
+        $linguisticRequest = new LinguisticRequestIn($generalInfo, $contacts, $originalDocument, $productRequests, $AuxiliaryDocuments);
 
         // Define missing arguments for Request.
-        $relatedRequest = NULL;
+        $relatedRequest = new RequestReferenceIn(123, 'ref123');
         $templateName = 'WEB';
 
-        $parameters = new CreateRequests($linguisticRequest, $relatedRequest, $templateName);
+        // All arguments are ready, create the request.
+        $createRequest = new CreateRequests($relatedRequest, $templateName);
+        $createRequest = $createRequest->withLinguisticRequest($linguisticRequest);
 
         // Mock response.
         $response = $this->createMock(ResponseInterface::class);
@@ -122,20 +104,20 @@ class RequestTest extends AbstractTest
         $this->mockClient->addResponse($response);
 
         // Make request.
-        $response = $this->client->createRequests($parameters);
+        $response = $this->client->createRequests($createRequest);
 
         // Test request.
         $debug = $this->client->debugLastSoapRequest();
         $request = $debug['request'];
         $this->assertContains('ecas:ProxyTicket: DESKTOP_PT-21-9fp9', $request['headers'], 'Request XML header malformed, missing ticket.');
-        $this->assertContains('<title>Test</title>', $request['body'], 'Request XML body malformed, missing title.');
+        $this->assertContains("<title>$title</title>", $request['body'], 'Request XML body malformed, missing title.');
+        $this->assertContains('<contact userId="1" roleCode="AUTHOR"/>', $request['body'], 'Request XML body malformed, missing contact.');
 
         // Test response.
-        /** @var \OpenEuropa\ePoetry\Type\LinguisticRequest $return */
+        /** @var \OpenEuropa\EPoetry\Type\LinguisticRequest $return */
         $return = current($response->getReturn());
         $this->assertEquals($return->getStatusCode(), 'ENV', 'Response error, wrong status.');
         $this->assertEquals($return->getGeneralInfo()->getTitle(), 'Title of the Document', 'Response error, wrong title.');
 
     }
-
 }

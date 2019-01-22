@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class DgtDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentFormat
+     * @var string
      */
     private $format;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\documentType
+     * @var \OpenEuropa\EPoetry\Type\documentType
      */
     private $type;
 
@@ -26,11 +26,12 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\documentFormat $format
-     * @var \OpenEuropa\ePoetry\Type\documentType $type
+     * @var string $format
+     *   A DocumentFormat code.
+     * @var \OpenEuropa\EPoetry\Type\documentType $type
      * @var string $name
      */
-    public function __construct($format, $type, $name)
+    public function __construct(string $format, documentType $type, string $name)
     {
         $this->format = $format;
         $this->type = $type;
@@ -38,18 +39,18 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentFormat
+     * @return string
      */
-    public function getFormat()
+    public function getFormat(): string
     {
         return $this->format;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentFormat $format
+     * @param string $format
      * @return DgtDocument
      */
-    public function withFormat($format)
+    public function withFormat(string $format): DgtDocument
     {
         $new = clone $this;
         $new->format = $format;
@@ -58,18 +59,18 @@ class DgtDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\documentType
+     * @return \OpenEuropa\EPoetry\Type\documentType
      */
-    public function getType()
+    public function getType(): documentType
     {
         return $this->type;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\documentType $type
+     * @param \OpenEuropa\EPoetry\Type\documentType $type
      * @return DgtDocument
      */
-    public function withType($type)
+    public function withType(documentType $type): DgtDocument
     {
         $new = clone $this;
         $new->type = $type;
@@ -80,7 +81,7 @@ class DgtDocument implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -89,14 +90,11 @@ class DgtDocument implements RequestInterface, ResultInterface
      * @param string $name
      * @return DgtDocument
      */
-    public function withName($name)
+    public function withName(string $name): DgtDocument
     {
         $new = clone $this;
         $new->name = $name;
 
         return $new;
     }
-
-
 }
-

@@ -1,48 +1,45 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class LanguageIn implements RequestInterface, ResultInterface
+class LanguageIn implements LanguageInterface, RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\languageCode
+     * @var string
      */
     private $code;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\languageCode $code
+     * @var string $code
      */
-    public function __construct($code)
+    public function __construct(string $code)
     {
         $this->code = $code;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\languageCode
+     * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\languageCode $code
-     * @return LanguageIn
+     * @param string $code
+     * @return LanguageInterface
      */
-    public function withCode($code)
+    public function withCode(string $code): LanguageInterface
     {
         $new = clone $this;
         $new->code = $code;
 
         return $new;
     }
-
-
 }
-

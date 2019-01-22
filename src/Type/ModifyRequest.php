@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class ModifyRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
     private $requestReference;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
     private $linguisticRequest;
 
@@ -26,11 +26,11 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\requestReferenceIn $requestReference
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\RequestReferenceIn $requestReference
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
      * @var string $templateName
      */
-    public function __construct($requestReference, $linguisticRequest, $templateName)
+    public function __construct(RequestReferenceIn $requestReference, LinguisticRequestIn $linguisticRequest, string $templateName)
     {
         $this->requestReference = $requestReference;
         $this->linguisticRequest = $linguisticRequest;
@@ -38,18 +38,18 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\RequestReferenceIn
      */
-    public function getRequestReference()
+    public function getRequestReference(): RequestReferenceIn
     {
         return $this->requestReference;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReferenceIn $requestReference
+     * @param \OpenEuropa\EPoetry\Type\RequestReferenceIn $requestReference
      * @return ModifyRequest
      */
-    public function withRequestReference($requestReference)
+    public function withRequestReference(RequestReferenceIn $requestReference): ModifyRequest
     {
         $new = clone $this;
         $new->requestReference = $requestReference;
@@ -58,18 +58,18 @@ class ModifyRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequestIn
+     * @return \OpenEuropa\EPoetry\Type\LinguisticRequestIn
      */
-    public function getLinguisticRequest()
+    public function getLinguisticRequest(): LinguisticRequestIn
     {
         return $this->linguisticRequest;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequestIn $linguisticRequest
+     * @param \OpenEuropa\EPoetry\Type\LinguisticRequestIn $linguisticRequest
      * @return ModifyRequest
      */
-    public function withLinguisticRequest($linguisticRequest)
+    public function withLinguisticRequest(LinguisticRequestIn $linguisticRequest): ModifyRequest
     {
         $new = clone $this;
         $new->linguisticRequest = $linguisticRequest;
@@ -80,7 +80,7 @@ class ModifyRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->templateName;
     }
@@ -89,14 +89,11 @@ class ModifyRequest implements RequestInterface, ResultInterface
      * @param string $templateName
      * @return ModifyRequest
      */
-    public function withTemplateName($templateName)
+    public function withTemplateName(string $templateName): ModifyRequest
     {
         $new = clone $this;
         $new->templateName = $templateName;
 
         return $new;
     }
-
-
 }
-

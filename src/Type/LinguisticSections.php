@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,27 @@ class LinguisticSections implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticSection
+     * @var array \OpenEuropa\EPoetry\Type\LinguisticSection
      */
     private $linguisticSection;
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\linguisticSection $linguisticSection
+     * @return array \OpenEuropa\EPoetry\Type\LinguisticSection
      */
-    public function __construct($linguisticSection)
-    {
-        $this->linguisticSection = $linguisticSection;
-    }
-
-    /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticSection
-     */
-    public function getLinguisticSection()
+    public function getLinguisticSection(): array
     {
         return $this->linguisticSection;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticSection $linguisticSection
+     * @param \OpenEuropa\EPoetry\Type\LinguisticSection $linguisticSection
      * @return LinguisticSections
      */
-    public function withLinguisticSection($linguisticSection)
+    public function withLinguisticSection(LinguisticSection $linguisticSection): LinguisticSections
     {
         $new = clone $this;
-        $new->linguisticSection = $linguisticSection;
+        $new->linguisticSection[] = $linguisticSection;
 
         return $new;
     }
-
-
 }
-

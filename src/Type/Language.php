@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class Language implements RequestInterface, ResultInterface
+class Language implements LanguageInterface, RequestInterface, ResultInterface
 {
 
     /**
@@ -18,7 +18,7 @@ class Language implements RequestInterface, ResultInterface
      *
      * @var string $code
      */
-    public function __construct($code)
+    public function __construct(string $code)
     {
         $this->code = $code;
     }
@@ -26,7 +26,7 @@ class Language implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -35,14 +35,11 @@ class Language implements RequestInterface, ResultInterface
      * @param string $code
      * @return Language
      */
-    public function withCode($code)
+    public function withCode(string $code): LanguageInterface
     {
         $new = clone $this;
         $new->code = $code;
 
         return $new;
     }
-
-
 }
-

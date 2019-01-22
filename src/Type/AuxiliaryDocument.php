@@ -1,48 +1,45 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class AuxiliaryDocument implements RequestInterface, ResultInterface
+class AuxiliaryDocument extends DgtDocument implements AuxiliaryDocumentInterface, RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\languageCode
+     * @var string
      */
     private $language;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\languageCode $language
+     * @param string $language
      */
-    public function __construct($language)
+    public function __construct(string $language)
     {
         $this->language = $language;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\languageCode
+     * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\languageCode $language
-     * @return AuxiliaryDocument
+     * @param string $language
+     * @return AuxiliaryDocumentInterface
      */
-    public function withLanguage($language)
+    public function withLanguage(string $language): AuxiliaryDocumentInterface
     {
         $new = clone $this;
         $new->language = $language;
 
         return $new;
     }
-
-
 }
-

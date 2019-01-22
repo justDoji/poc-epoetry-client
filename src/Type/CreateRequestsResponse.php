@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,27 @@ class CreateRequestsResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @var array \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
-    private $return;
+    private $return = [];
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @return array \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
-    public function __construct($return)
-    {
-        $this->return = $return;
-    }
-
-    /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
-     */
-    public function getReturn()
+    public function getReturn(): array
     {
         return $this->return;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @param \OpenEuropa\EPoetry\Type\LinguisticRequest $return
      * @return CreateRequestsResponse
      */
-    public function withReturn($return)
+    public function withReturn(LinguisticRequest $return): CreateRequestsResponse
     {
         $new = clone $this;
-        $new->return = $return;
+        $new->return[] = $return;
 
         return $new;
     }
-
-
 }
-

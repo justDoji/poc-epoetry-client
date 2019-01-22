@@ -1,15 +1,15 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class OriginalDocument implements RequestInterface, ResultInterface
+class OriginalDocument extends DgtDocument implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections
      */
     private $linguisticSections;
 
@@ -26,11 +26,11 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
+     * @var \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @var bool $trackChanges
      * @var float $pages
      */
-    public function __construct($linguisticSections, $trackChanges, $pages)
+    public function __construct(LinguisticSections $linguisticSections, bool $trackChanges, float $pages)
     {
         $this->linguisticSections = $linguisticSections;
         $this->trackChanges = $trackChanges;
@@ -38,18 +38,18 @@ class OriginalDocument implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticSections
+     * @return \OpenEuropa\EPoetry\Type\LinguisticSections
      */
-    public function getLinguisticSections()
+    public function getLinguisticSections(): LinguisticSections
     {
         return $this->linguisticSections;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticSections $linguisticSections
+     * @param \OpenEuropa\EPoetry\Type\LinguisticSections $linguisticSections
      * @return OriginalDocument
      */
-    public function withLinguisticSections($linguisticSections)
+    public function withLinguisticSections(LinguisticSections $linguisticSections): OriginalDocument
     {
         $new = clone $this;
         $new->linguisticSections = $linguisticSections;
@@ -60,7 +60,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return bool
      */
-    public function getTrackChanges()
+    public function isTrackChanges(): bool
     {
         return $this->trackChanges;
     }
@@ -69,7 +69,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @param bool $trackChanges
      * @return OriginalDocument
      */
-    public function withTrackChanges($trackChanges)
+    public function withTrackChanges(bool $trackChanges): OriginalDocument
     {
         $new = clone $this;
         $new->trackChanges = $trackChanges;
@@ -80,7 +80,7 @@ class OriginalDocument implements RequestInterface, ResultInterface
     /**
      * @return float
      */
-    public function getPages()
+    public function getPages(): float
     {
         return $this->pages;
     }
@@ -89,14 +89,11 @@ class OriginalDocument implements RequestInterface, ResultInterface
      * @param float $pages
      * @return OriginalDocument
      */
-    public function withPages($pages)
+    public function withPages(float $pages): OriginalDocument
     {
         $new = clone $this;
         $new->pages = $pages;
 
         return $new;
     }
-
-
 }
-

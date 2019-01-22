@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class PermissionDeniedException
 {
@@ -31,7 +31,7 @@ class PermissionDeniedException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\PermissionDeniedException
+     * @return \OpenEuropa\EPoetry\Type\PermissionDeniedException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class PermissionDeniedException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\PermissionDeniedException
+     * @return \OpenEuropa\EPoetry\Type\PermissionDeniedException
      */
     public function setUid($uid)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class destination
 {
@@ -10,7 +10,7 @@ class destination
     const IE = 'IE';
     const INTERNE = 'INTERNE';
     const JO = 'JO';
-    const aPUBLIC = 'PUBLIC';
+    const PUBLIC = 'PUBLIC';
 
 
 }

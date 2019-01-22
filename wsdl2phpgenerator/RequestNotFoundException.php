@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class RequestNotFoundException
 {
@@ -31,7 +31,7 @@ class RequestNotFoundException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\RequestNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\RequestNotFoundException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class RequestNotFoundException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\RequestNotFoundException
+     * @return \OpenEuropa\EPoetry\Type\RequestNotFoundException
      */
     public function setUid($uid)
     {

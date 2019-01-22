@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class MissingOrInvalidParameterException
 {
@@ -31,7 +31,7 @@ class MissingOrInvalidParameterException
 
     /**
      * @param string $message
-     * @return \OpenEuropa\ePoetry\Type\MissingOrInvalidParameterException
+     * @return \OpenEuropa\EPoetry\Type\MissingOrInvalidParameterException
      */
     public function setMessage($message)
     {
@@ -49,7 +49,7 @@ class MissingOrInvalidParameterException
 
     /**
      * @param string $uid
-     * @return \OpenEuropa\ePoetry\Type\MissingOrInvalidParameterException
+     * @return \OpenEuropa\EPoetry\Type\MissingOrInvalidParameterException
      */
     public function setUid($uid)
     {

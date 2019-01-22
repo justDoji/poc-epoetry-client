@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -24,7 +24,7 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
      * @var int $id
      * @var string $internalTechnicalId
      */
-    public function __construct($id, $internalTechnicalId)
+    public function __construct(int $id, string $internalTechnicalId)
     {
         $this->id = $id;
         $this->internalTechnicalId = $internalTechnicalId;
@@ -33,7 +33,7 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -42,7 +42,7 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
      * @param int $id
      * @return RequestReferenceIn
      */
-    public function withId($id)
+    public function withId(int $id): RequestReferenceIn
     {
         $new = clone $this;
         $new->id = $id;
@@ -53,7 +53,7 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getInternalTechnicalId()
+    public function getInternalTechnicalId(): string
     {
         return $this->internalTechnicalId;
     }
@@ -62,14 +62,11 @@ class RequestReferenceIn implements RequestInterface, ResultInterface
      * @param string $internalTechnicalId
      * @return RequestReferenceIn
      */
-    public function withInternalTechnicalId($internalTechnicalId)
+    public function withInternalTechnicalId(string $internalTechnicalId): RequestReferenceIn
     {
         $new = clone $this;
         $new->internalTechnicalId = $internalTechnicalId;
 
         return $new;
     }
-
-
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class productRequest
 {
@@ -68,7 +68,7 @@ class productRequest
 
     /**
      * @param language $language
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setLanguage($language)
     {
@@ -94,7 +94,7 @@ class productRequest
 
     /**
      * @param \DateTime $requestedDeadline
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setRequestedDeadline(\DateTime $requestedDeadline)
     {
@@ -120,7 +120,7 @@ class productRequest
 
     /**
      * @param \DateTime $acceptedDeadline
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setAcceptedDeadline(\DateTime $acceptedDeadline)
     {
@@ -138,7 +138,7 @@ class productRequest
 
     /**
      * @param string $formatCode
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setFormatCode($formatCode)
     {
@@ -156,7 +156,7 @@ class productRequest
 
     /**
      * @param string $statusCode
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setStatusCode($statusCode)
     {
@@ -174,7 +174,7 @@ class productRequest
 
     /**
      * @param boolean $trackChanges
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setTrackChanges($trackChanges)
     {
@@ -192,7 +192,7 @@ class productRequest
 
     /**
      * @param string $internalProductReference
-     * @return \OpenEuropa\ePoetry\Type\productRequest
+     * @return \OpenEuropa\EPoetry\Type\productRequest
      */
     public function setInternalProductReference($internalProductReference)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class requestReferenceIn
 {
@@ -35,7 +35,7 @@ class requestReferenceIn
 
     /**
      * @param int $id
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     public function setId($id)
     {
@@ -53,7 +53,7 @@ class requestReferenceIn
 
     /**
      * @param string $internalTechnicalId
-     * @return \OpenEuropa\ePoetry\Type\requestReferenceIn
+     * @return \OpenEuropa\EPoetry\Type\requestReferenceIn
      */
     public function setInternalTechnicalId($internalTechnicalId)
     {

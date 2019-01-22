@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,40 @@ class CorrectTranslation implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\productReference
+     * @var \OpenEuropa\EPoetry\Type\ProductReference
      */
     private $product;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\correctionDocument
+     * @var \OpenEuropa\EPoetry\Type\CorrectionDocument
      */
     private $correction;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\productReference $product
-     * @var \OpenEuropa\ePoetry\Type\correctionDocument $correction
+     * @var \OpenEuropa\EPoetry\Type\ProductReference $product
+     * @var \OpenEuropa\EPoetry\Type\CorrectionDocument $correction
      */
-    public function __construct($product, $correction)
+    public function __construct(ProductReference $product, CorrectionDocument $correction)
     {
         $this->product = $product;
         $this->correction = $correction;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\productReference
+     * @return \OpenEuropa\EPoetry\Type\ProductReference
      */
-    public function getProduct()
+    public function getProduct(): ProductReference
     {
         return $this->product;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\productReference $product
+     * @param \OpenEuropa\EPoetry\Type\ProductReference $product
      * @return CorrectTranslation
      */
-    public function withProduct($product)
+    public function withProduct(ProductReference $product): CorrectTranslation
     {
         $new = clone $this;
         $new->product = $product;
@@ -51,25 +51,22 @@ class CorrectTranslation implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\correctionDocument
+     * @return \OpenEuropa\EPoetry\Type\CorrectionDocument
      */
-    public function getCorrection()
+    public function getCorrection(): CorrectionDocument
     {
         return $this->correction;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\correctionDocument $correction
+     * @param \OpenEuropa\EPoetry\Type\CorrectionDocument $correction
      * @return CorrectTranslation
      */
-    public function withCorrection($correction)
+    public function withCorrection(CorrectionDocument $correction): CorrectTranslation
     {
         $new = clone $this;
         $new->correction = $correction;
 
         return $new;
     }
-
-
 }
-

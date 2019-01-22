@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,40 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @var \OpenEuropa\EPoetry\Type\RequestGeneralInfoIn
      */
     private $generalInfo;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\contacts
+     * @var \OpenEuropa\EPoetry\Type\Contacts
      */
     private $contacts;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\originalDocumentIn
+     * @var \OpenEuropa\EPoetry\Type\OriginalDocumentIn
      */
     private $originalDocument;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\productRequests
+     * @var \OpenEuropa\EPoetry\Type\ProductRequests
      */
     private $productRequests;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocuments
+     * @var \OpenEuropa\EPoetry\Type\AuxiliaryDocuments
      */
     private $auxiliaryDocuments;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\requestGeneralInfoIn $generalInfo
-     * @var \OpenEuropa\ePoetry\Type\contacts $contacts
-     * @var \OpenEuropa\ePoetry\Type\originalDocumentIn $originalDocument
-     * @var \OpenEuropa\ePoetry\Type\productRequests $productRequests
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocuments $auxiliaryDocuments
+     * @var \OpenEuropa\EPoetry\Type\RequestGeneralInfoIn $generalInfo
+     * @var \OpenEuropa\EPoetry\Type\Contacts $contacts
+     * @var \OpenEuropa\EPoetry\Type\OriginalDocumentIn $originalDocument
+     * @var \OpenEuropa\EPoetry\Type\ProductRequests $productRequests
+     * @var \OpenEuropa\EPoetry\Type\AuxiliaryDocuments $auxiliaryDocuments
      */
-    public function __construct($generalInfo, $contacts, $originalDocument, $productRequests, $auxiliaryDocuments)
+    public function __construct(RequestGeneralInfoIn $generalInfo, Contacts $contacts, OriginalDocumentIn $originalDocument, ProductRequests $productRequests, AuxiliaryDocuments $auxiliaryDocuments)
     {
         $this->generalInfo = $generalInfo;
         $this->contacts = $contacts;
@@ -52,18 +52,18 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfoIn
+     * @return \OpenEuropa\EPoetry\Type\RequestGeneralInfoIn
      */
-    public function getGeneralInfo()
+    public function getGeneralInfo(): RequestGeneralInfoIn
     {
         return $this->generalInfo;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestGeneralInfoIn $generalInfo
+     * @param \OpenEuropa\EPoetry\Type\RequestGeneralInfoIn $generalInfo
      * @return LinguisticRequestIn
      */
-    public function withGeneralInfo($generalInfo)
+    public function withGeneralInfo(RequestGeneralInfoIn $generalInfo): LinguisticRequestIn
     {
         $new = clone $this;
         $new->generalInfo = $generalInfo;
@@ -72,18 +72,18 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\contacts
+     * @return \OpenEuropa\EPoetry\Type\Contacts
      */
-    public function getContacts()
+    public function getContacts(): Contacts
     {
         return $this->contacts;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contacts $contacts
+     * @param \OpenEuropa\EPoetry\Type\Contacts $contacts
      * @return LinguisticRequestIn
      */
-    public function withContacts($contacts)
+    public function withContacts(Contacts $contacts): LinguisticRequestIn
     {
         $new = clone $this;
         $new->contacts = $contacts;
@@ -92,18 +92,18 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\originalDocumentIn
+     * @return \OpenEuropa\EPoetry\Type\OriginalDocumentIn
      */
-    public function getOriginalDocument()
+    public function getOriginalDocument(): OriginalDocumentIn
     {
         return $this->originalDocument;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\originalDocumentIn $originalDocument
+     * @param \OpenEuropa\EPoetry\Type\OriginalDocumentIn $originalDocument
      * @return LinguisticRequestIn
      */
-    public function withOriginalDocument($originalDocument)
+    public function withOriginalDocument(OriginalDocumentIn $originalDocument): LinguisticRequestIn
     {
         $new = clone $this;
         $new->originalDocument = $originalDocument;
@@ -112,18 +112,18 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\productRequests
+     * @return \OpenEuropa\EPoetry\Type\ProductRequests
      */
-    public function getProductRequests()
+    public function getProductRequests(): ProductRequests
     {
         return $this->productRequests;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\productRequests $productRequests
+     * @param \OpenEuropa\EPoetry\Type\ProductRequests $productRequests
      * @return LinguisticRequestIn
      */
-    public function withProductRequests($productRequests)
+    public function withProductRequests(ProductRequests $productRequests): LinguisticRequestIn
     {
         $new = clone $this;
         $new->productRequests = $productRequests;
@@ -132,7 +132,7 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\auxiliaryDocuments
+     * @return \OpenEuropa\EPoetry\Type\AuxiliaryDocuments
      */
     public function getAuxiliaryDocuments()
     {
@@ -140,17 +140,14 @@ class LinguisticRequestIn implements RequestInterface, ResultInterface
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\auxiliaryDocuments $auxiliaryDocuments
+     * @param \OpenEuropa\EPoetry\Type\AuxiliaryDocuments $auxiliaryDocuments
      * @return LinguisticRequestIn
      */
-    public function withAuxiliaryDocuments($auxiliaryDocuments)
+    public function withAuxiliaryDocuments($auxiliaryDocuments): LinguisticRequestIn
     {
         $new = clone $this;
         $new->auxiliaryDocuments = $auxiliaryDocuments;
 
         return $new;
     }
-
-
 }
-

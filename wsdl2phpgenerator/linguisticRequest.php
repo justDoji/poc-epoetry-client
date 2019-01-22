@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 class linguisticRequest
 {
@@ -58,7 +58,7 @@ class linguisticRequest
 
     /**
      * @param requestReference $reference
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setReference($reference)
     {
@@ -76,7 +76,7 @@ class linguisticRequest
 
     /**
      * @param requestGeneralInfo $generalInfo
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setGeneralInfo($generalInfo)
     {
@@ -94,7 +94,7 @@ class linguisticRequest
 
     /**
      * @param contacts $contacts
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setContacts($contacts)
     {
@@ -112,7 +112,7 @@ class linguisticRequest
 
     /**
      * @param originalDocument $originalDocument
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setOriginalDocument($originalDocument)
     {
@@ -130,7 +130,7 @@ class linguisticRequest
 
     /**
      * @param productRequests $productRequests
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setProductRequests($productRequests)
     {
@@ -148,7 +148,7 @@ class linguisticRequest
 
     /**
      * @param auxiliaryDocuments $auxiliaryDocuments
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setAuxiliaryDocuments($auxiliaryDocuments)
     {
@@ -166,7 +166,7 @@ class linguisticRequest
 
     /**
      * @param string $statusCode
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\linguisticRequest
      */
     public function setStatusCode($statusCode)
     {

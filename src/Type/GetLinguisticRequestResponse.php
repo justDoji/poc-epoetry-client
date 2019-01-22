@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,37 @@ class GetLinguisticRequestResponse implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
     private $return;
 
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @var \OpenEuropa\EPoetry\Type\LinguisticRequest $return
      */
-    public function __construct($return)
+    public function __construct(LinguisticRequest $return)
     {
         $this->return = $return;
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\linguisticRequest
+     * @return \OpenEuropa\EPoetry\Type\LinguisticRequest
      */
-    public function getReturn()
+    public function getReturn(): LinguisticRequest
     {
         return $this->return;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\linguisticRequest $return
+     * @param \OpenEuropa\EPoetry\Type\LinguisticRequest $return
      * @return GetLinguisticRequestResponse
      */
-    public function withReturn($return)
+    public function withReturn(LinguisticRequest $return): GetLinguisticRequestResponse
     {
         $new = clone $this;
         $new->return = $return;
 
         return $new;
     }
-
-
 }
-

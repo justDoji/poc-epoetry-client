@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,32 +9,32 @@ class LinguisticRequest implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestReference
+     * @var \OpenEuropa\EPoetry\Type\RequestReference
      */
     private $reference;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @var \OpenEuropa\EPoetry\Type\RequestGeneralInfo
      */
     private $generalInfo;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\contacts
+     * @var \OpenEuropa\EPoetry\Type\Contacts
      */
     private $contacts;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\originalDocument
+     * @var \OpenEuropa\EPoetry\Type\OriginalDocument
      */
     private $originalDocument;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\productRequests
+     * @var \OpenEuropa\EPoetry\Type\ProductRequests
      */
     private $productRequests;
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocuments
+     * @var \OpenEuropa\EPoetry\Type\AuxiliaryDocuments
      */
     private $auxiliaryDocuments;
 
@@ -46,15 +46,15 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     /**
      * Constructor
      *
-     * @var \OpenEuropa\ePoetry\Type\requestReference $reference
-     * @var \OpenEuropa\ePoetry\Type\requestGeneralInfo $generalInfo
-     * @var \OpenEuropa\ePoetry\Type\contacts $contacts
-     * @var \OpenEuropa\ePoetry\Type\originalDocument $originalDocument
-     * @var \OpenEuropa\ePoetry\Type\productRequests $productRequests
-     * @var \OpenEuropa\ePoetry\Type\auxiliaryDocuments $auxiliaryDocuments
+     * @var \OpenEuropa\EPoetry\Type\RequestReference $reference
+     * @var \OpenEuropa\EPoetry\Type\RequestGeneralInfo $generalInfo
+     * @var \OpenEuropa\EPoetry\Type\Contacts $contacts
+     * @var \OpenEuropa\EPoetry\Type\OriginalDocument $originalDocument
+     * @var \OpenEuropa\EPoetry\Type\ProductRequests $productRequests
+     * @var \OpenEuropa\EPoetry\Type\AuxiliaryDocuments $auxiliaryDocuments
      * @var string $statusCode
      */
-    public function __construct($reference, $generalInfo, $contacts, $originalDocument, $productRequests, $auxiliaryDocuments, $statusCode)
+    public function __construct(RequestReference $reference, RequestGeneralInfo $generalInfo, Contacts $contacts, OriginalDocument $originalDocument, ProductRequests $productRequests, AuxiliaryDocuments $auxiliaryDocuments, string $statusCode)
     {
         $this->reference = $reference;
         $this->generalInfo = $generalInfo;
@@ -66,18 +66,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestReference
+     * @return \OpenEuropa\EPoetry\Type\RequestReference
      */
-    public function getReference()
+    public function getReference(): RequestReference
     {
         return $this->reference;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestReference $reference
+     * @param \OpenEuropa\EPoetry\Type\RequestReference $reference
      * @return LinguisticRequest
      */
-    public function withReference($reference)
+    public function withReference(RequestReference $reference): LinguisticRequest
     {
         $new = clone $this;
         $new->reference = $reference;
@@ -86,18 +86,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\requestGeneralInfo
+     * @return \OpenEuropa\EPoetry\Type\RequestGeneralInfo
      */
-    public function getGeneralInfo()
+    public function getGeneralInfo(): RequestGeneralInfo
     {
         return $this->generalInfo;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\requestGeneralInfo $generalInfo
+     * @param \OpenEuropa\EPoetry\Type\RequestGeneralInfo $generalInfo
      * @return LinguisticRequest
      */
-    public function withGeneralInfo($generalInfo)
+    public function withGeneralInfo(RequestGeneralInfo $generalInfo): LinguisticRequest
     {
         $new = clone $this;
         $new->generalInfo = $generalInfo;
@@ -106,18 +106,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\contacts
+     * @return \OpenEuropa\EPoetry\Type\Contacts
      */
-    public function getContacts()
+    public function getContacts(): Contacts
     {
         return $this->contacts;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\contacts $contacts
+     * @param \OpenEuropa\EPoetry\Type\Contacts $contacts
      * @return LinguisticRequest
      */
-    public function withContacts($contacts)
+    public function withContacts(Contacts $contacts): LinguisticRequest
     {
         $new = clone $this;
         $new->contacts = $contacts;
@@ -126,18 +126,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\originalDocument
+     * @return \OpenEuropa\EPoetry\Type\OriginalDocument
      */
-    public function getOriginalDocument()
+    public function getOriginalDocument(): OriginalDocument
     {
         return $this->originalDocument;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\originalDocument $originalDocument
+     * @param \OpenEuropa\EPoetry\Type\OriginalDocument $originalDocument
      * @return LinguisticRequest
      */
-    public function withOriginalDocument($originalDocument)
+    public function withOriginalDocument(OriginalDocument $originalDocument): LinguisticRequest
     {
         $new = clone $this;
         $new->originalDocument = $originalDocument;
@@ -146,18 +146,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\productRequests
+     * @return \OpenEuropa\EPoetry\Type\ProductRequests
      */
-    public function getProductRequests()
+    public function getProductRequests(): ProductRequests
     {
         return $this->productRequests;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\productRequests $productRequests
+     * @param \OpenEuropa\EPoetry\Type\ProductRequests $productRequests
      * @return LinguisticRequest
      */
-    public function withProductRequests($productRequests)
+    public function withProductRequests(ProductRequests $productRequests): LinguisticRequest
     {
         $new = clone $this;
         $new->productRequests = $productRequests;
@@ -166,18 +166,18 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     }
 
     /**
-     * @return \OpenEuropa\ePoetry\Type\auxiliaryDocuments
+     * @return \OpenEuropa\EPoetry\Type\AuxiliaryDocuments
      */
-    public function getAuxiliaryDocuments()
+    public function getAuxiliaryDocuments(): AuxiliaryDocuments
     {
         return $this->auxiliaryDocuments;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\auxiliaryDocuments $auxiliaryDocuments
+     * @param \OpenEuropa\EPoetry\Type\AuxiliaryDocuments $auxiliaryDocuments
      * @return LinguisticRequest
      */
-    public function withAuxiliaryDocuments($auxiliaryDocuments)
+    public function withAuxiliaryDocuments(AuxiliaryDocuments $auxiliaryDocuments): LinguisticRequest
     {
         $new = clone $this;
         $new->auxiliaryDocuments = $auxiliaryDocuments;
@@ -188,7 +188,7 @@ class LinguisticRequest implements RequestInterface, ResultInterface
     /**
      * @return string
      */
-    public function getStatusCode()
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }
@@ -197,14 +197,11 @@ class LinguisticRequest implements RequestInterface, ResultInterface
      * @param string $statusCode
      * @return LinguisticRequest
      */
-    public function withStatusCode($statusCode)
+    public function withStatusCode(string $statusCode): LinguisticRequest
     {
         $new = clone $this;
         $new->statusCode = $statusCode;
 
         return $new;
     }
-
-
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEuropa\ePoetry\Type;
+namespace OpenEuropa\EPoetry\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,40 +9,27 @@ class ProductRequests implements RequestInterface, ResultInterface
 {
 
     /**
-     * @var \OpenEuropa\ePoetry\Type\productRequest
+     * @var array \OpenEuropa\EPoetry\Type\ProductRequestInterface
      */
-    private $productRequest;
+    private $productRequest = [];
 
     /**
-     * Constructor
-     *
-     * @var \OpenEuropa\ePoetry\Type\productRequest $productRequest
+     * @return array \OpenEuropa\EPoetry\Type\ProductRequestInterface
      */
-    public function __construct($productRequest)
-    {
-        $this->productRequest = $productRequest;
-    }
-
-    /**
-     * @return \OpenEuropa\ePoetry\Type\productRequest
-     */
-    public function getProductRequest()
+    public function getProductRequest(): array
     {
         return $this->productRequest;
     }
 
     /**
-     * @param \OpenEuropa\ePoetry\Type\productRequest $productRequest
+     * @param \OpenEuropa\EPoetry\Type\ProductRequestInterface $productRequest
      * @return ProductRequests
      */
-    public function withProductRequest($productRequest)
+    public function withProductRequest(ProductRequestInterface $productRequest): ProductRequests
     {
         $new = clone $this;
-        $new->productRequest = $productRequest;
+        $new->productRequest[] = $productRequest;
 
         return $new;
     }
-
-
 }
-
